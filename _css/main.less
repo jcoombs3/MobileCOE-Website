@@ -52,6 +52,9 @@
 @sapient-sans-medium: 'SapientSans-Medium';
 @sapient-sans-light: 'SapientSans-Light';
 
+@devicesHeight: 300px;
+@progressBarHeight: 2px;
+
 /* ---------------------------------------------------------- */
 
 html, body {
@@ -216,7 +219,35 @@ html, body {
 
 /* ---------------------------------------------------------- */
 
+#devices {
+	width:100%;
+	height:@devicesHeight;
+	background:@electric-blue;
+	margin-top:65px;
 
+	.container {
+		width:100%;
+		height:@devicesHeight - @progressBarHeight;
+	}
+}
+
+#projects {
+	width:100%;
+	/* height is determined in setup.js */
+	background:@piano;
+
+}
+
+.progress-bar {
+	width:0px;
+	height:@progressBarHeight;
+	background:@sapient-heat;
+	.transition(all 500ms ease);
+
+	&.enabled {
+		width:100%;
+	}
+}
 
 /*-----------------------------------*/
 
