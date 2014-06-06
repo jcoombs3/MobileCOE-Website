@@ -52,6 +52,7 @@
 @sapient-sans-medium: 'SapientSans-Medium';
 @sapient-sans-light: 'SapientSans-Light';
 
+@ribbonHeight : 75px;
 @devicesHeight: 300px;
 @progressBarHeight: 2px;
 
@@ -218,6 +219,14 @@ html, body {
 }
 
 /* ---------------------------------------------------------- */
+
+#ribbon {
+	width:100%;
+	height:@ribbonHeight;
+	background:@sapient-heat;
+	position: absolute;
+	top: 0;
+}
 
 #devices {
 	width:100%;
