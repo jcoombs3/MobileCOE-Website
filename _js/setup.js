@@ -2,13 +2,13 @@
 $(window).load(function(){
 
 	/* #projects */ 
-	setHeight('#projects');
+	setup('#projects');
 
-	setHeight('.progress-bar');
+	setup('.progress-bar');
 });
 
 
-function setHeight(el){
+function setup(el){
 
 	switch (el) {
         case ('#projects'):
