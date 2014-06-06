@@ -224,15 +224,7 @@ html, body {
 }
 
 /* ---------------------------------------------------------- */
-ul{
-	padding: 0px;
-}
-li{
-	width: 25%;
-	height: 100%;
-	float: left;
-	text-align: center;
-}
+
 #ribbon {
 	width:100%;
 	height:@ribbonHeight;
@@ -251,30 +243,52 @@ li{
 	.container {
 		width:100%;
 		height:@devicesHeight - @progressBarHeight;
+
+		ul {
+			padding:0px;
+			margin:0px;
+			height:100%;
+			width:100%;
+		}
+
+		li {
+			width:25%;
+			height:100%;
+			float: left;
+			text-align: center;
+		}
 	}
+
+	img {
+		height:75%;
+	}
+
 }
 
 #projects {
 	width:100%;
 	/* height is determined in setup.js */
 	background:@piano;
+	overflow:hidden;
+	overflow-x:auto;
 
 	ul {
 		/* width is determined in setup.js */
 		height:100%;
 		padding:0;
 		margin:0;
+		margin-left:5px;
 
 		li {
 			list-style-type: none;
-			width:22%;
+			width:21%;
 			height:100%;
 			padding:0;
-			margin:0 0 0 5px;
+			margin:0 5px 0 0;
 			float: left;
 
 			&:last-child {
-				margin-right: 5px;
+				margin-right:0px;
 			}
 
 			.load-bar {
