@@ -72,7 +72,7 @@ function stackDeck(li) {
 	$( "#projects li" ).each(function(i){
 		var moveInteger = selected - $(this).data('order');
 		var moveSpeed = initMoveSpeed*Math.abs(moveInteger);
-		var delayTime = longestDelay - (moveInteger/(maxApp- selected)*.15);
+		var delayTime = longestDelay - ( Math.abs(moveInteger)/(maxApp - selected) )*.15;
 		var aniAttr = {left: ( (width) * moveInteger ) + 'px', ease:Sine.easeOut, delay: delayTime};
 
 		TweenMax.to($(this), moveSpeed, aniAttr);
