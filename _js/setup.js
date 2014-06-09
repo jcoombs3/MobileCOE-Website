@@ -19,8 +19,9 @@ function setup(el){
             });	
 			break;
         case ('#projects'):
-            var projectHeight = ( $(window).outerHeight() - ( $('#ribbon').outerHeight() + $('#devices').outerHeight() ) ) + 'px';
-            $('#projects').css('height',projectHeight);
+            var projectHeight = $(window).outerHeight() - ( $('#ribbon').outerHeight() + $('#devices').outerHeight() );
+            $('#projects').css('height',projectHeight + 'px');
+            $('#projects-hover').css('height',projectHeight + 'px');
 
             var maxApp = 0;
             $('#apps li').each(function(){
@@ -36,7 +37,8 @@ function setup(el){
             /* set up hover */ 
             var hoverWidth = Math.round( ($(window).outerWidth() * 0.10 ));
             $('#projects .hover').css('width',hoverWidth + 'px');
-            $('#projects .hover').css('height','100%');
+            $('#projects .hover').css('height',projectHeight + 'px');
+            $('#projects-hover .hover').addClass('enabled');;
 
            	break;
     }
