@@ -4,6 +4,7 @@ $(window).load(function(){
 	$('#projects li').hover(function(e){
 		$(e.currentTarget).find('.app-bar').addClass('hover');
 		$(e.currentTarget).addClass('hover');
+		$(e.currentTarget).find('.overview').fadeIn('fast');
 		checkDevices($(e.currentTarget));
 	},function(e){
 		$(e.currentTarget).find('.app-bar').removeClass('hover');
