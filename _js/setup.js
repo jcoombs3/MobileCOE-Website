@@ -30,13 +30,17 @@ function setup(el){
             	maxApp++;
             });
 
+            var appHeight = $('apps li').outerHeight();
+            var maxWidth = Math.round(appHeight*0.5725191);
+            $('#app li').css('max-width',maxWidth + 'px');
+
             var appWidth = Math.round( ($(window).outerWidth() * 0.22 ));
             $('#apps li').css('width',appWidth + 'px');
 
             var ulWidth = (appWidth * maxApp + (5 * maxApp));
             $('#apps').css('width',ulWidth + 'px');
 
-            var appIconWidth = $('#projects li.app-icon').outerWidth();
+            var appIconWidth = $('#projects .app-icon').outerWidth();
             $('#projects .app-icon').css('height', appIconWidth + 'px');
 
             /* set up hover */ 
