@@ -30,9 +30,9 @@ function setup(el){
             	maxApp++;
             });
 
-            var appHeight = $('apps li').outerHeight();
+            var appHeight = $('#apps li').outerHeight();
             var maxWidth = Math.round(appHeight*0.5725191);
-            $('#app li').css('max-width',maxWidth + 'px');
+            $('#apps li').css('max-width',maxWidth + 'px');
 
             var appWidth = Math.round( ($(window).outerWidth() * 0.22 ));
             $('#apps li').css('width',appWidth + 'px');
