@@ -11,6 +11,7 @@ $(window).load(function(){
 
 function setup(el){
 
+
 	switch (el) {
 		case ('#devices'):
             $('#devices img').each(function(e){
@@ -32,6 +33,9 @@ function setup(el){
 
             var ulWidth = (appWidth * maxApp + (5 * maxApp));
             $('#apps').css('width',ulWidth + 'px');
+
+            var width = $('#projects li.app-icon').outerWidth();
+            $('#projcts .app-icon').css('height', width + 'px');
 
             /* set up hover */ 
             var hoverWidth = Math.round( ($(window).outerWidth() * 0.10 ));
