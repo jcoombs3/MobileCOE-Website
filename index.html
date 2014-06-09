@@ -18,6 +18,7 @@
   <script src="_js/ember-1.5.1.js"></script>
   <script src = "_js/ember-data.min.js"></script>
 </head>
+
 <body>
   <div id="container">
 
@@ -39,33 +40,53 @@
 
 
                 <div class='clearfix'></div>
-            </section>
+        </section>
+
 
     </div>
   </div>
-   <script type="text/x-handlebars" id="topics">
-    <div class = 'bodyContent'>
+
+
+ <script type="text/x-handlebars" id="examples">
+//   <div class = "bodyContent">
+//     <p> Here I will be listing inspiration examples </p>
+//   </div>
+ </script>
+
+ <script type="text/x-handlebars" id="topics">
+  <div class = 'bodyContent'>
     <section id="projects">
-      <ul id="apps">
-        {{#each}}
-          <li>
-            <div class="app-bar">
-            </div>
-
-            <div class="overview">
-              <div class="app-icon">
+        <ul id="apps">
+          {{#each}}
+            <li>
+              <div class="app-bar">
               </div>
-              <div class='app-title'>
+
+              <div class="overview">
+                <div class="app-icon">
+                </div>
+                <div class='app-title'>
+                </div>
               </div>
-            </div>
-          </li>
-        {{/each}}
-      </ul>
-      </section>
-    </div>
+            </li>
+          {{/each}}
+        </ul>
+        {{outlet}}
+    </section>
+  </div>
+</script>
 
-  </script>
+<script type="text/x-handlebars" id="topic">
+   {{name}}
+</script> 
 
+ <script type="text/x-handlebars" id="topic/_edit">
+  <div class="editSectionContent">
+    <p>{{input type = "text" value = topic}}</p>
+    <p>{{textarea value = description}}</p>
+  </div>
+</script> 
+>>>>>>> 3c336b2c8746cb138bddab03155341b21dbc918c
 
 
   <script type="text/javascript" src="_js/setup.js"> </script>
