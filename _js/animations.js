@@ -15,6 +15,9 @@ $(window).load(function(){
 		$(e.currentTarget).find('.app-bar').addClass('hover');
 		$(e.currentTarget).addClass('clicked');
 		TweenMax.to($('#app-content'), 0.6, {opacity: 1});
+
+		var color = $(e.currentTarget).data('brandcolor');
+		$('#app-content').css('background', color);
 		stackDeck($(e.currentTarget));
 	});
 		
