@@ -57,7 +57,7 @@
 @progressBarHeight: 2px;
 
 @app-li-one: @charcoal;
-@app-li-two: #8E8E8E;
+@app-li-two: #e8e8e8;
 @app-li-three: #666666;
 
 /* ---------------------------------------------------------- */
@@ -336,15 +336,15 @@ html, body {
 				margin:0 auto;
 			}
 
-			&:nth-of-type(3n - 2) .overview {
+			&:nth-of-type(3n) .overview {
 				background:@app-li-one;
-			}
+			}			
 
-			&:nth-of-type(3n - 1) .overview {
+			&:nth-of-type(3n-2) .overview {
 				background:@app-li-two;
 			}
 
-			&:nth-child(3n + 0) .overview {
+			&:nth-of-type(3n-1) .overview {
 				background:@app-li-three;
 			}
 
