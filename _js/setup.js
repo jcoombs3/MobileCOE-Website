@@ -25,7 +25,8 @@ function setup(el){
             $('#projects-hover').css('height',projectHeight + 'px');
 
             var maxApp = 0;
-            $('#apps li').each(function(){
+            $('#apps li').each(function(i){
+                $(this).data('order',i);
             	maxApp++;
             });
 
@@ -35,14 +36,14 @@ function setup(el){
             var ulWidth = (appWidth * maxApp + (5 * maxApp));
             $('#apps').css('width',ulWidth + 'px');
 
-            var width = $('#projects li.app-icon').outerWidth();
-            $('#projcts .app-icon').css('height', width + 'px');
+            var appIconWidth = $('#projects li.app-icon').outerWidth();
+            $('#projects .app-icon').css('height', appIconWidth + 'px');
 
             /* set up hover */ 
-            var hoverWidth = Math.round( ($(window).outerWidth() * 0.10 ));
-            $('#projects .hover').css('width',hoverWidth + 'px');
-            $('#projects .hover').css('height',projectHeight + 'px');
-            $('#projects-hover .hover').addClass('enabled');;
+            // var hoverWidth = Math.round( ($(window).outerWidth() * 0.10 ));
+            // $('#projects .hover').css('width',hoverWidth + 'px');
+            // $('#projects .hover').css('height',projectHeight + 'px');
+            // $('#projects-hover .hover').addClass('enabled');;
 
            	break;
     }
