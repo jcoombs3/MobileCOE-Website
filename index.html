@@ -12,14 +12,11 @@
     <!-- libraries -->
         <!-- jQuery -->
   <script type="text/javascript" src="_js/jquery-1.10.1.js"> </script>
-
-        <!-- Greensock -->
    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.9.8/TweenMax.min.js"></script>
-
-        <!-- Handlebars -->
-        <!--<script type="text/javascript" src="_js/handlebars.js"></script>-->
-
-
+   <script src="_js/jquery-1.10.1.js"></script>
+  <script src="_js/handlebars.js"></script>
+  <script src="_js/ember-1.5.1.js"></script>
+  <script src = "_js/ember-data.min.js"></script>
 </head>
 <body>
   <div id="container">
@@ -43,61 +40,35 @@
 
                 <div class='clearfix'></div>
             </section>
+
     </div>
   </div>
-
-
- <script type="text/x-handlebars" id="examples">
-//   <div class = "bodyContent">
-//     <p> Here I will be listing inspiration examples </p>
-//   </div>
-
- </script>
-
- <script type="text/x-handlebars" id="topics">
-  <div class = 'bodyContent'>
-  <section id="projects">
-    <ul id="apps">
-      {{#each}}
-        <li data-android= '{{dataAndroid}}' data-ipad='{{dataIpad}}' data-iphone='{{dataIphone}}' data-kiosk='{{dataKiosk}}'>
-          <div class="app-bar">
-          </div>
-
-          <div class="overview">
-            <div class="app-icon">
+   <script type="text/x-handlebars" id="topics">
+    <div class = 'bodyContent'>
+    <section id="projects">
+      <ul id="apps">
+        {{#each}}
+          <li>
+            <div class="app-bar">
             </div>
-            <div class='app-title'>
+
+            <div class="overview">
+              <div class="app-icon">
+              </div>
+              <div class='app-title'>
+              </div>
             </div>
-          </div>
-        </li>
-      {{/each}}
-    </ul>
-    {{outlet}}
-    </section>
-  </div>
+          </li>
+        {{/each}}
+      </ul>
+      </section>
+    </div>
 
-</script>
+  </script>
 
- <script type="text/x-handlebars" id="topic">
-   {{name}}
-
-</script> 
-
- <script type="text/x-handlebars" id="topic/_edit">
-
-  <div class="editSectionContent">
-    <p>{{input type = "text" value = topic}}</p>
-    <p>{{textarea value = description}}</p>
-  </div>
-
-</script> 
 
 
   <script type="text/javascript" src="_js/setup.js"> </script>
-  <script src="_js/jquery-1.10.1.js"></script>
-  <script src="_js/handlebars.js"></script>
-  <script src="_js/ember-1.5.1.js"></script>
-  <script src = "_js/ember-data.min.js"></script>
   <script src="_js/ember_setup.js"></script>
 
 </body>
