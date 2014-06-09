@@ -14,11 +14,8 @@ $(window).load(function(){
 	$('#projects li').on('click',function(e){
 		$(e.currentTarget).find('.app-bar').addClass('hover');
 		$(e.currentTarget).addClass('clicked');
-<<<<<<< HEAD
-		TweenMax.to($('#app-content'), 0.6, {opacity: 100});
-=======
+		TweenMax.to($('#app-content'), 0.6, {opacity: 1});
 		//stackDeck($(e.currentTarget));
->>>>>>> 9bdca3672d85f69c0c27b51e3d168081025bf718
 	});
 		
 });
