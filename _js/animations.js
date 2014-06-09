@@ -15,7 +15,7 @@ $(window).load(function(){
 		$(e.currentTarget).find('.app-bar').addClass('hover');
 		$(e.currentTarget).addClass('clicked');
 		TweenMax.to($('#app-content'), 0.6, {opacity: 1});
-		//stackDeck($(e.currentTarget));
+		stackDeck($(e.currentTarget));
 	});
 		
 });
@@ -48,16 +48,23 @@ function resetDevices() {
 }
 
 function stackDeck(li) {
-	focusApp = li;
-	// lockApp = true;
-	var maxApp = $('#projects li').length;
-	originalOffset = li.offset().left;
+	/* selected app */
+	var focusApp = li;
+	/* select app's order # in list */
 	var selected = li.data('order');
+	/* quanity of apps in ul */
+	var maxApp = $('#projects li').length - 1;
+	/* width of li */
 	var width = $(li).outerWidth();
+	/* initial move speed of apps */
+	var initMoveSpeed = .6/maxApp;
+	console.log(initMoveSpeed + " -- initial Move speed");
+	/* longest delay of animation for farthest app from selected */ 
 	var longestDelay = 1.05/maxApp;
+	console.log(longestDelay + " -- longest delay");
+	/* center of window when moving deck to center*/
 	var centerLeftPos = ( $( document ).width() /2.0)-(width/2.0);
 	var centerPos = centerLeftPos - li.offset().left;
-	var initMoveSpeed = .6/maxApp;
 
 	TweenMax.to(li, 0, {zIndex: '50'});
 
@@ -65,11 +72,11 @@ function stackDeck(li) {
 	$( "#projects li" ).each(function(i){
 		var moveInteger = selected - $(this).data('order');
 		var moveSpeed = initMoveSpeed*Math.abs(moveInteger);
-		var delayTime = longestDelay - (moveInteger/(maxApp- selected)*.15);
+		var delayTime = longestDelay - ( Math.abs(moveInteger)/(maxApp - selected) )*.15;
 		var aniAttr = {left: ( (width) * moveInteger ) + 'px', ease:Sine.easeOut, delay: delayTime};
 
-		TweenMax.to($(this), moveSpeed, aniAttr)
-	});
+		TweenMax.to($(this), moveSpeed, aniAttr);
+	});		
 
 	//move stack to center
 	$( "#projects li" ).each(function(i){
@@ -82,7 +89,7 @@ function stackDeck(li) {
 		}
 		else{
 			aniAttr.onComplete = function(){
-				 $(".back").fadeIn();
+				 //$(".back").fadeIn();
 				 //toggleApp(li);
 				};
 		}
@@ -90,6 +97,5 @@ function stackDeck(li) {
 		TweenMax.to($(this), .2, aniAttr);
 	});
 
-	//toggleApp(li);
 }
 

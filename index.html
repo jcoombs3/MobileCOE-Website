@@ -1,39 +1,24 @@
-<!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SapientNitro MobileCOE Prototype</title>
+<meta charset="utf-8">
+  <link href="_css/main.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SapientNitro MobileCOE Prototype</title>
     
-    <link href="_css/main.css" rel="stylesheet" type="text/css">
+  <link href="_css/main.css" rel="stylesheet" type="text/css">
   
-    <!-- libraries -->
-        <!-- jQuery -->
-        <script type="text/javascript" src="_js/jquery-1.10.1.js"> </script>
-
-        <!-- Greensock -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.9.8/TweenMax.min.js"></script>
-
-        <!-- Handlebars -->
-        <!--<script type="text/javascript" src="_js/handlebars.js"></script>-->
-
-
 </head>
 
 <body>
-    <div id="container">
+  <div id="container">
 
-        <div id="main">
+    <div id="main">
+      <section id="ribbon">
+      </section>
 
-            <section id="ribbon">
-            </section>
-
-            <section id="devices">
+       <section id="devices">
                 <div class="container">
                     <ul type='none'>
                         <li id="android"><img src='_img/nexus.png'></li>
@@ -44,161 +29,62 @@
                 </div>
                 <div class="progress-bar enabled">
                 </div>
-
-
                 <div class='clearfix'></div>
-            </section>
+        </section>
 
-            <section id="projects">
-                <ul id="apps">
-                    <li data-android='true' data-ipad='false' data-iphone='false' data-kiosk='false'>
-                        <div class="app-bar">
-                        </div>
-
-                        <div class="overview">
-                            <div class="app-icon">
-                            </div>
-                            <div class='app-title'>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-android='false' data-ipad='false' data-iphone='true' data-kiosk='true'>
-                        <div class="app-bar">
-                        </div>
-
-                        <div class="overview">
-                            <div class="app-icon">
-                            </div>
-                            <div class='app-title'>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-android='false' data-ipad='true' data-iphone='true' data-kiosk='false'>
-                        <div class="app-bar">
-                        </div>
-
-                        <div class="overview">
-                            <div class="app-icon">
-                            </div>
-                            <div class='app-title'>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-android='true' data-ipad='false' data-iphone='false' data-kiosk='true'>
-                        <div class="app-bar">
-                        </div>
-
-                        <div class="overview">
-                            <div class="app-icon">
-                            </div>
-                            <div class='app-title'>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-android='true' data-ipad='true' data-iphone='true' data-kiosk='false'>
-                        <div class="app-bar">
-                        </div>
-
-                        <div class="overview">
-                            <div class="app-icon">
-                            </div>
-                            <div class='app-title'>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-android='false' data-ipad='false' data-iphone='true' data-kiosk='true'>
-                        <div class="app-bar">
-                        </div>
-
-                        <div class="overview">
-                            <div class="app-icon">
-                            </div>
-                            <div class='app-title'>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-android='false' data-ipad='true' data-iphone='true' data-kiosk='false'>
-                        <div class="app-bar">
-                        </div>
-
-                        <div class="overview">
-                            <div class="app-icon">
-                            </div>
-                            <div class='app-title'>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-android='true' data-ipad='false' data-iphone='false' data-kiosk='true'>
-                        <div class="app-bar">
-                        </div>
-
-                        <div class="overview">
-                            <div class="app-icon">
-                            </div>
-                            <div class='app-title'>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-android='false' data-ipad='false' data-iphone='true' data-kiosk='true'>
-                        <div class="app-bar">
-                        </div>
-
-                        <div class="overview">
-                            <div class="app-icon">
-                            </div>
-                            <div class='app-title'>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-android='false' data-ipad='true' data-iphone='true' data-kiosk='false'>
-                        <div class="app-bar">
-                        </div>
-
-                        <div class="overview">
-                            <div class="app-icon">
-                            </div>
-                            <div class='app-title'>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-android='true' data-ipad='false' data-iphone='false' data-kiosk='true'>
-                        <div class="app-bar">
-                        </div>
-
-                        <div class="overview">
-                            <div class="app-icon">
-                            </div>
-                            <div class='app-title'>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-
-<!--                 <div id="projects-hover">
-                    <div class="hover hover-left">
-                    </div>
-                    <div class="hover hover-right">
-                    </div>
-                </div> -->
-            </section>
-
-<<<<<<< HEAD
-            <section id="app-content">
-
-            </section>
-
-=======
->>>>>>> 9bdca3672d85f69c0c27b51e3d168081025bf718
-        </div>
 
     </div>
+  </div>
 
-    <!-- project specific scripts -->
-    <!-- <script type="text/javascript" src="_js/controller.js"> </script> -->
-    <script type="text/javascript" src="_js/animations.js"> </script>
+
+ <script type="text/x-handlebars" id="examples">
+//   <div class = "bodyContent">
+//     <p> Here I will be listing inspiration examples </p>
+//   </div>
+ </script>
+
+ <script type="text/x-handlebars" id="topics">
+  <div class = 'bodyContent'>
+    <section id="projects">
+        <ul id="apps">
+          {{#each}}
+            <li>
+              <div class="app-bar">
+              </div>
+
+              <div class="overview">
+                <div class="app-icon">
+                </div>
+                <div class='app-title'>
+                </div>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+    </section>
+  </div>
+</script>
+
+<script type="text/x-handlebars" id="topic">
+   {{name}}
+</script> 
+
+ <script type="text/x-handlebars" id="topic/_edit">
+  <div class="editSectionContent">
+    <p>{{input type = "text" value = topic}}</p>
+    <p>{{textarea value = description}}</p>
+  </div>
+</script>
+
+
+    <script type="text/javascript" src="_js/jquery-1.10.1.js"> </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.9.8/TweenMax.min.js"></script>
+    <script src="_js/handlebars.js"></script>
+    <script src="_js/ember-1.5.1.js"></script>
+    <script src = "_js/ember-data.min.js"></script>
+    <script src="_js/animations.js"></script>
+    <script src="_js/ember_setup.js"></script>
     <script type="text/javascript" src="_js/setup.js"> </script>
 
-   
 </body>
-
 </html>
