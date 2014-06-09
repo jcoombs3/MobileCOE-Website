@@ -56,8 +56,8 @@
 @devicesHeight: 300px;
 @progressBarHeight: 2px;
 
-@app-li-one: #ffffff;
-@app-li-two: #333333;
+@app-li-one: @charcoal;
+@app-li-two: #8E8E8E;
 @app-li-three: #666666;
 
 /* ---------------------------------------------------------- */
@@ -261,6 +261,11 @@ html, body {
 
 	img {
 		height:75%;
+		max-width:100%;
+	}
+
+	#ipad img {
+		height:65%;
 	}
 
 }
@@ -360,6 +365,18 @@ html, body {
 
 @media screen and (max-device-width: 320px) 
 { 
+	#ribbon {
+		height:60px;
+	}
+
+	#devices {
+		height:175px;
+		margin-top:60px;
+
+		.container {
+			height:173px;
+		}
+	}
 
 }
 
