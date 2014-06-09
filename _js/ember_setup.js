@@ -49,7 +49,8 @@ var topics = [{
     "dataAndroid" : "true",
     "dataIpad" : "false",
     "dataIphone" : "false",
-    "dataKiosk" : "false"
+    "dataKiosk" : "false",
+    "dataBrandColor" : "#ff0"
   },
 
   {
@@ -59,7 +60,8 @@ var topics = [{
     "dataAndroid" : "false",
     "dataIpad" : "true",
     "dataIphone" : "true",
-    "dataKiosk" : "true"
+    "dataKiosk" : "true",
+    "dataBrandColor" : "blue"
   },
 
   {
@@ -69,7 +71,8 @@ var topics = [{
     "dataAndroid" : "true",
     "dataIpad" : "false",
     "dataIphone" : "true",
-    "dataKiosk" : "false"
+    "dataKiosk" : "false",
+    "dataBrandColor" : "green"
   },
 
   {
