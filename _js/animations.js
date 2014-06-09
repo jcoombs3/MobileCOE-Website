@@ -20,6 +20,15 @@ $(window).load(function(){
 		$('#app-content').css('background', color);
 		stackDeck($(e.currentTarget));
 	});
+
+	$('#nav').on('click', function(e){
+		$(e.currentTarget).toggleClass('expanded');
+		TweenMax.to($('#nav'), 0.3, {width: '0px', onComplete:function(){
+			TweenMax.to($('#nav'), 0.3, {top: $('#ribbon').outerHeight() + $('#devices').outerHeight() - 100 +'px' ,height: '200px', onComplete:function(){
+				TweenMax.to($('#nav'), 0.3, {width: '100%'})}})}});
+		// navSlide()
+		
+	});
 		
 });
 
@@ -99,6 +108,18 @@ function stackDeck(li) {
 
 		TweenMax.to($(this), .2, aniAttr);
 	});
+
+	function navSlide(nav_State){
+		switch(nav_State){
+			case 'expanded':
+				TweenMax.to($('#nav'), 0.3, {width: '0px', onComplete:function(){
+					TweenMax.to($('#nav'), 0.3, {top: $('#ribbon').outerHeight() + $('#devices').outerHeight() - 100 +'px' ,height: '200px', onComplete:function(){
+						TweenMax.to($('#nav'), 0.3, {width: '100%'})}})}});
+				break;
+			default:
+				break; 
+		}
+	}
 
 }
 
