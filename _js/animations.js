@@ -15,6 +15,7 @@ $(window).load(function(){
 	$('#projects li').on('click',function(e){
 		$(e.currentTarget).find('.app-bar').addClass('hover');
 		$(e.currentTarget).addClass('clicked');
+		TweenMax.to($('#app-content'), 0.6, {opacity: 100});
 	});
 		
 });
