@@ -56,9 +56,9 @@
 @devicesHeight: 300px;
 @progressBarHeight: 2px;
 
-@app-li-one: @charcoal;
-@app-li-two: #e8e8e8;
-@app-li-three: #666666;
+@app-li-one: @aluminum-gray;
+@app-li-two: #555555;
+@app-li-three: #888888;
 
 /* ---------------------------------------------------------- */
 
@@ -228,7 +228,7 @@ html, body {
 #ribbon {
 	width:100%;
 	height:@ribbonHeight;
-	background:@sapient-heat;
+	background:@piano;
 	position: absolute;
 	top: 0;
 	.box-shadow(0px 3px 5px 0px rgba(50, 50, 50, 0.75));
@@ -237,7 +237,7 @@ html, body {
 #devices {
 	width:100%;
 	height:@devicesHeight;
-	background:@electric-blue;
+	background:@charcoal;
 	margin-top:@ribbonHeight;
 	overflow:hidden;
 
@@ -383,12 +383,13 @@ html, body {
 }
 
 #nav {
-	background:#0066FF;
+	background:@electric-blue;
 	position: fixed;
-	height:70px;
-	width:70px;
-	top:@ribbonHeight + @devicesHeight - 35px;
+	height:50px;
+	width:50px;
+	top:@ribbonHeight + @devicesHeight - 25px;
 	z-index:500;
+	.box-shadow(1px 2px 3px 0px rgba(50, 50, 50, 0.75));
 }
 
 .hover-left.enabled {
@@ -436,6 +437,25 @@ html, body {
 		.container {
 			height:173px;
 		}
+
+		img {
+			height:65%;
+		}
+
+		#ipad img {
+			height:55%;
+		}
+	}
+
+	#app-content {
+		height:175px;
+		top:60px;
+	}
+
+	#nav {
+		width:30px;
+		height:30px;
+		top:60px + 175px - 15px;
 	}
 
 }

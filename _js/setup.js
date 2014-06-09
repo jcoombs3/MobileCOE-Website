@@ -31,11 +31,9 @@ function setup(el){
             });
 
             var appHeight = $('#apps li').outerHeight();
-            var maxWidth = Math.round(appHeight*0.5725191);
-            $('#apps li').css('max-width',maxWidth + 'px');
-
-            var appWidth = Math.round( ($(window).outerWidth() * 0.22 ));
-            $('#apps li').css('width',appWidth + 'px');
+            console.log(appHeight)
+            var appWidth = Math.round(appHeight*0.5725191);
+            $('#apps li').css('max-width',appWidth + 'px');
 
             var ulWidth = (appWidth * maxApp + (5 * maxApp));
             $('#apps').css('width',ulWidth + 'px');
