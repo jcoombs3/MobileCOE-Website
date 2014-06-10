@@ -374,12 +374,27 @@ html, body {
 }
 
 #app-content {
-	background:@ice-white;
+	background:@aluminum-gray;
 	width:100%;
 	height: @devicesHeight;
 	position: absolute;
 	top:@ribbonHeight;
 	opacity: 0;
+	z-index:50;
+	padding-top:@devicesHeight;
+	overflow:hidden;
+	overflow-y:auto;
+
+	.title {
+		/*set height through jquery*/
+
+		.app-icon {
+			margin:0 auto;
+			width:200px;
+			height:200px;
+			background:@sapient-heat;
+		}
+	}
 }
 
 #nav {
@@ -392,7 +407,7 @@ html, body {
 	.box-shadow(1px 2px 3px 0px rgba(50, 50, 50, 0.75));
 
 	&.expanded{
-	}
+	
 	}
 }
 
