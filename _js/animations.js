@@ -27,7 +27,10 @@ $(window).load(function(){
 			TweenMax.to($('#nav'), 0.3, {top: $('#ribbon').outerHeight() + $('#devices').outerHeight() - 100 +'px' ,height: '200px', onComplete:function(){
 				TweenMax.to($('#nav'), 0.3, {width: '100%'})}})}});
 		// navSlide()
-		
+	});
+
+	$('#app-content .app-icon').on('click', function(e){
+		loadContent();
 	});
 		
 });
@@ -109,17 +112,52 @@ function stackDeck(li) {
 		TweenMax.to($(this), .2, aniAttr);
 	});
 
-	function navSlide(nav_State){
-		switch(nav_State){
-			case 'expanded':
-				TweenMax.to($('#nav'), 0.3, {width: '0px', onComplete:function(){
-					TweenMax.to($('#nav'), 0.3, {top: $('#ribbon').outerHeight() + $('#devices').outerHeight() - 100 +'px' ,height: '200px', onComplete:function(){
-						TweenMax.to($('#nav'), 0.3, {width: '100%'})}})}});
-				break;
-			default:
-				break; 
-		}
+}
+
+function navSlide(nav_State){
+	switch(nav_State){
+		case 'expanded':
+			TweenMax.to($('#nav'), 0.3, {width: '0px', onComplete:function(){
+				TweenMax.to($('#nav'), 0.3, {top: $('#ribbon').outerHeight() + $('#devices').outerHeight() - 100 +'px' ,height: '200px', onComplete:function(){
+					TweenMax.to($('#nav'), 0.3, {width: '100%'})}})}});
+			break;
+		default:
+			break; 
 	}
+}
+
+function loadContent() {
+
+	/* BETA for App load */
+	var middleHeight = ( $('#icon-load .middle td').outerHeight() ) / 2;
+
+	TweenMax.to($('#icon-load .top .load'), 0, {width:'0px', x:'0'});
+	TweenMax.to($('#icon-load .middle .load'), 0, {height:'0px', y:'0'});
+	TweenMax.to($('#icon-load .bottom .load'), 0, {width:'0px', x:'0'});
+
+	TweenMax.to($('#icon-load .top .load'), 0.2, {width:'50%', onComplete:function(){
+		TweenMax.to($('#icon-load .middle .slide-down'), 0.2, {height:middleHeight + 'px', onComplete:function(){
+			TweenMax.to($('#icon-load .middle .slide-down'), 0.2, {y:'+200%', onComplete:function(){
+				TweenMax.to($('#icon-load .bottom .load'), 0.2, {width:'50%', onComplete:function(){
+					TweenMax.to($('#icon-load .bottom .slide-left'), 0, {x:'-100%'}); 
+					TweenMax.to($('#icon-load .bottom .slide-right'), 0, {x:'+100%'}); 
+				}}); 
+			}});
+		}}); 
+		TweenMax.to($('#icon-load .top .slide-left'), 0.2, {x:'-100%'}); 
+		TweenMax.to($('#icon-load .top .slide-right'), 0.2, {x:'+100%'}); 
+	}});
+
+
+
+
+	var maxHeight = $('#app-content').outerHeight();
+	var iconHeight = $('#app-content .app-icon').outerHeight();
+	var newMargin = (maxHeight/2) - (iconHeight*.66);
+	var originalMargin = $('#devices').outerHeight();
+	var delta = originalMargin - newMargin;
+
+	TweenMax.to($('#app-content .title'), 1, {marginTop:newMargin + 'px', marginBottom:delta + 'px'});
 
 }
 
