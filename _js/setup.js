@@ -4,6 +4,7 @@ $(window).load(function(){
 	/* #projects */ 
 	setup('#devices');
 	setup('#projects');
+    setup('#app-content');
 
 	//setup('.progress-bar');
 });
@@ -31,7 +32,6 @@ function setup(el){
             });
 
             var appHeight = $('#apps li').outerHeight();
-            console.log(appHeight)
             var appWidth = Math.round(appHeight*0.5725191);
             $('#apps li').css('max-width',appWidth + 'px');
 
@@ -49,9 +49,13 @@ function setup(el){
 
            	break;
         case ('#app-content'):
-            /*ERASE*/
             var setHeight = $(window).outerHeight() - $('#ribbon').outerHeight();
+            var windowWidth = $(window).outerWidth();
+            var titleHeight = setHeight - $('#devices').outerHeight();
+            var arrowLeft = (windowWidth/2) - ($('#app-content .arrow').outerWidth()/2);
             $('#app-content').css('height',setHeight + 'px');
+            $('#app-content .title').css('height',titleHeight + 'px');
+            $('#app-content .arrow').css('left',arrowLeft + 'px');
             TweenMax.to($('#app-content'),1.5,{opacity:'1'});
             break;
     }

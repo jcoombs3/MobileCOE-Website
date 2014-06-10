@@ -29,13 +29,6 @@ $(window).load(function(){
 		// navSlide()
 		
 	});
-
-
-
-	/*ERASE -- we will do this later when we load the app*/
-	var setHeight = $(window).outerHeight() - $('#ribbon').outerHeight();
-	$('#app-content').css('height',setHeight + 'px');
-	TweenMax.to($('#app-content'),1.5,{opacity:'1'});
 		
 });
 
