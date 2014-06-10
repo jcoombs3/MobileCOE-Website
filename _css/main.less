@@ -548,6 +548,64 @@ html, body {
 		font-size:50px;
 		.rotate(-90deg);
 	}
+	.slider-section{
+		height:500px;
+		width:100%;
+		background:@aluminum-gray;
+		z-index: inherit;
+	}
+
+	.shadow{
+		position: absolute;
+		left:0;
+		width:40%;
+		height:500px;
+		z-index: 100;
+		background: @sapient-heat;
+		opacity: 0.5;
+	}
+
+	.left-button{
+		height:50px;
+		width:50px;
+		background: @piano;
+		z-index: inherit;
+		position: relative;
+		top: 225px;
+		left:50%;
+		display: inline-block;
+	}
+	.right-button{
+		height:50px;
+		width:50px;
+		background: @piano;
+		z-index: inherit;
+		position: relative;
+		top: 225px;
+		left: 90%;
+		display: inline-block;
+	}
+	.main-slide{
+		height:200px;
+		width:200px;
+		background: @piano;
+		z-index: 35;
+		position: relative;
+		top:75px;
+		left:66%;
+		display: inline-block;
+	}
+
+	.alt-slide{
+		height:200px;
+		width:200px;
+		background: @piano;
+		z-index: 35;
+		position: relative;
+		top:-125px;
+		left:14%;
+		display: inline-block;
+	}
 }
 
 .block{
