@@ -137,12 +137,14 @@ function loadContent() {
 
 	TweenMax.to($('#icon-load .top .load'), 0.2, {width:'50%', onComplete:function(){
 		TweenMax.to($('#icon-load .middle .slide-down'), 0.2, {height:middleHeight + 'px', onComplete:function(){
-			TweenMax.to($('#icon-load .middle .slide-down'), 0.2, {y:'+200%', onComplete:function(){
-				TweenMax.to($('#icon-load .bottom .load'), 0.2, {width:'50%', onComplete:function(){
-					TweenMax.to($('#icon-load .bottom .slide-left'), 0, {x:'-100%'}); 
-					TweenMax.to($('#icon-load .bottom .slide-right'), 0, {x:'+100%'}); 
-				}}); 
-			}});
+			TweenMax.to($('#icon-load .middle .slide-down'), 0.2, {y:'+200%'});
+
+			TweenMax.to($('#icon-load .bottom .load'), 0.2, {delay:'0.1', width:'50%', onComplete:function(){
+				TweenMax.to($('#icon-load .bottom .slide-left'), 0, {x:'-100%'}); 
+				TweenMax.to($('#icon-load .bottom .slide-right'), 0, {x:'+100%'}); 
+				TweenMax.to($('#icon-load .bottom .slide-left'), 0.2, {width:'0%'}); 
+				TweenMax.to($('#icon-load .bottom .slide-right'), 0.2, {width:'0%'}); 
+			}}); 
 		}}); 
 		TweenMax.to($('#icon-load .top .slide-left'), 0.2, {x:'-100%'}); 
 		TweenMax.to($('#icon-load .top .slide-right'), 0.2, {x:'+100%'}); 
