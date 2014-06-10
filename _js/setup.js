@@ -48,6 +48,12 @@ function setup(el){
             // $('#projects-hover .hover').addClass('enabled');;
 
            	break;
+        case ('#app-content'):
+            /*ERASE*/
+            var setHeight = $(window).outerHeight() - $('#ribbon').outerHeight();
+            $('#app-content').css('height',setHeight + 'px');
+            TweenMax.to($('#app-content'),1.5,{opacity:'1'});
+            break;
     }
 
 }
