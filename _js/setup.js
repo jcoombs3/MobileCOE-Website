@@ -6,6 +6,8 @@ $(window).load(function(){
 	setup('#projects');
     setup('#app-content');
 
+    setup('.slider-section');
+
 	//setup('.progress-bar');
 });
 
@@ -57,6 +59,25 @@ function setup(el){
             $('#app-content .title').css('height',titleHeight + 'px');
             $('#app-content .arrow').css('left',arrowLeft + 'px');
             TweenMax.to($('#app-content'),1.5,{opacity:'1'});
+            break;
+        case ('.slider-section'):
+            var firstChildLiMargin = ($('.shadow').outerWidth()/2) - ($('.slider-section li').outerWidth()/2);
+            var marginLeft = firstChildLiMargin + ($(window).outerWidth() - $('.shadow').outerWidth())/2 - ($('.slider-section li').outerWidth()/2);
+            TweenMax.to($('.slider-section li'), 0, {marginLeft:marginLeft + 'px'});
+            TweenMax.to($('.slider-section li:first-child'), 0, {marginLeft:firstChildLiMargin + 'px'});
+            var maxLi = $('.slider-section ul').length;
+            var ulLength = firstChildLiMargin + ($('.slider-section li').outerWidth()*(maxLi+1)) + (marginLeft*maxLi);
+            TweenMax.to($('.slider-section ul'), 0, {width:ulLength + 'px'});
+
+            /*center the images*/
+            $('.slider-section li').each(function(){
+                var targetHeight = ($(this).find('img')).outerHeight();
+                var listHeight = $(this).outerHeight();
+                var marginHeight = (listHeight - targetHeight)/2;
+                TweenMax.to($($(this).find('img')), 0, {marginTop : marginHeight + 'px'});
+            });
+
+
             break;
     }
 
