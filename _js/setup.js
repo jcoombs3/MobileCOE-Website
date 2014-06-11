@@ -99,12 +99,15 @@ function setup(el){
 
             break;
         case('.halfsies'):
-            // var imgY = $('.halfsies').outerHeight()/2 - $('img').outerHeight()/2;
-            var imgX = $('.halfsies').outerWidth()/2 - $('img').outerWidth()/2;
+            var imgY = $('.halfsies').outerHeight()/2 - $('.halfsies img').outerHeight()/2;
+            var imgX = $('.halfsies').outerWidth()/2 - $('.halfsies img').outerWidth()/2;
             if(imgX !== null){
-                TweenMax.to($('.halfsies:last-child'), 0, {paddingLeft: 0 + 'px', width: '45%'});
+                TweenMax.to($('.halfsies:last-child'), 0, {paddingLeft: 0 + 'px', paddingTop: '0px', width: '45%'});
             }
+            console.log($('.block.col2').outerHeight()/2);
+            console.log($('.halfsies img').outerHeight());
             TweenMax.to($('.halfsies img'), 0, {marginLeft: imgX + 'px'});
+            TweenMax.to($('.halfsies:last-child'), 0, {marginTop: imgY + 'px'});
             break;
     }
 
