@@ -5,7 +5,6 @@ $(window).load(function(){
 	setup('#devices');
 	setup('#projects');
     setup('#app-content');
-
     setup('.slider-section');
 
 	//setup('.progress-bar');

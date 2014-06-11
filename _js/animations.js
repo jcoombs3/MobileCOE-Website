@@ -23,10 +23,19 @@ $(window).load(function(){
 
 	$('#nav').on('click', function(e){
 		$(e.currentTarget).toggleClass('expanded');
-		TweenMax.to($('#nav'), 0.3, {width: '0px', onComplete:function(){
-			TweenMax.to($('#nav'), 0.3, {top: $('#ribbon').outerHeight() + $('#devices').outerHeight() - 100 +'px' ,height: '200px', onComplete:function(){
-				TweenMax.to($('#nav'), 0.3, {width: '100%'})}})}});
-		// navSlide()
+
+		if($(e.currentTarget).hasClass('expanded')){
+			TweenMax.to($('#nav ul'), 0, {width: $(window).outerWidth() + 'px'});
+			TweenMax.to($('#nav'), 0.3, {width: '0px', onComplete:function(){
+				TweenMax.to($('#nav'), 0, {top: $('#ribbon').outerHeight() + $('#devices').outerHeight() - 100 +'px' ,height: '25%', onComplete:function(){
+					TweenMax.to($('#nav'), 0.3, {width: '100%'});
+					TweenMax.to($('#nav li'), 0, {lineHeight: $('#nav').outerHeight() + 'px'});
+				}})
+			}});	
+		}
+		else {
+		}
+		
 	});
 
 	$('#app-content .app-icon').on('click', function(e){
