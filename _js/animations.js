@@ -27,15 +27,39 @@ $(window).load(function(){
 		if($(e.currentTarget).hasClass('expanded')){
 			TweenMax.to($('#nav ul'), 0, {width: $(window).outerWidth() + 'px'});
 			TweenMax.to($('#nav'), 0.3, {width: '0px', onComplete:function(){
-				TweenMax.to($('#nav'), 0, {top: $('#ribbon').outerHeight() + $('#devices').outerHeight() - 100 +'px' ,height: '25%', onComplete:function(){
-					TweenMax.to($('#nav'), 0.3, {width: '100%'});
+				TweenMax.to($('#nav'), 0, {height: '25%', onComplete:function(){
+					TweenMax.to($('#nav'), 0, {top: $('#ribbon').outerHeight() + $('#devices').outerHeight() - ($('#nav').outerHeight()/2) +'px'});
+					TweenMax.to($('#nav'), 0.15, {width: '100%'});
+					TweenMax.staggerFrom($('#nav li'), 1, 
+                   		{opacity:0}, 0.05);
 					TweenMax.to($('#nav li'), 0, {lineHeight: $('#nav').outerHeight() + 'px'});
 				}})
 			}});	
 		}
 		else {
+			TweenMax.to($('#nav'), 0.15, {width: '0px', onComplete:function(){
+				TweenMax.to($('#nav'), 0, {height:'50px', onComplete:function(){
+					TweenMax.to($('#nav'), 0, {top: $('#ribbon').outerHeight() + $('#devices').outerHeight() - ($('#nav').outerHeight()/2) +'px'});
+				}});
+				TweenMax.to($('#nav'), 0.3, {width:'50px'});
+			}});
 		}
 		
+	});
+
+	$('.slider-section .btn').on('click', function(e){
+
+		var block = $(e.currentTarget).parents('.slider-section');
+		var ul = block.find('ul');
+		var margin = ul.find('li:nth-child(2)').css('margin-left');
+		var order = ul.find('li.selected').data('order');
+
+		if($(e.currentTarget).hasClass('right-btn')){
+			TweenMax.to($(ul), 0.5, {left: '-=' + margin});
+		}
+		else{
+			TweenMax.to($(ul), 0.5, {left: '+=' + margin});
+		}
 	});
 
 	$('#app-content .app-icon').on('click', function(e){
@@ -121,18 +145,6 @@ function stackDeck(li) {
 		TweenMax.to($(this), .2, aniAttr);
 	});
 
-}
-
-function navSlide(nav_State){
-	switch(nav_State){
-		case 'expanded':
-			TweenMax.to($('#nav'), 0.3, {width: '0px', onComplete:function(){
-				TweenMax.to($('#nav'), 0.3, {top: $('#ribbon').outerHeight() + $('#devices').outerHeight() - 100 +'px' ,height: '200px', onComplete:function(){
-					TweenMax.to($('#nav'), 0.3, {width: '100%'})}})}});
-			break;
-		default:
-			break; 
-	}
 }
 
 function loadContent() {

@@ -69,19 +69,32 @@ function setup(el){
             TweenMax.to($('.slider-section ul'), 0, {width:ulLength + 'px'});
 
             /*center the images*/
-            $('.slider-section li').each(function(){
+            $('.slider-section li').each(function(i){
                 var targetHeight = ($(this).find('img')).outerHeight();
                 var listHeight = $(this).outerHeight();
                 var marginHeight = (listHeight - targetHeight)/2;
                 TweenMax.to($($(this).find('img')), 0, {marginTop : marginHeight + 'px'});
+                $(this).data('order',i);
             });
 
-            var buttonLocationY = $('.slider-section').outerHeight()/2 - $('.left-button').outerHeight()/2;
+            var oddCatch = maxLi%2;
+            var midLi = maxLi/2;
+
+            var targetLi = $('.slider-section li').find() 
+
+            if(oddCatch == 1){
+                $('.slider-section ul').find(':nth-child(2)').addClass('selected');
+            }
+            // else {
+            //     $('.slider-section ul').find(':nth-child('+midLi+')').addClass('selected');
+            // }
+
+            var buttonLocationY = $('.slider-section').outerHeight()/2 - $('.left-btn').outerHeight()/2;
             var buttonSpace = $('.slider-section').outerWidth() - $('.shadow').outerWidth();
-            var lButtonX = $('.shadow').outerWidth() + buttonSpace*0.10 - $('.left-button').outerWidth()/2;
-            var rButtonX = $('.shadow').outerWidth() + buttonSpace*0.90 - $('.right-button').outerWidth()/2;
-            TweenMax.to($('.left-button'), 0, {marginTop: buttonLocationY +'px', marginLeft: lButtonX +'px'});
-            TweenMax.to($('.right-button'), 0, {marginTop: buttonLocationY +'px', marginLeft: rButtonX + 'px'});
+            var lButtonX = $('.shadow').outerWidth() + buttonSpace*0.10 - $('.left-btn').outerWidth()/2;
+            var rButtonX = $('.shadow').outerWidth() + buttonSpace*0.90 - $('.right-btn').outerWidth()/2;
+            TweenMax.to($('.left-btn'), 0, {marginTop: buttonLocationY +'px', marginLeft: lButtonX +'px'});
+            TweenMax.to($('.right-btn'), 0, {marginTop: buttonLocationY +'px', marginLeft: rButtonX + 'px'});
 
             break;
     }
