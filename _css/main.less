@@ -613,12 +613,53 @@ html, body {
 	}
 }
 
-.block{
+.block {
 	background: @charcoal;
 	width: 100%;
 	min-height: 150px;
 	position: relative;
 	overflow:hidden;
+
+	&.col2 {
+		background:@aluminum-gray;
+	}
+
+	&.col3 {
+		background:@ice-white;
+	}
+}
+
+.halfsies {
+  width: 42.5%;
+  min-height: 50px;
+  position: relative;
+  float: left;
+  padding: 5%;
+	height:100%;
+
+  p {
+    margin-bottom: 0; 
+    text-align: left;
+	font-size:28px;
+	line-height:50px;
+  }
+
+  img{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    float: left;
+    margin:0;
+    padding: 0;
+  }
+
+  &:first-child{
+    padding-right:2.5%;
+  }
+  &:last-child{
+    padding-left: 2.5%;
+  }
+
 }
 
 .purpose {

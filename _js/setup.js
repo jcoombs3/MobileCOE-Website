@@ -6,6 +6,7 @@ $(window).load(function(){
 	setup('#projects');
     setup('#app-content');
     setup('.slider-section');
+    setup('.halfsies');
 
 	//setup('.progress-bar');
 });
@@ -97,6 +98,14 @@ function setup(el){
             TweenMax.to($('.right-btn'), 0, {marginTop: buttonLocationY +'px', marginLeft: rButtonX + 'px'});
 
             break;
+        case('.halfsies'):
+            // var imgY = $('.halfsies').outerHeight()/2 - $('img').outerHeight()/2;
+            var imgX = $('.halfsies').outerWidth()/2 - $('img').outerWidth()/2;
+            if(imgX !== null){
+                TweenMax.to($('.halfsies:last-child'), 0, {paddingLeft: 0 + 'px', width: '45%'});
+            }
+            TweenMax.to($('.halfsies img'), 0, {marginLeft: imgX + 'px'});
+            break;
     }
 
 }
