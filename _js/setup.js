@@ -76,6 +76,12 @@ function setup(el){
                 TweenMax.to($($(this).find('img')), 0, {marginTop : marginHeight + 'px'});
             });
 
+            var buttonLocationY = $('.slider-section').outerHeight()/2 - $('.left-button').outerHeight()/2;
+            var buttonSpace = $('.slider-section').outerWidth() - $('.shadow').outerWidth();
+            var lButtonX = $('.shadow').outerWidth() + buttonSpace*0.10 - $('.left-button').outerWidth()/2;
+            var rButtonX = $('.shadow').outerWidth() + buttonSpace*0.90 - $('.right-button').outerWidth()/2;
+            TweenMax.to($('.left-button'), 0, {marginTop: buttonLocationY +'px', marginLeft: lButtonX +'px'});
+            TweenMax.to($('.right-button'), 0, {marginTop: buttonLocationY +'px', marginLeft: rButtonX + 'px'});
 
             break;
     }
