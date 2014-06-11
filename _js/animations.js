@@ -143,7 +143,9 @@ function loadContent() {
 				TweenMax.to($('#icon-load .bottom .slide-left'), 0, {x:'-100%'}); 
 				TweenMax.to($('#icon-load .bottom .slide-right'), 0, {x:'+100%'}); 
 				TweenMax.to($('#icon-load .bottom .slide-left'), 0.2, {width:'0%'}); 
-				TweenMax.to($('#icon-load .bottom .slide-right'), 0.2, {width:'0%'}); 
+				TweenMax.to($('#icon-load .bottom .slide-right'), 0.2, {width:'0%', onComplete:function(){
+					$('#app-center-icon').addClass('enabled');
+				}}); 
 			}}); 
 		}}); 
 		TweenMax.to($('#icon-load .top .slide-left'), 0.2, {x:'-100%'}); 

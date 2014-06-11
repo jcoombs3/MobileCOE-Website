@@ -66,7 +66,7 @@ function setup(el){
             TweenMax.to($('.slider-section li'), 0, {marginLeft:marginLeft + 'px'});
             TweenMax.to($('.slider-section li:first-child'), 0, {marginLeft:firstChildLiMargin + 'px'});
             var maxLi = $('.slider-section ul').length;
-            var ulLength = firstChildLiMargin + ($('.slider-section li').outerWidth()*(maxLi+1)) + (marginLeft*maxLi);
+            var ulLength = firstChildLiMargin + ($('.slider-section li').outerWidth()*(maxLi+1)) + (marginLeft*maxLi) + 20 /* add latency for box shadow */;
             TweenMax.to($('.slider-section ul'), 0, {width:ulLength + 'px'});
 
             /*center the images*/

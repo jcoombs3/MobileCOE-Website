@@ -508,6 +508,18 @@ html, body {
 				vertical-align:top;
 			}
 
+			#app-center-icon {
+				vertical-align:middle;
+				background:url(../_img/SN_Stamp.jpg) 0px 0px no-repeat;
+				background-size:100%;
+				opacity:0;
+				.transition(all 1200ms ease);
+				
+				&.enabled {
+					opacity:1;
+				}
+			}
+
 			.middle td:first-child, .middle td:last-child {
 				width:1px;
 			}
@@ -524,9 +536,6 @@ html, body {
 
 	.app-title {
 		text-align: center;
-	}
-
-	h1{	
 		font-face: @sapient-sans-light;
 		font-size: 50px;
 		margin-top:10px;
@@ -542,75 +551,7 @@ html, body {
 		font-size:50px;
 		.rotate(-90deg);
 	}
-
-
-	.slider-section {
-		height:500px;
-		background:@aluminum-gray;
-
-		.shadow{
-			position: absolute;
-			left:0;
-			width:40%;
-			height:500px;
-			z-index: 100;
-			background: @sapient-heat;
-			opacity: 0.5;
-			.box-shadow(10px 0px 5px 0px rgba(50, 50, 50, 0.75));
-		}
-
-		.left-button{
-			height:50px;
-			width:50px;
-			background: @piano;
-			z-index: inherit;
-			position: relative;
-			top: 225px;
-			left:50%;
-			display: inline-block;
-		}
-		.right-button{
-			height:50px;
-			width:50px;
-			background: @piano;
-			z-index: inherit;
-			position: relative;
-			top: 225px;
-			left: 90%;
-			display: inline-block;
-		}
-
-		ul {
-			width:700px;
-			height:100%;
-			overflow:hidden;
-			margin:0;
-			padding:0;
-		}
-
-		li {
-			max-width:250px;
-			height:100%;
-			position:relative;
-			float: left;
-			padding:0;
-
-			img {
-				width:200px;
-				height:300px;
-				background:@electric-blue;
-			}
-		}
-	}
-
 	
-}
-
-.block{
-	background: @charcoal;
-	width: 100%;
-	min-height: 150px;
-	position: relative;
 }
 
 #nav {
@@ -645,6 +586,109 @@ html, body {
 
 	&.enabled {
 		width:100%;
+	}
+}
+
+.block{
+	background: @charcoal;
+	width: 100%;
+	min-height: 150px;
+	position: relative;
+}
+
+.purpose {
+	padding:35px 0px;
+	color:#fff;
+	text-align:center;
+	.gradient(@electric-blue, #00f);
+
+	h1 {
+		text-transform: uppercase;
+		font-size:65px;
+	}
+
+	p {
+		font-size:35px;
+		padding-left:8%;
+		padding-right:8%;
+	}
+}
+
+.branding {
+	background:@ice-white;
+	padding:35px 0px;
+	color:@piano;
+	text-align:center;
+
+	h1 {
+		font-size:45px;
+	}
+
+	p {
+		font-size:30px;
+		padding-left:8%;
+		padding-right:8%;
+	}
+}
+
+.slider-section {
+	height:500px;
+	background:@charcoal;
+
+	.shadow{
+		position: absolute;
+		left:0;
+		width:40%;
+		height:500px;
+		z-index: 100;
+		background: @piano;
+		opacity: 0.7;
+		.box-shadow(10px 0px 10px 0px rgba(0, 0, 0, 0.9));
+	}
+
+	.left-button{
+		height:50px;
+		width:50px;
+		background: @piano;
+		z-index: inherit;
+		position: relative;
+		top: 225px;
+		left:50%;
+		display: inline-block;
+	}
+
+	.right-button{
+		height:50px;
+		width:50px;
+		background: @piano;
+		z-index: inherit;
+		position: relative;
+		top: 225px;
+		left: 90%;
+		display: inline-block;
+	}
+
+	ul {
+		width:700px;
+		height:100%;
+		overflow:hidden;
+		margin:0;
+		padding:0;
+	}
+
+	li {
+		max-width:250px;
+		height:100%;
+		position:relative;
+		float: left;
+		padding:0;
+
+		img {
+			width:200px;
+			height:300px;
+			background:@electric-blue;
+			.box-shadow(4px 4px 10px 0px rgba(50, 50, 50, 0.75));
+		}
 	}
 }
 
