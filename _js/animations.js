@@ -232,6 +232,10 @@ function loadContent() {
 	TweenMax.to($('#app-content .title'), 1, {marginTop:newMargin + 'px', marginBottom:delta + 'px'});
 
 
+    setup('.slider-section');
+    setup('.halfsies.img');
+    setup('.powerpoint');
+
 	animPowerpoints();
 }
 

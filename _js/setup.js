@@ -4,9 +4,6 @@ $(window).load(function(){
 	/* #projects */ 
 	setup('#devices');
 	setup('#projects');
-    setup('.slider-section');
-    setup('.halfsies.img');
-    setup('.powerpoint');
 
 	//setup('.progress-bar');
 });
