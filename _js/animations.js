@@ -47,7 +47,7 @@ $(window).load(function(){
 		
 	});
 
-	$('.slider-section .btns .btn').on('click', function(e){
+	$('.slider-section .btn').on('click', function(e){
 
 		var block = $(e.currentTarget).parents('.slider-section');
 		var ul = block.find('ul');
