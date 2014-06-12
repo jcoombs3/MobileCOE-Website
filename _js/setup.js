@@ -4,7 +4,6 @@ $(window).load(function(){
 	/* #projects */ 
 	setup('#devices');
 	setup('#projects');
-    setup('#app-content');
     setup('.slider-section');
     setup('.halfsies.img');
     setup('.powerpoint');
@@ -52,14 +51,8 @@ function setup(el){
 
            	break;
         case ('#app-content'):
-            var setHeight = $(window).outerHeight() - $('#ribbon').outerHeight();
-            var windowWidth = $(window).outerWidth();
-            var titleHeight = setHeight - $('#devices').outerHeight();
-            var arrowLeft = (windowWidth/2) - ($('#app-content .arrow').outerWidth()/2);
-            $('#app-content').css('height',setHeight + 'px');
-            $('#app-content .title').css('height',titleHeight + 'px');
-            $('#app-content .arrow').css('left',arrowLeft + 'px');
-            TweenMax.to($('#app-content'),1.5,{opacity:'1'});
+            var setHeight = $(window).outerHeight() - $('#ribbon').outerHeight() - $('#devices').outerHeight();
+            $('#app-content .title').css('height',setHeight + 'px');
             break;
         case ('.slider-section'):
             var liWidth = Math.round($(window).outerWidth()*.20);

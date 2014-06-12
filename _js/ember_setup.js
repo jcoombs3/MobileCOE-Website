@@ -15,18 +15,6 @@ App.TopicRoute = Ember.Route.extend({
   }
 })
 
-App.TopicController = Ember.ObjectController.extend({
-  isEditing: false,
-  actions:{
-    edit: function(){
-      this.set('isEditing', true);
-    },
-    doneEditing: function(){
-      this.set('isEditing', false);
-    }
-  }
-})
-
 App.Store = DS.Store.extend({
   revision: 12,
   adapter: "DS.FixtureAdapter"
@@ -38,11 +26,10 @@ App.TopicsRoute = Ember.Route.extend({
   }
 })
 
-Ember.Handlebars.helper('format-topic', function(date) {
-  //if needed I could use this helper to format input/fields
-});
+
 
 var topics = [{
+    "id" : 1,
     "appName" : "A",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -54,6 +41,7 @@ var topics = [{
   },
 
   {
+    "id" : 2,
     "appName" : "B",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -65,6 +53,7 @@ var topics = [{
   },
 
   {
+    "id" : 2,
     "appName" : "C",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -76,6 +65,7 @@ var topics = [{
   },
 
   {
+    "id" : 3,
     "appName" : "D",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -87,6 +77,7 @@ var topics = [{
 
 
   {
+    "id" : 4,
     "appName" : "E",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -98,6 +89,7 @@ var topics = [{
 
 
   {
+    "id" : 5,
     "appName" : "F",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -108,6 +100,7 @@ var topics = [{
   },
 
   {
+    "id" : 6,
     "appName" : "G",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -119,6 +112,7 @@ var topics = [{
 
 
   {
+    "id" : 7,
     "appName" : "H",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -130,6 +124,7 @@ var topics = [{
 
 
   {
+    "id" : 8,
     "appName" : "I",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -141,6 +136,7 @@ var topics = [{
 
 
   {
+    "id" : 9,
     "appName" : "J",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -152,6 +148,7 @@ var topics = [{
 
 
   {
+    "id" : 10,
     "appName" : "K",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -163,6 +160,7 @@ var topics = [{
 
 
   {
+    "id" : 11,
     "appName" : "L",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -174,6 +172,7 @@ var topics = [{
 
 
   {
+    "id" : 12,
     "appName" : "M",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -185,6 +184,7 @@ var topics = [{
 
 
   {
+    "id" : 13,
     "appName" : "N",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -194,6 +194,7 @@ var topics = [{
     "dataKiosk" : "false"
   },
   {
+    "id" : 14,
     "appName" : "O",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -203,6 +204,7 @@ var topics = [{
     "dataKiosk" : "false"
   },
   {
+    "id" : 15,
     "appName" : "P",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -212,6 +214,7 @@ var topics = [{
     "dataKiosk" : "true"
   },
   {
+    "id" : 16,
     "appName" : "Q",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -221,6 +224,7 @@ var topics = [{
     "dataKiosk" : "false"
   },
   {
+    "id" : 17,
     "appName" : "R",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -230,6 +234,7 @@ var topics = [{
     "dataKiosk" : "true"
   },
   {
+    "id" : 18,
     "appName" : "S",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -239,6 +244,7 @@ var topics = [{
     "dataKiosk" : "true"
   },
   {
+    "id" : 19,
     "appName" : "T",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -248,6 +254,7 @@ var topics = [{
     "dataKiosk" : "false"
   },
   {
+    "id" : 20,
     "appName" : "U",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -257,6 +264,7 @@ var topics = [{
     "dataKiosk" : "false"
   },
   {
+    "id" : 21,
     "appName" : "V",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -266,6 +274,7 @@ var topics = [{
     "dataKiosk" : "true"
   },
   {
+    "id" : 22,
     "appName" : "W",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -275,6 +284,7 @@ var topics = [{
     "dataKiosk" : "false"
   },
   {
+    "id" : 23,
     "appName" : "X",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -284,6 +294,7 @@ var topics = [{
     "dataKiosk" : "false"
   },
   {
+    "id" : 24,
     "appName" : "Y",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
@@ -293,6 +304,7 @@ var topics = [{
     "dataKiosk" : "true"
   },
   {
+    "id" : 25,
     "appName" : "Z",
     "company" : "companyName",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
