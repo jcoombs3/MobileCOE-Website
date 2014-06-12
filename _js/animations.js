@@ -47,7 +47,7 @@ $(window).load(function(){
 		
 	});
 
-	$('.slider-section .btn').on('click', function(e){
+	$('.slider-section .btns .btn').on('click', function(e){
 
 		var block = $(e.currentTarget).parents('.slider-section');
 		var ul = block.find('ul');
@@ -60,9 +60,6 @@ $(window).load(function(){
 			$(ul).data('anim','true');
 
 			ul.find('li.selected').removeClass('selected');
-
-			console.log(order);
-			//console.log($(ul.find('li:last-child')).data('order'));
 
 			if(order == 0 || order == $(ul.find('li:last-child')).data('order')){
 				$(block.find('.btn')).removeClass('disabled');
@@ -106,11 +103,6 @@ $(window).load(function(){
 
 		}
 	});
-
-	$('#app-content .app-icon').on('click', function(e){
-		loadContent();
-	});
-
 		
 });
 
@@ -152,10 +144,8 @@ function stackDeck(li) {
 	var width = $(li).outerWidth();
 	/* initial move speed of apps */
 	var initMoveSpeed = .6/maxApp;
-	console.log(initMoveSpeed + " -- initial Move speed");
 	/* longest delay of animation for farthest app from selected */ 
 	var longestDelay = 1.05/maxApp;
-	console.log(longestDelay + " -- longest delay");
 	/* center of window when moving deck to center*/
 	var centerLeftPos = ( $( document ).width() /2.0)-(width/2.0);
 	var centerPos = centerLeftPos - li.offset().left;
@@ -223,13 +213,14 @@ function loadContent() {
 
 
 	var maxHeight = $('#app-content').outerHeight();
-	console.log(maxHeight);
 	var iconHeight = $('#app-content .app-icon').outerHeight();
 	var newMargin = (maxHeight/2) - (iconHeight*.66);
 	var originalMargin = $('#devices').outerHeight();
 	var delta = originalMargin - newMargin;
 
 	TweenMax.to($('#app-content .title'), 1, {marginTop:newMargin + 'px', marginBottom:delta + 'px'});
+
+
 
 
     setup('.slider-section');
@@ -240,7 +231,6 @@ function loadContent() {
 }
 
 function animPowerpoints(){
-	console.log('~~~~~ Animating powerpoint ~~~~~');
 
 	$('.powerpoint').each(function(){
 		//var target = $(this).find('.slide.enabled');
