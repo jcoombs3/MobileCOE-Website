@@ -6,7 +6,8 @@ $(window).load(function(){
 	setup('#projects');
     setup('#app-content');
     setup('.slider-section');
-    setup('.halfsies');
+    setup('.halfsies.img');
+    setup('.powerpoint');
 
 	//setup('.progress-bar');
 });
@@ -76,7 +77,10 @@ function setup(el){
                 var targetHeight = ($(this).find('img')).outerHeight();
                 var listHeight = $(this).outerHeight();
                 var marginHeight = (listHeight - targetHeight)/2;
-                TweenMax.to($($(this).find('img')), 0, {marginTop : marginHeight + 'px'});
+                var targetWidth = ($(this).find('img')).outerWidth();
+                var listWidth = $(this).outerWidth();
+                var marginWidth = (listWidth - targetWidth)/2;
+                TweenMax.to($($(this).find('img')), 0, {marginTop : marginHeight + 'px', marginLeft: marginWidth + 'px'});
                 $(this).data('order',i);
             });
 
@@ -101,16 +105,29 @@ function setup(el){
             var rButtonX = $('.shadow').outerWidth() + buttonSpace*0.90 - $('.right-btn').outerWidth()/2;
             TweenMax.to($('.left-btn'), 0, {marginTop: buttonLocationY +'px', marginLeft: lButtonX +'px'});
             TweenMax.to($('.right-btn'), 0, {marginTop: buttonLocationY +'px', marginLeft: rButtonX + 'px'});
+
+            $('.slider-section ul').data('anim', 'false');
+
             break;
-        case('.halfsies'):
-            var imgY = $('.halfsies').outerHeight()/2 - $('.halfsies img').outerHeight()/2;
-            var imgX = $('.halfsies').outerWidth()/2 - $('.halfsies img').outerWidth()/2;
-            if(imgX !== null){
-                TweenMax.to($('.halfsies:last-child'), 0, {paddingLeft: 0 + 'px', paddingTop: '0px', width: '45%'});
-            }
-            TweenMax.to($('.halfsies img'), 0, {marginLeft: imgX + 'px'});
-            TweenMax.to($('.halfsies:last-child'), 0, {marginTop: imgY + 'px'});
+        case('.halfsies.img'):
+            $('.halfsies.img').each(function(){
+                var img = $(this).find('img');
+                var imgY = $(this).parents('.block').outerHeight()/2 - $(this).outerHeight()/2;
+                var imgX = $(this).outerWidth()/2 - $(img).outerWidth()/2 - parseInt($(this).css('padding-left'));
+
+                TweenMax.to($(img), 0, {marginLeft: imgX + 'px', marginTop: imgY + 'px'});
+            });
             break;
+        case('.powerpoint'):
+            $('.powerpoint').each(function(){
+                $(this).find('.slide:first-child').addClass('enabled');
+                var order = 0;
+                $($(this).find('.slide')).each(function(){
+                    $(this).data('order',order);
+                    order++;
+                });
+            });
+            break;
     }
 
 }

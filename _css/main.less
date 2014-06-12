@@ -432,7 +432,7 @@ html, body {
 	height: @devicesHeight;
 	position: absolute;
 	top:@ribbonHeight;
-	opacity: 0;
+	opacity: 1;
 	z-index:50;
 	overflow:hidden;
 	overflow-y:auto;
@@ -630,44 +630,9 @@ html, body {
 	
 }
 
-.dblColTitle{
-	min-height: 200px;
-	position: relative;
-	background: @electric-blue;
-
-	.titleBlock{
-	width: 100%;
-	background: @electric-blue;
-	position: relative;
-	text-align: center;
-	}
-
-	ul{
-	padding: 0;
-	margin: 0;
-	height: 80%
-	position: relative;
-
-		li{
-			float: left;
-			min-width: 0;
-			max-width: 42.5%;
-			padding: 5%;
-
-			&:first-child{
-				padding-right: 2.5%;
-				p {
-				margin:0;
-				text-align: left;
-				font-size: 24px;
-				}
-			}
-			&:last-child{
-				padding-left: 2.5%
-			}
-		}
-	}
-
+.block-title {
+	width:100%;
+	text-align:center;
 }
 
 
@@ -680,9 +645,6 @@ html, body {
 	position: relative;
 	float: left;
 	padding: 5%;
-	height:100%;
-
-
 
   p {
     margin-bottom: 0; 
@@ -762,6 +724,10 @@ html, body {
 	.btns {
 		position:absolute;
 		z-index:50;
+
+		.btn.disabled {
+			display:none;
+		}
 	}
 
 	.left-btn{
@@ -805,6 +771,36 @@ html, body {
 			margin:0 auto;
 			background:@electric-blue;
 			.box-shadow(4px 4px 10px 0px rgba(50, 50, 50, 0.75));
+		}
+
+		&.selected img {
+			background:@sapient-heat;
+		}
+
+	}
+}
+
+.powerpoint {
+	height:300px;
+
+	.slide {
+		width:100%;
+		height:100%;
+		position:absolute;
+
+		font-size:50px;
+		color:#f00;
+
+		&.enabled {
+			z-index:50;
+		}
+
+		&:nth-of-type(2n){
+			background:@sapient-heat;
+		}
+
+		&:nth-of-type(2n-1){
+			background:@electric-blue;
 		}
 	}
 }
