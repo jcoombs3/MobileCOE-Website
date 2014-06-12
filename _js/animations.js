@@ -67,6 +67,7 @@ $(window).load(function(){
 	$('#app-content .app-icon').on('click', function(e){
 		loadContent();
 	});
+
 		
 });
 
@@ -139,18 +140,20 @@ function stackDeck(li) {
 		}
 		else{
 			aniAttr.onComplete = function(){
-				 //$(".back").fadeIn();
-				 //toggleApp(li);
-				};
+			 	TweenMax.to($('#app-content'),1.5,{opacity:'1', onComplete:function(){
+			 		TweenMax.to($('#app-content'),0.5,{height:$(window).outerHeight() - $('#ribbon').outerHeight() + 'px'});
+			 		loadContent();
+			 	}});
+			};
 		}
 
+		setup('#app-content');
 		TweenMax.to($(this), .2, aniAttr);
 	});
 
 }
 
 function loadContent() {
-
 	/* BETA for App load */
 	var middleHeight = ( $('#icon-load .middle td').outerHeight() ) / 2;
 
@@ -176,9 +179,8 @@ function loadContent() {
 	}});
 
 
-
-
 	var maxHeight = $('#app-content').outerHeight();
+	console.log(maxHeight);
 	var iconHeight = $('#app-content .app-icon').outerHeight();
 	var newMargin = (maxHeight/2) - (iconHeight*.66);
 	var originalMargin = $('#devices').outerHeight();

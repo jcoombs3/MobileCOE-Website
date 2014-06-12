@@ -345,13 +345,8 @@ html, body {
 			width:21%;
 			height:100%;
 			padding:0;
-			margin:0 5px 0 0;
 			float: left;
 			position:relative;
-
-			&:last-child {
-				margin-right:0px;
-			}
 
 			.app-bar {
 				width:100%;
@@ -390,18 +385,6 @@ html, body {
 				margin:0 auto;
 			}
 
-			&:nth-of-type(3n) .overview {
-				background:@app-li-one;
-			}			
-
-			&:nth-of-type(3n-2) .overview {
-				background:@app-li-two;
-			}
-
-			&:nth-of-type(3n-1) .overview {
-				background:@app-li-three;
-			}
-
 			&.clicked {
 				.overview {
 					background:@ice-white;
@@ -413,6 +396,29 @@ html, body {
 					height: 95%;
 				}
 
+			}
+		}
+
+		a {
+
+			&:nth-of-type(3n) li {
+				background:@app-li-one;
+			}			
+
+			&:nth-of-type(3n-2) li {
+				background:@app-li-two;
+			}
+
+			&:nth-of-type(3n-1) li {
+				background:@app-li-three;
+			}
+
+			li {
+				margin:0 5px 0 0;
+			}
+
+			&:last-child li {
+				margin-right:0px;
 			}
 		}
 	}
@@ -438,7 +444,7 @@ html, body {
 	overflow-y:auto;
 
 	.title {
-		margin-top:@devicesHeight;
+		padding-top:@devicesHeight;
 		margin-bottom:0;
 		/*set height through jquery*/
 

@@ -55,7 +55,49 @@
                 <div class='clearfix'></div>
         </section>
 
-        <section id="app-content">
+            
+
+  </div>
+
+
+ <script type="text/x-handlebars" id="topics">
+  <div class = 'bodyContent'>
+    <section id="projects">
+        <ul id="apps">
+          {{#each}}
+
+            {{#link-to 'topic' this}}
+
+            <li data-android="{{unbound dataAndroid}}" data-ipad="{{unbound dataIpad}}" data-iphone="{{unbound dataIphone}}" data-kiosk="{{unbound dataKiosk}}" data-brandcolor="{{unbound dataBrandColor}}" class = "appListItem">
+              <div class="app-bar">
+              </div>
+
+              <div class="overview">
+                <div class="app-icon">
+                </div>
+                <div class='app-title'>
+                  {{appName}}
+                </div>
+              </div>
+            </li>
+
+            {{/link-to}}
+
+          {{/each}}
+        </ul>
+    </section>
+
+        
+
+
+  </div>
+
+  {{outlet}}  
+
+</script>
+
+ <script type="text/x-handlebars" id="topic">
+     <section id="app-content">
           <div class="title">
             <div class="app-icon">
               <table id="icon-load">
@@ -84,7 +126,8 @@
               </table>
             </div>
             <div class='app-title'>
-              <span>APP TITLE</span>
+              <span>{{appName}} </span> <br>
+              {{company}}
             </div>
             <div class='arrow icon icon-arrow-left'>
             </div>  
@@ -93,7 +136,7 @@
           <div class='block purpose'>
             <h1>The Project</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              {{description}}  
             </p>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -174,50 +217,8 @@
           </div>
                  
         </section>
-        
-          
 
-  </div>
-
-
- <script type="text/x-handlebars" id="examples">
-//   <div class = "bodyContent">
-//     <p> Here I will be listing inspiration examples </p>
-//   </div>
- </script>
-
- <script type="text/x-handlebars" id="topics">
-  <div class = 'bodyContent'>
-    <section id="projects">
-        <ul id="apps">
-          {{#each}}
-            <li data-android="{{unbound dataAndroid}}" data-ipad="{{unbound dataIpad}}" data-iphone="{{unbound dataIphone}}" data-kiosk="{{unbound dataKiosk}}" data-brandcolor="{{unbound dataBrandColor}}">
-              <div class="app-bar">
-              </div>
-
-              <div class="overview">
-                <div class="app-icon">
-                </div>
-                <div class='app-title'>
-                </div>
-              </div>
-            </li>
-          {{/each}}
-        </ul>
-    </section>
-  </div>
-</script>
-
-<script type="text/x-handlebars" id="topic">
-   {{name}}
 </script> 
-
- <script type="text/x-handlebars" id="topic/_edit">
-  <div class="editSectionContent">
-    <p>{{input type = "text" value = topic}}</p>
-    <p>{{textarea value = description}}</p>
-  </div>
-</script>
 
 
     <script type="text/javascript" src="_js/jquery-1.10.1.js"> </script>
@@ -225,9 +226,9 @@
     <script src="_js/handlebars.js"></script>
     <script src="_js/ember-1.5.1.js"></script>
     <script src = "_js/ember-data.min.js"></script>
-    <script src="_js/animations.js"></script>
     <script src="_js/ember_setup.js"></script>
     <script type="text/javascript" src="_js/setup.js"> </script>
+    <script src="_js/animations.js"></script>
 
 </body>
 </html>
