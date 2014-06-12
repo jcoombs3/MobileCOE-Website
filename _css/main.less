@@ -392,7 +392,7 @@ html, body {
 			}
 			&.hover {
 				.overview {
-					background: @ice-white;
+					background: @ice-white !important;
 					height: 95%;
 				}
 
@@ -401,15 +401,15 @@ html, body {
 
 		a {
 
-			&:nth-of-type(3n) li {
+			&:nth-of-type(3n) li .overview {
 				background:@app-li-one;
 			}			
 
-			&:nth-of-type(3n-2) li {
+			&:nth-of-type(3n-2) li .overview {
 				background:@app-li-two;
 			}
 
-			&:nth-of-type(3n-1) li {
+			&:nth-of-type(3n-1) li .overview {
 				background:@app-li-three;
 			}
 
