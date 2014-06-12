@@ -104,8 +104,6 @@ function setup(el){
             if(imgX !== null){
                 TweenMax.to($('.halfsies:last-child'), 0, {paddingLeft: 0 + 'px', paddingTop: '0px', width: '45%'});
             }
-            console.log($('.block.col2').outerHeight()/2);
-            console.log($('.halfsies img').outerHeight());
             TweenMax.to($('.halfsies img'), 0, {marginLeft: imgX + 'px'});
             TweenMax.to($('.halfsies:last-child'), 0, {marginTop: imgY + 'px'});
             break;
