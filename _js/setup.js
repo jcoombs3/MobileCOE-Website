@@ -61,12 +61,14 @@ function setup(el){
             TweenMax.to($('#app-content'),1.5,{opacity:'1'});
             break;
         case ('.slider-section'):
-            var firstChildLiMargin = ($('.shadow').outerWidth()/2) - ($('.slider-section li').outerWidth()/2);
-            var marginLeft = firstChildLiMargin + ($(window).outerWidth() - $('.shadow').outerWidth())/2 - ($('.slider-section li').outerWidth()/2);
+            var liWidth = Math.round($(window).outerWidth()*.20);
+            $('.slider-section li').css('max-width',liWidth+'px');
+            var firstChildLiMargin = ($('.shadow').outerWidth()/2) - (liWidth/2);
+            var marginLeft = firstChildLiMargin + ($(window).outerWidth() - $('.shadow').outerWidth())/2 - (liWidth/2);
             TweenMax.to($('.slider-section li'), 0, {marginLeft:marginLeft + 'px'});
             TweenMax.to($('.slider-section li:first-child'), 0, {marginLeft:firstChildLiMargin + 'px'});
-            var maxLi = $('.slider-section ul').length;
-            var ulLength = firstChildLiMargin + ($('.slider-section li').outerWidth()*(maxLi+1)) + (marginLeft*maxLi) + 20 /* add latency for box shadow */;
+            var maxLi = $('.slider-section li').length;
+            var ulLength = firstChildLiMargin + ($('.slider-section li').outerWidth()*(maxLi-1)) + (marginLeft*maxLi-1) + 20 /* add latency for box shadow */;
             TweenMax.to($('.slider-section ul'), 0, {width:ulLength + 'px'});
 
             /*center the images*/
@@ -78,17 +80,20 @@ function setup(el){
                 $(this).data('order',i);
             });
 
-            var oddCatch = maxLi%2;
-            var midLi = maxLi/2;
-
-            var targetLi = $('.slider-section li').find() 
+            var newMaxLi = maxLi+1;
+            var oddCatch = newMaxLi%2;
+            var midLi = newMaxLi/2;
 
             if(oddCatch == 1){
-                $('.slider-section ul').find(':nth-child(2)').addClass('selected');
+                var num = (midLi+1).toString();
+                var str = ':nth-child('+num+')';
+                $('.slider-section ul').find('li'+str).addClass('selected');
             }
-            // else {
-            //     $('.slider-section ul').find(':nth-child('+midLi+')').addClass('selected');
-            // }
+            else {
+                var num = (midLi).toString();
+                var str = ':nth-child('+num+')';
+                $('.slider-section ul').find('li'+str).addClass('selected');
+            }
 
             var buttonLocationY = $('.slider-section').outerHeight()/2 - $('.left-btn').outerHeight()/2;
             var buttonSpace = $('.slider-section').outerWidth() - $('.shadow').outerWidth();
@@ -96,7 +101,6 @@ function setup(el){
             var rButtonX = $('.shadow').outerWidth() + buttonSpace*0.90 - $('.right-btn').outerWidth()/2;
             TweenMax.to($('.left-btn'), 0, {marginTop: buttonLocationY +'px', marginLeft: lButtonX +'px'});
             TweenMax.to($('.right-btn'), 0, {marginTop: buttonLocationY +'px', marginLeft: rButtonX + 'px'});
-
             break;
         case('.halfsies'):
             var imgY = $('.halfsies').outerHeight()/2 - $('.halfsies img').outerHeight()/2;
@@ -104,8 +108,6 @@ function setup(el){
             if(imgX !== null){
                 TweenMax.to($('.halfsies:last-child'), 0, {paddingLeft: 0 + 'px', paddingTop: '0px', width: '45%'});
             }
-            console.log($('.block.col2').outerHeight()/2);
-            console.log($('.halfsies img').outerHeight());
             TweenMax.to($('.halfsies img'), 0, {marginLeft: imgX + 'px'});
             TweenMax.to($('.halfsies:last-child'), 0, {marginTop: imgY + 'px'});
             break;

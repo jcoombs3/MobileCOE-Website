@@ -51,14 +51,16 @@ $(window).load(function(){
 
 		var block = $(e.currentTarget).parents('.slider-section');
 		var ul = block.find('ul');
-		var margin = ul.find('li:nth-child(2)').css('margin-left');
+		var margin = parseInt(ul.find('li').css('margin-left'));
+		var width = parseInt(ul.find('li').css('width'));
+		var num = margin+width;
 		var order = ul.find('li.selected').data('order');
 
 		if($(e.currentTarget).hasClass('right-btn')){
-			TweenMax.to($(ul), 0.5, {left: '-=' + margin});
+			TweenMax.to($(ul), 1, {left: '-=' + num, ease:Back.easeInOut});
 		}
 		else{
-			TweenMax.to($(ul), 0.5, {left: '+=' + margin});
+			TweenMax.to($(ul), 1, {left: '+=' + num, ease:Back.easeInOut});
 		}
 	});
 

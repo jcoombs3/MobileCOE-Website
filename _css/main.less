@@ -712,6 +712,11 @@ html, body {
 		.box-shadow(10px 0px 10px 0px rgba(0, 0, 0, 0.9));
 	}
 
+	.btns {
+		position:absolute;
+		z-index:50;
+	}
+
 	.left-btn{
 		height:50px;
 		width:50px;
@@ -740,15 +745,17 @@ html, body {
 	}
 
 	li {
-		max-width:250px;
+		width:250px;
 		height:100%;
 		position:relative;
 		float: left;
 		padding:0;
 
 		img {
+			max-width:100%;
 			width:200px;
 			height:300px;
+			margin:0 auto;
 			background:@electric-blue;
 			.box-shadow(4px 4px 10px 0px rgba(50, 50, 50, 0.75));
 		}
