@@ -164,10 +164,10 @@ function stackDeck(li) {
 
 	//stack cards
 	$( "#projects li" ).each(function(i){
-		var moveInteger = selected - $(this).data('order');
+		var moveInteger = selected - $(this).data('order');//+$(this).data('order')*5;
 		var moveSpeed = initMoveSpeed*Math.abs(moveInteger);
 		var delayTime = longestDelay - ( Math.abs(moveInteger)/(maxApp - selected) )*.15;
-		var aniAttr = {left: ( (width) * moveInteger ) + 'px', ease:Sine.easeOut, delay: delayTime};
+		var aniAttr = {left: ( (width+5) * moveInteger ) + 'px', ease:Sine.easeOut, delay: delayTime};
 
 		TweenMax.to($(this), moveSpeed, aniAttr);
 	});		
