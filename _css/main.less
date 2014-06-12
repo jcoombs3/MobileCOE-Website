@@ -627,15 +627,62 @@ html, body {
 	&.col3 {
 		background:@ice-white;
 	}
+	
 }
 
+.dblColTitle{
+	min-height: 200px;
+	position: relative;
+	background: @electric-blue;
+
+	.titleBlock{
+	width: 100%;
+	background: @electric-blue;
+	position: relative;
+	text-align: center;
+	}
+
+	ul{
+	padding: 0;
+	margin: 0;
+	height: 80%
+	position: relative;
+
+		li{
+			float: left;
+			min-width: 0;
+			max-width: 42.5%;
+			padding: 5%;
+
+			&:first-child{
+				padding-right: 2.5%;
+				p {
+				margin:0;
+				text-align: left;
+				font-size: 24px;
+				}
+			}
+			&:last-child{
+				padding-left: 2.5%
+			}
+		}
+	}
+
+}
+
+
+
+
+
 .halfsies {
-  width: 42.5%;
-  min-height: 50px;
-  position: relative;
-  float: left;
-  padding: 5%;
+ 	width: 42.5%;
+	min-height: 50px;
+	position: relative;
+	float: left;
+	padding: 5%;
 	height:100%;
+
+
 
   p {
     margin-bottom: 0; 
