@@ -59,6 +59,12 @@ function setup(el){
             break;
         case ('.slider-section'):
             var liWidth = Math.round($(window).outerWidth()*.20);
+
+            //Check for Scanner//
+            if($(window).outerWidth() < 400){
+                liWidth = Math.round($(window).outerWidth()*.45);
+            }
+            
             $('.slider-section li').css('max-width',liWidth+'px');
             var firstChildLiMargin = ($('.shadow').outerWidth()/2) - (liWidth/2);
             var marginLeft = firstChildLiMargin + ($(window).outerWidth() - $('.shadow').outerWidth())/2 - (liWidth/2);
@@ -66,6 +72,8 @@ function setup(el){
             TweenMax.to($('.slider-section li:first-child'), 0, {marginLeft:firstChildLiMargin + 'px'});
             var maxLi = $('.slider-section li').length;
             var ulLength = firstChildLiMargin + ($('.slider-section li').outerWidth()*(maxLi-1)) + (marginLeft*maxLi-1) + 20 /* add latency for box shadow */;
+            ulLength *= 2;
+
             TweenMax.to($('.slider-section ul'), 0, {width:ulLength + 'px'});
 
             /*center the images*/
@@ -98,7 +106,11 @@ function setup(el){
             var buttonLocationY = $('.slider-section').outerHeight()/2 - $('.left-btn').outerHeight()/2;
             var buttonSpace = $('.slider-section').outerWidth() - $('.shadow').outerWidth();
             var lButtonX = $('.shadow').outerWidth() + buttonSpace*0.10 - $('.left-btn').outerWidth()/2;
-            var rButtonX = $('.shadow').outerWidth() + buttonSpace*0.90 - $('.right-btn').outerWidth()/2;
+            var rButtonX = $('.shadow').outerWidth() + buttonSpace*0.90 - $('.right-btn').outerWidth()/2;//Check for Scanner//
+            if(( rButtonX + ($('.btns .btn').outerWidth()*2) )> $(window).outerWidth()){
+                var delta = ( rButtonX + $('.btns .btn').outerWidth() ) - $(window).outerWidth();
+                rButtonX -= delta;
+            }
             TweenMax.to($('.left-btn'), 0, {marginTop: buttonLocationY +'px', marginLeft: lButtonX +'px'});
             TweenMax.to($('.right-btn'), 0, {marginTop: buttonLocationY +'px', marginLeft: rButtonX + 'px'});
 
