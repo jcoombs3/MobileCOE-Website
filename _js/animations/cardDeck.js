@@ -26,6 +26,7 @@ function resetDevices() {
 	TweenMax.to($('#devices img'), 0.2, {top:'0'});
 }
 
+//Stack cards on app select
 function stackDeck(li) {
 	/* selected app */
 	var focusApp = li;
@@ -67,7 +68,7 @@ function stackDeck(li) {
 		}
 		else{
 			aniAttr.onComplete = function(){
-			 	TweenMax.to($('#app-content'),1.5,{opacity:'1', onComplete:function(){
+			 	TweenMax.to($('#app-content'),.25,{opacity:'1', onComplete:function(){
 			 		TweenMax.to($('#app-content'),0.5,{height:$(window).outerHeight() - $('#ribbon').outerHeight() + 'px'});
 			 		loadContent();
 			 	}});
