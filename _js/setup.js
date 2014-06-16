@@ -19,6 +19,11 @@ function setup(el){
             });	
 			break;
         case ('#projects'):
+
+            //projects ul offset to move in X 
+            var ulOffsetX = $(window).outerWidth();
+            TweenMax.to($('#projects ul'), 0, {left:ulOffsetX + 'px'});
+
             var projectHeight = $(window).outerHeight() - ( $('#ribbon').outerHeight() + $('#devices').outerHeight() );
             $('#projects').css('height',projectHeight + 'px');
             $('#projects-hover').css('height',projectHeight + 'px');
@@ -51,6 +56,8 @@ function setup(el){
             // $('#projects .hover').css('width',hoverWidth + 'px');
             // $('#projects .hover').css('height',projectHeight + 'px');
             // $('#projects-hover .hover').addClass('enabled');;
+
+            TweenMax.to($('#projects ul'), 0.7, {delay:'1', left:'0px', ease:Back.easeOut});
 
            	break;
         case ('#app-content'):
@@ -107,7 +114,7 @@ function setup(el){
             var buttonSpace = $('.slider-section').outerWidth() - $('.shadow').outerWidth();
             var lButtonX = $('.shadow').outerWidth() + buttonSpace*0.10 - $('.left-btn').outerWidth()/2;
             var rButtonX = $('.shadow').outerWidth() + buttonSpace*0.90 - $('.right-btn').outerWidth()/2;//Check for Scanner//
-            if(( rButtonX + ($('.btns .btn').outerWidth()*2) )> $(window).outerWidth()){
+            if(( rButtonX + ($('.btns .btn').outerWidth()) )> $(window).outerWidth()){
                 var delta = ( rButtonX + $('.btns .btn').outerWidth() ) - $(window).outerWidth();
                 rButtonX -= delta;
             }
