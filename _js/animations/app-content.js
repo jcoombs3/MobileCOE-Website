@@ -102,6 +102,7 @@ function loadContent() {
 	});
 
 	animPowerpoints();
+	moveEverforms();
 }
 
 function animPowerpoints(){
@@ -137,5 +138,14 @@ function slideAnimation(animSlide){
 				slideAnimation(firstChild);
 			}
 		}});
+	}});
+}
+
+//everform movement over non-focused slideshow images
+function moveEverforms(){
+	var leftEF = $('#leftEF');
+	console.log(leftEF.height());
+	TweenMax.to(leftEF, 7, {marginTop: '100px', onComplete:function(){
+		console.log('hiThere');
 	}});
 }
