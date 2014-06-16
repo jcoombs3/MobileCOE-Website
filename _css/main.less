@@ -551,6 +551,7 @@ html, body {
 		font-face: @sapient-sans-light;
 		font-size: 50px;
 		margin-top:10px;
+		padding:0px 3%;
 	}
 
 	.arrow {
@@ -854,12 +855,37 @@ html, body {
 	#app-content {
 		height:175px;
 		top:60px;
+
+		.title .app-icon {
+			width:100px;
+			height:100px;
+		}
+
+		.arrow {
+			width:35px;
+			height:35px;
+			font-size:35px;
+		}
+
+		h1 {
+			font-size:35px;
+		}
+
+		h2 {
+			font-size:20px;
+		}
 	}
 
 	#nav {
 		width:30px;
 		height:30px;
 		top:60px + 175px - 15px;
+	}
+
+	#apps {
+		.app-title {
+			display:none;
+		}
 	}
 
 }

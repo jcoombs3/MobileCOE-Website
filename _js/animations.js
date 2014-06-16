@@ -158,7 +158,7 @@ function loadContent() {
 	var maxHeight = $(window).outerHeight() - $('#ribbon').outerHeight();
 	var iconHeight = $('#app-content .app-title').outerHeight();
 	var titlePadding = parseInt($('#app-content .title').css('padding-top'));
-	var newPadding = Math.round(titlePadding - (iconHeight*.66));
+	var newPadding = Math.round(titlePadding - (iconHeight*.9));
 	var delta = titlePadding - Math.round(newPadding);
 
 	var setHeight = maxHeight - titlePadding; 

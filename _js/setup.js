@@ -1,4 +1,3 @@
-
 $(window).load(function(){
 
 	/* #projects */ 
@@ -32,12 +31,19 @@ function setup(el){
 
             var appHeight = $('#apps li').outerHeight();
             var appWidth = Math.round(appHeight*0.5725191);
-            $('#apps li').css('max-width',appWidth + 'px');
-
-            var ulWidth = (appWidth * maxApp + (5 * maxApp));
-            $('#apps').css('width',ulWidth + 'px');
-
             var appIconWidth = $('#projects .app-icon').outerWidth();
+
+            //Check for Scanner//
+            if($(window).outerWidth() < 400){
+                appWidth = Math.round(appHeight*0.22);
+                var appIconTop = ($('#apps li').outerHeight()/2)-(appIconWidth/2);
+                $('#projects .app-icon').css('top', appIconTop + 'px');
+            }
+            
+            var ulWidth = (appWidth * maxApp + (5 * maxApp));
+
+            $('#apps li').css('max-width',appWidth + 'px');
+            $('#apps').css('width',ulWidth + 'px');
             $('#projects .app-icon').css('height', appIconWidth + 'px');
 
             /* set up hover */ 
