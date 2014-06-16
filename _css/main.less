@@ -54,7 +54,7 @@
 
 @ribbonHeight : 75px;
 @devicesHeight: 300px;
-@progressBarHeight: 2px;
+@progressBarHeight: 5px;
 
 @app-li-one: @aluminum-gray;
 @app-li-two: #555555;
@@ -298,6 +298,7 @@ html, body {
 		width:100%;
 		height:@devicesHeight - @progressBarHeight;
 		overflow:hidden;
+		border-bottom:1px solid @ice-white;
 
 		ul {
 			padding:0px;
@@ -339,6 +340,7 @@ html, body {
 		padding:0;
 		margin:0;
 		margin-left:5px;
+		position:relative;
 
 		li {
 			list-style-type: none;
@@ -539,10 +541,6 @@ html, body {
 				overflow:hidden;
 			}
 		}
-
-		h1, h2 {
-			margin:0;
-		}
 		
 	}
 
@@ -557,10 +555,9 @@ html, body {
 	.arrow {
 		height:50px;
 		width:50px;
-		position:absolute;
-		bottom:15px;
+		position:relative;
+		margin:0 auto;
 		z-index: 50;
-		opacity:0;
 		font-size:50px;
 		.rotate(-90deg);
 	}
@@ -629,7 +626,7 @@ html, body {
 .block {
 	background: @charcoal;
 	width: 100%;
-	min-height: 150px;
+	min-height: 30%;
 	position: relative;
 	overflow:hidden;
 
@@ -664,6 +661,10 @@ html, body {
     text-align: left;
 	font-size:28px;
 	line-height:50px;
+
+	&:first-child{
+		margin-top:0;
+	}
   }
 
   img{
@@ -728,7 +729,7 @@ html, body {
 		left:0;
 		width:40%;
 		height:500px;
-		z-index: 100;
+		z-index: 30;
 		background: @piano;
 		opacity: 0.7;
 		.box-shadow(10px 0px 10px 0px rgba(0, 0, 0, 0.9));
@@ -794,7 +795,7 @@ html, body {
 }
 
 .powerpoint {
-	height:300px;
+	height:45%;
 
 	.slide {
 		width:100%;
@@ -885,6 +886,42 @@ html, body {
 	#apps {
 		.app-title {
 			display:none;
+		}
+
+		.app-icon {
+			width:70% !important;
+		}
+	}
+
+	.powerpoint {
+		height:30%;
+	}
+
+	.slider-section {
+		height:400px;
+	}
+
+	.halfsies {
+		width:75%;
+		padding:5% 5% 5% 20%;
+
+		p {
+			font-size:20px;
+			line-height:25px;
+		}
+
+		&:last-child {
+			padding-left:20%;
+		}
+
+		&.img {
+			display:none;
+		}
+	}
+
+	.slider-section {
+		.shadow {
+			width:45%;
 		}
 	}
 
