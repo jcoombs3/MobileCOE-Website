@@ -158,15 +158,18 @@ function loadContent() {
 	var maxHeight = $(window).outerHeight() - $('#ribbon').outerHeight();
 	var iconHeight = $('#app-content .app-title').outerHeight();
 	var titlePadding = parseInt($('#app-content .title').css('padding-top'));
-	var newPadding = titlePadding - (iconHeight*.66);
-	var delta = titlePadding - newPadding;
+	var newPadding = Math.round(titlePadding - (iconHeight*.66));
+	var delta = titlePadding - Math.round(newPadding);
 
 	var setHeight = maxHeight - titlePadding; 
 
+	var arrowRight = ($(window).outerWidth()/2) - ($('#app-content .title .arrow').outerWidth()/2);
+
 	$('#app-content .title').css('height',maxHeight+'px');
-	$('#app-content .title .arrow').css('top',delta + 'px');
+	$('#app-content .title .arrow').css('right',arrowRight + 'px');
 
 	TweenMax.to($('#app-content .title'), 1, {paddingTop:newPadding + 'px', paddingBottom:delta + 'px', height:setHeight + 'px'});
+	TweenMax.to($('#app-content .title .arrow'), 1.5, {delay:'2', opacity:'1'});
 
     setup('.slider-section');
     setup('.halfsies.img');
