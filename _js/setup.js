@@ -40,7 +40,7 @@ function setup(el){
 
             //Check for Scanner//
             if($(window).outerWidth() < 400){
-                appWidth = Math.round(appHeight*0.22);
+                appWidth = Math.round(appHeight*0.19);
                 var appIconTop = ($('#apps li').outerHeight()/2)-(appIconWidth/2);
                 $('#projects .app-icon').css('top', appIconTop + 'px');
             }

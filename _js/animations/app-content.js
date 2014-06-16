@@ -120,22 +120,42 @@ function animateSlide(powerpoint){
 }
 
 function slideAnimation(animSlide){
-	TweenMax.to($(animSlide),5,{color:'#fff', onComplete:function(){
-		TweenMax.to($(animSlide),0.5,{color:'#f00', onComplete:function(){
-			$(animSlide).removeClass('enabled');
 
-			var lastOrder = $($(animSlide).parent()).find('.slide:last-child').data('order');
+	TweenMax.to($(animSlide).find('.header'),0,{right:'5%'});
+	TweenMax.to($(animSlide).find('.sub-info'),0,{right:'2%'});
+	TweenMax.to($(animSlide).find('img'),0,{left:'10%'});
 
-			if($(animSlide).data('order') !== lastOrder){
-				var newChild = $(animSlide).next();
-				$(newChild).addClass('enabled');
-				slideAnimation(newChild);
-			}
-			else {
-				var firstChild = $($(animSlide).parent()).find('.slide:nth-child(1)');
-				$(firstChild).addClass('enabled');
-				slideAnimation(firstChild);
-			}
+	//move img and header 
+	TweenMax.from($(animSlide).find('.header'),0.3,{right:-$(window).outerWidth() + 'px', onComplete:function(){
+		TweenMax.to($(animSlide).find('.header'),10,{x:'-10px'});
+	}});
+	TweenMax.from($(animSlide).find('img'),0.3,{delay:'0.2', left:-$(window).outerWidth() + 'px', onComplete:function(){
+		TweenMax.to($(animSlide).find('img'),10,{x:'+50px', onComplete:function(){
+			TweenMax.to($(animSlide).find('.header'),1,{x:'0', right:-$(window).outerWidth(), ease:Back.easeIn});
+			TweenMax.to($(animSlide).find('.sub-info'),1,{x:'0', right:-$(window).outerWidth(), ease:Back.easeIn});
+			TweenMax.to($(animSlide).find('img'),1,{x:'0', left:-$(window).outerWidth(), ease:Back.easeIn, onComplete:function(){
+				$(animSlide).removeClass('enabled');
+
+				var lastOrder = $($(animSlide).parent()).find('.slide:last-child').data('order');
+
+				if($(animSlide).data('order') !== lastOrder){
+					var newChild = $(animSlide).next();
+					$(newChild).addClass('enabled');
+					slideAnimation(newChild);
+				}
+				else {
+					var firstChild = $($(animSlide).parent()).find('.slide:nth-child(1)');
+					$(firstChild).addClass('enabled');
+					slideAnimation(firstChild);
+				}
+			}});
 		}});
 	}});
+	TweenMax.from($(animSlide).find('.sub-info'),0.3,{delay:'0.3', right:-$(window).outerWidth() + 'px', onComplete:function(){
+		TweenMax.to($(animSlide).find('.sub-info'),10,{x:'-20px'});
+	}});
+
+
+
+
 }
