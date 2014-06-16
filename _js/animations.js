@@ -104,6 +104,7 @@ function stackDeck(li) {
 		TweenMax.to($(this), moveSpeed, aniAttr);
 	});		
 
+
 	//move stack to center
 	$( "#projects li" ).each(function(i){
 		var moveInteger = selected - $(this).data('order');
@@ -129,8 +130,14 @@ function stackDeck(li) {
 
 }
 
-function loadContent() {
+function refreshAppContent(){
+	TweenMax.to($('#app-content'),0.5,{height:$(window).outerHeight() - $('#ribbon').outerHeight() + 'px'});
+	//loadContent();
+	//setup('#app-content');
+}
 
+
+function loadContent() {
 	/* BETA for App load */
 	var middleHeight = ( $('#icon-load .middle td').outerHeight() ) / 2;
 

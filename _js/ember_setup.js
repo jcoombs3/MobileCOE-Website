@@ -10,7 +10,16 @@ App.Router.map(function(){
 })
 
 App.TopicRoute = Ember.Route.extend({
+
   model: function(params){
+    var fullLength = $(window).outerHeight() - $('#ribbon').outerHeight()
+   // if(document.getElementById('app-content').style.height == $(window).outerHeight() - $('#ribbon').outerHeight()){
+      if(document.getElementById('app-content')== null){
+        console.log(0);
+        this.transitionTo('topics');
+      }
+   // }
+    //check to see if refreshing, if so, return topic route
     return topics.findBy('id', params.topic_id);
   }
 })
