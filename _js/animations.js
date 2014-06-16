@@ -123,12 +123,14 @@ function stackDeck(li) {
 		}
 
 		setup('#app-content');
+
 		TweenMax.to($(this), .2, aniAttr);
 	});
 
 }
 
 function loadContent() {
+
 	/* BETA for App load */
 	var middleHeight = ( $('#icon-load .middle td').outerHeight() ) / 2;
 
@@ -153,16 +155,18 @@ function loadContent() {
 		TweenMax.to($('#icon-load .top .slide-right'), 0.2, {x:'+100%'}); 
 	}});
 
+	var maxHeight = $(window).outerHeight() - $('#ribbon').outerHeight();
+	var iconHeight = $('#app-content .app-title').outerHeight();
+	var titlePadding = parseInt($('#app-content .title').css('padding-top'));
+	var newPadding = titlePadding - (iconHeight*.66);
+	var delta = titlePadding - newPadding;
 
-	var maxHeight = $('#app-content').outerHeight();
-	var iconHeight = $('#app-content .app-icon').outerHeight();
-	var newMargin = (maxHeight/2) - (iconHeight*.66);
-	var originalMargin = $('#devices').outerHeight();
-	var delta = originalMargin - newMargin;
+	var setHeight = maxHeight - titlePadding; 
 
-	TweenMax.to($('#app-content .title'), 1, {marginTop:newMargin + 'px', marginBottom:delta + 'px'});
+	$('#app-content .title').css('height',maxHeight+'px');
+	$('#app-content .title .arrow').css('top',delta + 'px');
 
-
+	TweenMax.to($('#app-content .title'), 1, {paddingTop:newPadding + 'px', paddingBottom:delta + 'px', height:setHeight + 'px'});
 
     setup('.slider-section');
     setup('.halfsies.img');
