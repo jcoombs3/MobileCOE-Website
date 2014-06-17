@@ -158,7 +158,7 @@ function setup(el){
             TweenMax.to($('.timeline .disk'), 0, {marginTop: circY+'px', marginLeft: circX+'px'});
             var circX = $('.timeline.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
             var circY = $('.timeline.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
-            TweenMax.to($('.timeline .disk'), 0, {top: circY + 'px', marginLeft: circX+'px'});
+            TweenMax.to($('.timeline .disk'), 0, {marginTop: circY + 'px', marginLeft: circX+'px'});
 
             // description
             var detailX = $('.timeline .description').outerWidth();
