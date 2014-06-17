@@ -248,6 +248,5 @@ function moveEverforms() {
 }
 
 function toggleTimeline(li){
-	if()
 
 }

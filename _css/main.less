@@ -893,7 +893,7 @@ html, body {
 	}
 }
 .timeline{
-	background: @charcoal;
+	background:@ice-white;
 	height: 300px;
 
 	.container{
@@ -919,10 +919,33 @@ html, body {
 		position: relative;
 		float: left;
 
-		.description {
+		.box {
 			width:80%;
 			height:50%;
-			background:@electric-blue;
+			background:@aluminum-gray;
+			border:4px solid @electric-blue;
+			.box-shadow(1px 3px 5px 0px rgba(50, 50, 50, 0.75));
+		}
+
+		.description {
+			width:88%;
+			height:100%;
+			float: left;
+			background:@ice-white;
+			border-right:4px solid @electric-blue;
+
+			p {
+				padding:2%;
+				margin:0;
+				font-size:18px;
+				color:@charcoal;
+			}
+		}
+
+		.close-container {
+			width:10%;
+			height:100%;
+			float: left;
 		}
 	}
 
