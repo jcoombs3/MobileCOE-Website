@@ -928,27 +928,32 @@ html, body {
 		}
 
 		.description {
-			width:88%;
+			width:90%;
 			height:100%;
 			float: left;
 			background:@ice-white;
-			border-right:4px solid @electric-blue;
+			z-index:50;
 
 			p {
-				padding:2%;
+				padding:2% 10% 2% 2%;
 				margin:0;
 				font-size:18px;
 				color:@charcoal;
 			}
 		}
 
-		.close-container {
+		img {
 			width:10%;
 			height:100%;
-			float: left;
+			background:@sapient-heat;
+			position:relative;
+			top:-100%;
+			left:90%;
+			display:none;
+			opacity:0;
 		}
 	}
-
+ 
 	.disk{
 		border-radius: 50%;
 		width: 80%;
