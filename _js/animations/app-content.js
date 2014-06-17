@@ -162,6 +162,11 @@ function loadContent() {
 		}
 	});
 
+	$('#app-content .title .arrow').on('click', function(e){
+		var parent = $(e.currentTarget).parents('.timeline-container');
+		toggleTimeline(parent);
+	});
+
 	animPowerpoints();
 	moveEverforms();
 }
@@ -239,5 +244,10 @@ function moveEverforms() {
 		onComplete: function() {
 		}
 	});
+
+}
+
+function toggleTimeline(li){
+	if()
 
 }
