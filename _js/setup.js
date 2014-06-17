@@ -160,14 +160,12 @@ function setup(el){
             var circY = $('.timeline.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
             TweenMax.to($('.timeline .disk'), 0, {marginTop: circY + 'px', marginLeft: circX+'px'});
 
-            // description
-            var detailX = $('.timeline .description').outerWidth();
-            console.log(detailX);
-            console.log($('.timeline .details').outerWidth());
-            var detailY = $('.timeline .description').outerHeight();
+            // box
+            var detailX = $('.timeline .box').outerWidth();
+            var detailY = $('.timeline .box').outerHeight();
             var deltaX = ( $('.timeline .details').outerWidth() - detailX ) / 2;
             var deltaY = ( $('.timeline .details').outerHeight() - detailY ) / 2;
-            TweenMax.to($('.timeline .description'), 0, {marginTop: deltaY+'px', marginLeft: deltaX+'px'});
+            TweenMax.to($('.timeline .box'), 0, {marginTop: deltaY+'px', marginLeft: deltaX+'px'});
             break;
     }
 
