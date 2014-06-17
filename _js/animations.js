@@ -25,6 +25,9 @@ $(window).load(function(){
 		$(e.currentTarget).toggleClass('expanded');
 
 		if($(e.currentTarget).hasClass('expanded')){
+
+			$('#nav').data('initial',$('#nav').outerHeight());
+
 			TweenMax.to($('#nav ul'), 0, {width: $(window).outerWidth() + 'px'});
 			TweenMax.to($('#nav'), 0.3, {width: '0px', onComplete:function(){
 				TweenMax.to($('#nav'), 0, {height: '25%', onComplete:function(){
@@ -38,10 +41,10 @@ $(window).load(function(){
 		}
 		else {
 			TweenMax.to($('#nav'), 0.15, {width: '0px', onComplete:function(){
-				TweenMax.to($('#nav'), 0, {height:'50px', onComplete:function(){
+				TweenMax.to($('#nav'), 0, {height:$('#nav').data('initial') + 'px', onComplete:function(){
 					TweenMax.to($('#nav'), 0, {top: $('#ribbon').outerHeight() + $('#devices').outerHeight() - ($('#nav').outerHeight()/2) +'px'});
 				}});
-				TweenMax.to($('#nav'), 0.3, {width:'50px'});
+				TweenMax.to($('#nav'), 0.3, {width:$('#nav').data('initial') + 'px'});
 			}});
 		}
 		

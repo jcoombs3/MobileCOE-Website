@@ -1,6 +1,7 @@
 $(window).load(function(){
 
 	/* #projects */ 
+    setup('#ribbon');
 	setup('#devices');
 	setup('#projects');
 
@@ -12,6 +13,13 @@ function setup(el){
 
 
 	switch (el) {
+        case ('#ribbon'):
+            var ribbonHeight = $('#ribbon').outerHeight();
+            var logoHeight = $('#ribbon .logo img').outerHeight();
+            var delta = (ribbonHeight - logoHeight)/2;
+
+            $('#ribbon .logo img').css('margin-top', delta+'px');
+            break;
 		case ('#devices'):
             $('#devices img').each(function(e){
                 var imgMargin = ($('#devices li').outerHeight() - $(this).outerHeight()) / 2;
@@ -142,6 +150,28 @@ function setup(el){
                     order++;
                 });
             });
+            break;
+        case('.timeline'):
+            $('.timeline').css('height', $('.timeline.circleDiv').outerWidth());
+
+            // description close 
+            var descriptionWidth = $('.timeline .description').outerWidth();
+            TweenMax.to($('.timeline .description'), 0, {width:'100%'});
+
+            // disk 
+            TweenMax.to($('.timeline .disk'), 0, {marginTop: circY+'px', marginLeft: circX+'px'});
+            var circX = $('.timeline.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
+            var circY = $('.timeline.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
+            TweenMax.to($('.timeline .disk'), 0, {marginTop: circY + 'px', marginLeft: circX+'px'});
+
+            // box
+            var detailX = $('.timeline .box').outerWidth();
+            var detailY = $('.timeline .box').outerHeight();
+            var deltaX = ( $('.timeline .details').outerWidth() - detailX ) / 2;
+            var deltaY = ( $('.timeline .details').outerHeight() - detailY ) / 2;
+            TweenMax.to($('.timeline .box'), 0, {marginTop: deltaY+'px', marginLeft: deltaX+'px'});
+
+
             break;
     }
 
