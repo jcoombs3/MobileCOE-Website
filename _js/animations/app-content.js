@@ -162,9 +162,18 @@ function loadContent() {
 		}
 	});
 
-	$('#app-content .timeline .container .circleDiv .disk').on('click', function(e){
+	$('#app-content .timeline .disk').on('click', function(e){
 		var parent = $(e.currentTarget).parents('li');
-		toggleTimeline(parent);
+		if(!($(parent).hasClass('expanded'))){
+			toggleTimeline(parent);
+		}
+	});
+
+	$('#app-content .timeline .box').on('click', function(e){
+		var parent = $(e.currentTarget).parents('li');
+		if($(parent).hasClass('expanded')){
+			toggleTimeline(parent);
+		}
 	});
 
 	animPowerpoints();
@@ -259,19 +268,21 @@ function toggleTimeline(li){
 	var padX = $('.timeline.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
 	var padY = $('.timeline.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
 
-	if($(disk).hasClass('expanded')){
+	if($(li).hasClass('expanded')){
 		TweenMax.to($(disk), 0.3, {borderRadius: '50%', borderStyle: 'none'});
 		TweenMax.to($(disk), 0, {delay: '0.3', marginTop: padY + 5 +'px', marginLeft: padX + 5 +'px'})
-		$(disk).removeClass('expanded');
+		$(li).removeClass('expanded');
+
+		TweenMax.to($(description), 0.3, {width:'100%'});
 	}
 	else{
 		TweenMax.to($(disk), 0.3, {borderRadius: '25%', onComplete: function(){
 			TweenMax.to($(disk), 0.3, {borderStyle: 'solid', borderWidth: '5px', borderColor: '#1d1d1d'})
 		}});
 		TweenMax.to($(disk), 0.1, {delay: '0.3', marginTop: padY - 5 +'px', marginLeft: padX - 5 +'px'});
-		$(disk).addClass('expanded');
+		$(li).addClass('expanded');
 
-		TweenMax.to($(description), 0.5, {delay:'3', width:'90%'});
+		TweenMax.to($(description), 0.3, {delay:'3', width:'90%'});
 	}
 
 }
