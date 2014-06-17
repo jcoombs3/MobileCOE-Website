@@ -250,14 +250,11 @@ function moveEverforms() {
 function toggleTimeline(li){
 
 	var item = $(li).find('.disk');
-<<<<<<< HEAD
 	var padX = $('.timeline.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
 	var padY = $('.timeline.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
-=======
->>>>>>> FETCH_HEAD
 	if($(item).hasClass('expanded')){
 		TweenMax.to($(item), 0.3, {borderRadius: '50%', borderStyle: 'none'});
-		TweenMax.to($(item), 0.1, {delay: 0.3, marginTop: padY + 5 +'px', marginLeft: padX + 5 +'px'})
+		TweenMax.to($(item), 0, {delay: 0.3, marginTop: padY + 5 +'px', marginLeft: padX + 5 +'px'})
 		$(item).removeClass('expanded');
 	}
 	else{
