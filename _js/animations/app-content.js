@@ -238,7 +238,6 @@ function slideAnimation(animSlide) {
 }
 
 //everform movement over non-focused slideshow images
-<<<<<<< HEAD
 function moveEverforms($item, direction) {
 	var height = $item.height()/4.0*direction;
 	var width = $item.width()/4.0*direction;
