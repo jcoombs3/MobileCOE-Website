@@ -163,7 +163,7 @@ function loadContent() {
 	});
 
 	$('#app-content .timeline .container .circleDiv .disk').on('click', function(e){
-		var parent = $(e.currentTarget).parents('.circleDiv');
+		var parent = $(e.currentTarget).parents('li');
 		toggleTimeline(parent);
 	});
 
@@ -249,20 +249,25 @@ function moveEverforms() {
 
 function toggleTimeline(li){
 
-	var item = $(li).find('.disk');
+	var disk = $(li).find('.disk');
+	var description = $(li).find('.description');
+
 	var padX = $('.timeline.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
 	var padY = $('.timeline.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
-	if($(item).hasClass('expanded')){
-		TweenMax.to($(item), 0.3, {borderRadius: '50%', borderStyle: 'none'});
-		TweenMax.to($(item), 0, {delay: 0.3, marginTop: padY + 5 +'px', marginLeft: padX + 5 +'px'})
-		$(item).removeClass('expanded');
+
+	if($(disk).hasClass('expanded')){
+		TweenMax.to($(disk), 0.3, {borderRadius: '50%', borderStyle: 'none'});
+		TweenMax.to($(disk), 0, {delay: '0.3', marginTop: padY + 5 +'px', marginLeft: padX + 5 +'px'})
+		$(disk).removeClass('expanded');
 	}
 	else{
-		TweenMax.to($(item), 0.3, {borderRadius: '25%', onComplete: function(){
-			TweenMax.to($(item), 0.3, {borderStyle: 'solid', borderWidth: '5px', borderColor: '#1d1d1d'})
+		TweenMax.to($(disk), 0.3, {borderRadius: '25%', onComplete: function(){
+			TweenMax.to($(disk), 0.3, {borderStyle: 'solid', borderWidth: '5px', borderColor: '#1d1d1d'})
 		}});
-		TweenMax.to($(item), 0.1, {delay: 0.3, marginTop: padY - 5 +'px', marginLeft: padX - 5 +'px'});
-		$(item).addClass('expanded');
+		TweenMax.to($(disk), 0.1, {delay: '0.3', marginTop: padY - 5 +'px', marginLeft: padX - 5 +'px'});
+		$(disk).addClass('expanded');
+
+		TweenMax.to($(description), 0.5, {delay:'3', width:'90%'});
 	}
 
 }
