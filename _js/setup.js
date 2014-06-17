@@ -1,6 +1,7 @@
 $(window).load(function(){
 
 	/* #projects */ 
+    setup('#ribbon');
 	setup('#devices');
 	setup('#projects');
 
@@ -12,6 +13,13 @@ function setup(el){
 
 
 	switch (el) {
+        case ('#ribbon'):
+            var ribbonHeight = $('#ribbon').outerHeight();
+            var logoHeight = $('#ribbon .logo img').outerHeight();
+            var delta = (ribbonHeight - logoHeight)/2;
+
+            $('#ribbon .logo img').css('margin-top', delta+'px');
+            break;
 		case ('#devices'):
             $('#devices img').each(function(e){
                 var imgMargin = ($('#devices li').outerHeight() - $(this).outerHeight()) / 2;
