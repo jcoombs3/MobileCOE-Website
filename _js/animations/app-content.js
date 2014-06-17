@@ -157,7 +157,8 @@ function loadContent() {
 	});
 
 	animPowerpoints();
-	moveEverforms();
+	moveEverforms($('#leftEF'),1);
+	moveEverforms($('#rightEF'),-1);
 }
 
 function animPowerpoints() {
@@ -249,13 +250,14 @@ function slideAnimation(animSlide) {
 }
 
 //everform movement over non-focused slideshow images
-function moveEverforms() {
-	var leftEF = $('#leftEF');
-	console.log(leftEF.height());
-	TweenMax.to(leftEF, 7, {
-		marginTop: '100px',
+function moveEverforms($item, direction) {
+	var height = $item.height()/4.0*direction;
+	var width = $item.width()/4.0*direction;
+	TweenMax.to($item, 45, {
+		marginTop: height+'px',
+		marginLeft: width + 'px',
 		onComplete: function() {
-			console.log('hiThere');
+			moveEverforms($item, direction*-1)
 		}
 	});
 
