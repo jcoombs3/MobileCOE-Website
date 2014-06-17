@@ -154,6 +154,10 @@ function setup(el){
         case('.timeline'):
             $('.timeline.container').css('height', $('.timeline.circleDiv').outerWidth());
 
+            // description close 
+            var descriptionWidth = $('.timeline .description').outerWidth();
+            TweenMax.to($('.timeline .description'), 0, {width:'100%'});
+
             // disk 
             TweenMax.to($('.timeline .disk'), 0, {marginTop: circY+'px', marginLeft: circX+'px'});
             var circX = $('.timeline.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
@@ -173,6 +177,8 @@ function setup(el){
             var deltaX = ( $('.timeline .details').outerWidth() - detailX ) / 2;
             var deltaY = ( $('.timeline .details').outerHeight() - detailY ) / 2;
             TweenMax.to($('.timeline .box'), 0, {marginTop: deltaY+'px', marginLeft: deltaX+'px'});
+
+
             break;
 
 
