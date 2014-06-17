@@ -84,6 +84,7 @@ function loadContent() {
 	setup('.slider-section');
 	setup('.halfsies.img');
 	setup('.powerpoint');
+	setup('.timeline');
 
 	$('.slider-section .btn').on('click', function(e) {
 

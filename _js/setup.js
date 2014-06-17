@@ -143,6 +143,12 @@ function setup(el){
                 });
             });
             break;
+        case('.timeline'):
+            var circX = $('.timeline.circleDiv').outerWidth()/2 - $('.timeline.disk').outerWidth()/2;
+            var circY = $('.timeline.circleDiv').outerHeight()/2 - $('.timeline.disk').outerHeight()/2;
+            $('.timeline').css('height', $('.timeline.circleDiv').outerWidth());
+            TweenMax.to($('.timeline.disk'), 0, {marginTop: circY+'px', marginLeft: circX+'px'});
+            break;
     }
 
 }
