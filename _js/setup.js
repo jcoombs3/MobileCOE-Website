@@ -155,8 +155,6 @@ function setup(el){
             $('.timeline').css('height', $('.timeline.circleDiv').outerWidth());
             var circX = $('.timeline.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
             var circY = $('.timeline.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
-            console.log(circX);
-            console.log(circY);
             TweenMax.to($('.timeline .disk'), 0, {top: circY + 'px', marginLeft: circX+'px'});
             break;
     }
