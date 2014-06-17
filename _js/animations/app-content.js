@@ -162,8 +162,9 @@ function loadContent() {
 		}
 	});
 
-	$('#app-content .title .arrow').on('click', function(e){
-		var parent = $(e.currentTarget).parents('.timeline-container');
+	$('#app-content .timeline .container .circleDiv .disk').on('click', function(e){
+		var parent = $(e.currentTarget).parents('.circleDiv');
+		console.log(parent);
 		toggleTimeline(parent);
 	});
 
@@ -248,5 +249,17 @@ function moveEverforms() {
 }
 
 function toggleTimeline(li){
+
+	var item = $(li).find('.disk');
+	if($(item).hasClass('expanded')){
+		TweenMax.to($(item), 0.3, {borderRadius: '50%', borderStyle: 'none'});
+		$(item).removeClass('expanded');
+	}
+	else{
+		TweenMax.to($(item), 0.3, {borderRadius: '25%', onComplete: function(){
+			TweenMax.to($(item), 0.3, {borderStyle: 'solid', borderWidth: '5px', borderColor: 'white'})
+		}});
+		$(item).addClass('expanded');
+	}
 
 }
