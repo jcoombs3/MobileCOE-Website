@@ -164,6 +164,7 @@ function loadContent() {
 
 	$('#app-content .timeline .container .circleDiv .disk').on('click', function(e){
 		var parent = $(e.currentTarget).parents('.circleDiv');
+		console.log(parent);
 		toggleTimeline(parent);
 	});
 
