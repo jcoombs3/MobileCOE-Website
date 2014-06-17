@@ -472,9 +472,16 @@ html, body {
 	overflow:hidden;
 	overflow-y:auto;
 
-	#leftEF{
-			width: 100%
-		}
+	.shadow{
+		overflow: hidden;
+		.EF{
+			width: 100%;
+			position:absolute;
+	}
+
+	}
+
+	
 
 	.title {
 		padding-top:@devicesHeight;
@@ -895,6 +902,19 @@ html, body {
 .timeline{
 	background:@ice-white;
 	height: 300px;
+
+	img{
+		width: 90%;
+		height:50%;
+		position: relative;
+		background: @piano;
+		float: left;
+	}
+	.icon{
+		width: 10%;
+		background: @charcoal;
+		float:left;
+	}
 
 	.container{
 		width: 100%;
