@@ -152,13 +152,20 @@ function setup(el){
             });
             break;
         case('.timeline'):
-            $('.timeline').css('height', $('.timeline.circleDiv').outerWidth());
+            $('.timeline.container').css('height', $('.timeline.circleDiv').outerWidth());
 
             // disk 
             TweenMax.to($('.timeline .disk'), 0, {marginTop: circY+'px', marginLeft: circX+'px'});
             var circX = $('.timeline.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
             var circY = $('.timeline.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
             TweenMax.to($('.timeline .disk'), 0, {marginTop: circY + 'px', marginLeft: circX+'px'});
+
+            //title
+            $('.timeline .icon').css('height', $('.timeline .icon').outerWidth());
+            var iconY = $('.timeline.titleDiv').outerHeight()/2 - $('.timeline .icon').outerHeight()/2;
+            var titleY = $('.timeline.titleDiv').outerHeight()/2 - $('.timeline img').outerHeight()/2;
+            TweenMax.to($('.timeline .icon'), 0, {marginTop: iconY + 'px'});
+            TweenMax.to($('.timeline img'), 0, {marginTop: titleY + 'px'});
 
             // box
             var detailX = $('.timeline .box').outerWidth();
@@ -167,6 +174,8 @@ function setup(el){
             var deltaY = ( $('.timeline .details').outerHeight() - detailY ) / 2;
             TweenMax.to($('.timeline .box'), 0, {marginTop: deltaY+'px', marginLeft: deltaX+'px'});
             break;
+
+
     }
 
 }
