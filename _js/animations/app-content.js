@@ -177,7 +177,7 @@ function animateSlide(powerpoint) {
 }
 
 function slideAnimation(animSlide) {
-
+	
 	TweenMax.to($(animSlide).find('.header'), 0, {
 		right: '5%'
 	});
@@ -185,7 +185,7 @@ function slideAnimation(animSlide) {
 		right: '2%'
 	});
 	TweenMax.to($(animSlide).find('img'), 0, {
-		left: '10%'
+		left: '5%'
 	});
 
 	//move img and header 
