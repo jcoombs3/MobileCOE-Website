@@ -247,7 +247,7 @@ function moveEverforms($item, direction) {
 		onComplete: function() {
 			moveEverforms($item, direction*-1)
 
-	});
+	}});
 
 }
 
