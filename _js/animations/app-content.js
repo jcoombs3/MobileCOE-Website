@@ -274,9 +274,7 @@ function toggleTimeline(li){
 
 	if($(li).hasClass('expanded')){
 		TweenMax.to($(disk), 0.3, {borderRadius: '50%', borderStyle: 'none'});
-		TweenMax.to($(disk), 0, {delay: '0.3', marginTop: padY +'px', marginLeft: padX +'px', onComplete: function(){
-			TweenMax.to($(description), 0, {width:'100%'});
-		}})
+		TweenMax.to($(description), 0, {delay: '0.2', width:'100%'});
 		$(li).removeClass('expanded');
 		TweenMax.to($(box), 0.3, {marginLeft: '0px'});
 		TweenMax.to($(box), 0.2, {delay: 0.1, opacity: 0});
@@ -284,10 +282,7 @@ function toggleTimeline(li){
 	else{
 		TweenMax.to($(disk), 0.2, {marginTop: padY + 30 + 'px', onComplete: function(){
 			TweenMax.to($(disk), 0.2, {marginTop: padY + 'px', onComplete: function(){
-				TweenMax.to($(disk), 0.3, {borderRadius: '25%', onComplete: function(){
-					TweenMax.to($(disk), 0.3, {borderStyle: 'solid', borderWidth: '5px', borderColor: '#1d1d1d'})
-				}});
-				TweenMax.to($(disk), 0.1, {delay: '0.3', marginTop: padY - 5 +'px', marginLeft: padX - 5 +'px'});
+				TweenMax.to($(disk), 0.3, {borderRadius: '25%'});
 				TweenMax.to($(box), 0.3, {delay: 1.0, marginLeft: deltaX + 'px'});
 				TweenMax.to($(box), 0.2, {delay: 1.1, opacity: 1});
 				$(li).addClass('expanded');
