@@ -55,6 +55,7 @@
 @ribbonHeight : 75px;
 @devicesHeight: 250px;
 @progressBarHeight: 5px;
+@navDim: 50px;
 
 @app-li-one: @aluminum-gray;
 @app-li-two: #555555;
@@ -1010,6 +1011,24 @@ html, body {
 		&.code {
 			background:url(../_img/timeline-code.jpg) 0px 0px no-repeat;
 			background-size:100%;
+		}
+	}
+
+	.meet-the-team {
+		padding-right: 15 + @navDim;
+		padding-left: 15 + @navDim;
+		.container {
+			width: 100%;
+			background: @charcoal;
+			min-height: 100px;
+			/*padding-left: @navDim;*/
+		}
+
+		.member{
+			float: left;
+			width: 20%;
+			height:100%;
+			background: transparent;
 		}
 	}
 
