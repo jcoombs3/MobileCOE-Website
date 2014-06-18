@@ -176,7 +176,7 @@ function setup(el){
             var detailY = $('.timeline .box').outerHeight();
             var deltaX = ( $('.timeline .details').outerWidth() - detailX ) / 2;
             var deltaY = ( $('.timeline .details').outerHeight() - detailY ) / 2;
-            TweenMax.to($('.timeline .box'), 0, {marginTop: deltaY+'px', marginLeft: - detailX +'px', opacity:0});
+            TweenMax.to($('.timeline .box'), 0, {marginTop: deltaY+'px', marginLeft: '0px', opacity:0});
             TweenMax.to($('.timeline .box p'), 0, {width: descriptionWidth + 'px'});
 
             break;

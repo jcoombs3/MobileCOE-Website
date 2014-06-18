@@ -264,13 +264,13 @@ function toggleTimeline(li){
 	var disk = $(li).find('.disk');
 	var description = $(li).find('.description');
 	var box = $(li).find('.box');
-	console.log($(disk).outerWidth());
 
 	var padX = $(li).find('.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
 	var padY = $(li).find('.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
 
+	var detailMar = ($('.timeline .details').outerWidth()/2) * 0.1;
 	var detailX = $('.timeline .box').outerWidth();
-    var deltaX = ( $('.timeline .details').outerWidth() - detailX ) / 2;
+    var deltaX = ( $('.timeline .details').outerWidth() / 2) + ( ($('.timeline .details').outerWidth() / 2) - detailX - detailMar);
 
 	if($(li).hasClass('expanded')){
 		TweenMax.to($(disk), 0.3, {borderRadius: '50%', borderStyle: 'none'});
@@ -278,7 +278,7 @@ function toggleTimeline(li){
 		padY = $(li).find('.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
 		TweenMax.to($(disk), 0, {delay: '0.3', marginTop: padY + 5 +'px', marginLeft: padX + 5 +'px'})
 		$(li).removeClass('expanded');
-		TweenMax.to($(box), 0.3, {marginLeft: - detailX + 'px'});
+		TweenMax.to($(box), 0.3, {marginLeft: '0px'});
 		TweenMax.to($(box), 0.2, {delay: 0.1, opacity: 0});
 		TweenMax.to($(description), 0.3, {width:'100%'});
 	}

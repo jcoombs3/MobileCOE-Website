@@ -927,6 +927,7 @@ html, body {
 		position: relative;
 		float: left;
 		background:transparent;
+		z-index:1;
 	}
 	.titleDiv{
 		width:25%;
@@ -934,16 +935,18 @@ html, body {
 		position: relative;
 		float: left;
 		background:transparent;
+		z-index:1;
 	}
 	.details{
-		width:50%;
+		width:100%;
 		height: 100%;
-		position: relative;
+		position: absolute;
 		float: left;
 		background:transparent;
+		z-index:0;
 
 		.box {
-			width:80%;
+			width:40%;
 			height:50%;
 			background:@aluminum-gray;
 			border:4px solid @charcoal;
