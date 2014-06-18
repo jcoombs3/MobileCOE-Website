@@ -276,11 +276,12 @@ function toggleTimeline(li){
 		TweenMax.to($(disk), 0.3, {borderRadius: '50%', borderStyle: 'none'});
 		padX = $(li).find('.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
 		padY = $(li).find('.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
-		TweenMax.to($(disk), 0, {delay: '0.3', marginTop: padY + 5 +'px', marginLeft: padX + 5 +'px'})
+		TweenMax.to($(disk), 0, {delay: '0.3', marginTop: padY + 5 +'px', marginLeft: padX + 5 +'px', onComplete: function(){
+			TweenMax.to($(description), 0, {width:'100%'});
+		}})
 		$(li).removeClass('expanded');
 		TweenMax.to($(box), 0.3, {marginLeft: '0px'});
 		TweenMax.to($(box), 0.2, {delay: 0.1, opacity: 0});
-		TweenMax.to($(description), 0.3, {width:'100%'});
 	}
 	else{
 		TweenMax.to($(disk), 0.2, {marginTop: padY + 30 + 'px', onComplete: function(){
