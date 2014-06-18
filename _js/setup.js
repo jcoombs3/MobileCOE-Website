@@ -189,6 +189,17 @@ function setup(el){
             var circY = $(diskSire).outerHeight()/2 - $('.timeline .member .disk').outerHeight()/2;
             TweenMax.to($('.timeline .member .disk'), 0, {marginTop: circY + 'px', marginLeft: circX+'px'});
 
+            var kiddies = $('.meet-the-team .container').children().length;
+            if(kiddies <=5){
+                console.log(kiddies);
+                var pad = ((5-kiddies)*teamWidth)/(kiddies +1);
+                $('.timeline .member').css('marginLeft', pad + 'px');
+            }
+            else{
+                var contLength = teamWidth*kiddies;
+                $('.meet-the-team .container').css('width', contLength +'px');
+            }
+
             break;
 
 

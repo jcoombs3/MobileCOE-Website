@@ -56,6 +56,7 @@
 @devicesHeight: 250px;
 @progressBarHeight: 5px;
 @navDim: 50px;
+@memberContainer: 30+2*@navDim;
 
 @app-li-one: @aluminum-gray;
 @app-li-two: #555555;
@@ -1049,12 +1050,20 @@ html, body {
 			}
 		}
 
+
 		&.meet-the-team {
+			width: 100% - @memberContainer;
 			padding-right: 15 + @navDim;
 			padding-left: 15 + @navDim;
 			background:#eee;
 			.gradient(#eee, #B5B5B5);
 
+
+			.member-mask{
+				width:100%;
+				height: 100%;
+				overflow: hidden;
+			}
 			.container {
 				width: 100%;
 				min-height: 100px;
