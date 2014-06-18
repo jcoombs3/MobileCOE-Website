@@ -158,10 +158,11 @@ function setup(el){
             var descriptionWidth = $('.timeline .description').outerWidth();
             TweenMax.to($('.timeline .description'), 0, {width:'100%'});
 
-            // disk 
-            var circX = $('.timeline.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
-            var circY = $('.timeline.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
-            TweenMax.to($('.timeline .disk'), 0, {marginTop: circY + 'px', marginLeft: circX+'px'});
+            // disk
+            var diskSire = $('.disk').parent('.circleDiv');
+            var circX = $(diskSire).outerWidth()/2 - $('.timeline .circleDiv .disk').outerWidth()/2;
+            var circY = $(diskSire).outerHeight()/2 - $('.timeline .circleDiv .disk').outerHeight()/2;
+            TweenMax.to($('.timeline .circleDiv .disk'), 0, {marginTop: circY + 'px', marginLeft: circX+'px'});
 
             //title
             $('.timeline .icon').css('height', $('.timeline .icon').outerWidth());
@@ -176,6 +177,17 @@ function setup(el){
             var deltaY = ( $('.timeline .details').outerHeight() - detailY ) / 2;
             TweenMax.to($('.timeline .box'), 0, {marginTop: deltaY+'px', marginLeft: '0px', opacity:0});
             TweenMax.to($('.timeline .box p'), 0, {width: descriptionWidth *.9 + 'px'});
+
+            //meet-the-team
+            var teamWidth = $('.meet-the-team .container').outerWidth()/5;
+            $('.meet-the-team').css('height', teamWidth+'px');
+            $('.meet-the-team .member').css('width', teamWidth+'px');
+            var teamHeight = $('.meet-the-team .container').outerHeight();
+            $('.meet-the-team .member').css('height', teamHeight+'px');
+            var diskSire = $('.disk').parent('.member');
+            var circX = $(diskSire).outerWidth()/2 - $('.timeline .member .disk').outerWidth()/2;
+            var circY = $(diskSire).outerHeight()/2 - $('.timeline .member .disk').outerHeight()/2;
+            TweenMax.to($('.timeline .member .disk'), 0, {marginTop: circY + 'px', marginLeft: circX+'px'});
 
             break;
 
