@@ -166,9 +166,8 @@ function setup(el){
             //title
             $('.timeline .icon').css('height', $('.timeline .icon').outerWidth());
             var iconY = $('.timeline.titleDiv').outerHeight()/2 - $('.timeline .icon').outerHeight()/2;
-            var titleY = $('.timeline.titleDiv').outerHeight()/2 - $('.timeline img').outerHeight()/2;
-            TweenMax.to($('.timeline .icon'), 0, {marginTop: iconY + 'px'});
-            TweenMax.to($('.timeline img'), 0, {marginTop: titleY + 'px'});
+            var titleY = $('.timeline.titleDiv').outerHeight()/2 - $('.timeline .subtitle').outerHeight()/2;
+            TweenMax.to($('.timeline .subtitle'), 0, {marginTop: titleY + 'px'});
 
             // box
             var detailX = $('.timeline .box').outerWidth();
@@ -176,7 +175,7 @@ function setup(el){
             var deltaX = ( $('.timeline .details').outerWidth() - detailX ) / 2;
             var deltaY = ( $('.timeline .details').outerHeight() - detailY ) / 2;
             TweenMax.to($('.timeline .box'), 0, {marginTop: deltaY+'px', marginLeft: '0px', opacity:0});
-            TweenMax.to($('.timeline .box p'), 0, {width: descriptionWidth + 'px'});
+            TweenMax.to($('.timeline .box p'), 0, {width: descriptionWidth *.9 + 'px'});
 
             break;
 

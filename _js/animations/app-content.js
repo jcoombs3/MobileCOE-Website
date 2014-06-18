@@ -273,7 +273,7 @@ function toggleTimeline(li){
     var deltaX = ( $('.timeline .details').outerWidth() / 2) + ( ($('.timeline .details').outerWidth() / 2) - detailX - detailMar);
 
 	if($(li).hasClass('expanded')){
-		TweenMax.to($(disk), 0.3, {borderRadius: '50%', borderStyle: 'none'});
+		TweenMax.to($(disk), 0.3, {borderRadius: '50%'});
 		TweenMax.to($(description), 0, {delay: '0.2', width:'100%'});
 		$(li).removeClass('expanded');
 		TweenMax.to($(box), 0.3, {marginLeft: '0px'});
