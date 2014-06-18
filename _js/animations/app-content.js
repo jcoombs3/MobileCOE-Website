@@ -261,28 +261,42 @@ function moveEverforms($item, direction) {
 }
 
 function toggleTimeline(li){
-
 	var disk = $(li).find('.disk');
 	var description = $(li).find('.description');
+	var box = $(li).find('.box');
+	console.log($(disk).outerWidth());
 
-	var padX = $('.timeline.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
-	var padY = $('.timeline.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
+	var padX = $(li).find('.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
+	var padY = $(li).find('.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
+
+	var detailX = $('.timeline .box').outerWidth();
+    var deltaX = ( $('.timeline .details').outerWidth() - detailX ) / 2;
 
 	if($(li).hasClass('expanded')){
 		TweenMax.to($(disk), 0.3, {borderRadius: '50%', borderStyle: 'none'});
+		padX = $(li).find('.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
+		padY = $(li).find('.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
 		TweenMax.to($(disk), 0, {delay: '0.3', marginTop: padY + 5 +'px', marginLeft: padX + 5 +'px'})
 		$(li).removeClass('expanded');
-
+		TweenMax.to($(box), 0.3, {marginLeft: - detailX + 'px'});
+		TweenMax.to($(box), 0.2, {delay: 0.1, opacity: 0});
 		TweenMax.to($(description), 0.3, {width:'100%'});
 	}
 	else{
-		TweenMax.to($(disk), 0.3, {borderRadius: '25%', onComplete: function(){
-			TweenMax.to($(disk), 0.3, {borderStyle: 'solid', borderWidth: '5px', borderColor: '#1d1d1d'})
+		TweenMax.to($(disk), 0.2, {marginTop: padY + 30 + 'px', onComplete: function(){
+			TweenMax.to($(disk), 0.2, {marginTop: padY + 'px', onComplete: function(){
+				TweenMax.to($(disk), 0.3, {borderRadius: '25%', onComplete: function(){
+					TweenMax.to($(disk), 0.3, {borderStyle: 'solid', borderWidth: '5px', borderColor: '#1d1d1d'})
+				}});
+				padX = $(li).find('.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
+				padY = $(li).find('.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
+				TweenMax.to($(disk), 0.1, {delay: '0.3', marginTop: padY - 5 +'px', marginLeft: padX - 5 +'px'});
+				TweenMax.to($(box), 0.3, {delay: 1.0, marginLeft: deltaX + 'px'});
+				TweenMax.to($(box), 0.2, {delay: 1.1, opacity: 1});
+				$(li).addClass('expanded');
+				TweenMax.to($(description), 0.3, {delay:'3', width:'90%'});
+			}})
 		}});
-		TweenMax.to($(disk), 0.1, {delay: '0.3', marginTop: padY - 5 +'px', marginLeft: padX - 5 +'px'});
-		$(li).addClass('expanded');
-
-		TweenMax.to($(description), 0.3, {delay:'3', width:'90%'});
 	}
 
 }
