@@ -264,9 +264,9 @@ function toggleTimeline(li){
 	var disk = $(li).find('.disk');
 	var description = $(li).find('.description');
 	var box = $(li).find('.box');
-
-	var padX = $(li).find('.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
-	var padY = $(li).find('.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
+	var diskHeight = $(li).find('.circleDiv').outerHeight()*8/10;
+	var padX = $(li).find('.circleDiv').outerWidth()/2 - diskHeight/2;
+	var padY = $(li).find('.circleDiv').outerHeight()/2 - diskHeight/2;
 
 	var detailMar = ($('.timeline .details').outerWidth()/2) * 0.1;
 	var detailX = $('.timeline .box').outerWidth();
@@ -274,9 +274,7 @@ function toggleTimeline(li){
 
 	if($(li).hasClass('expanded')){
 		TweenMax.to($(disk), 0.3, {borderRadius: '50%', borderStyle: 'none'});
-		padX = $(li).find('.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
-		padY = $(li).find('.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
-		TweenMax.to($(disk), 0, {delay: '0.3', marginTop: padY + 5 +'px', marginLeft: padX + 5 +'px', onComplete: function(){
+		TweenMax.to($(disk), 0, {delay: '0.3', marginTop: padY +'px', marginLeft: padX +'px', onComplete: function(){
 			TweenMax.to($(description), 0, {width:'100%'});
 		}})
 		$(li).removeClass('expanded');
@@ -289,8 +287,6 @@ function toggleTimeline(li){
 				TweenMax.to($(disk), 0.3, {borderRadius: '25%', onComplete: function(){
 					TweenMax.to($(disk), 0.3, {borderStyle: 'solid', borderWidth: '5px', borderColor: '#1d1d1d'})
 				}});
-				padX = $(li).find('.circleDiv').outerWidth()/2 - $('.timeline .disk').outerWidth()/2;
-				padY = $(li).find('.circleDiv').outerHeight()/2 - $('.timeline .disk').outerHeight()/2;
 				TweenMax.to($(disk), 0.1, {delay: '0.3', marginTop: padY - 5 +'px', marginLeft: padX - 5 +'px'});
 				TweenMax.to($(box), 0.3, {delay: 1.0, marginLeft: deltaX + 'px'});
 				TweenMax.to($(box), 0.2, {delay: 1.1, opacity: 1});
