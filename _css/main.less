@@ -902,7 +902,7 @@ html, body {
 	}
 }
 .timeline{
-	background:@ice-white;
+	background:#eee;
 	overflow-y:auto;
 
 	.container{
@@ -945,7 +945,7 @@ html, body {
 			width:40%;
 			height:50%;
 			background:@electric-blue;
-			.gradient(#60bcdb, @electric-blue);
+			.gradient(#eee, @aluminum-gray);
 			// border:4px solid @charcoal;
 			.box-shadow(1px 3px 5px 0px rgba(50, 50, 50, 0.33));
 		}
@@ -986,7 +986,7 @@ html, body {
 		height: 80%;
 		background: @sapient-heat;
 		position: relative;
-		border: 5px solid @aluminum-gray;
+		border: 5px solid #B5B5B5;
 		.transition(all 300ms ease);
 	}
 
@@ -1039,7 +1039,7 @@ html, body {
 		&.post-launch {
 
 			.disk {
-				background:url(../_img/timeline-question.jpg) 0px 0px no-repeat;
+				background:url(../_img/timeline-post.jpg) 0px 0px no-repeat;
 				background-size:100%;
 			}
 
@@ -1052,9 +1052,11 @@ html, body {
 		&.meet-the-team {
 			padding-right: 15 + @navDim;
 			padding-left: 15 + @navDim;
+			background:#eee;
+			.gradient(#eee, #B5B5B5);
+
 			.container {
 				width: 100%;
-				background: @charcoal;
 				min-height: 100px;
 				/*padding-left: @navDim;*/
 			}
@@ -1077,6 +1079,10 @@ html, body {
 		padding: 0 0 0 10%;
 	}
 }
+
+/*-----------------------------------*/
+
+@import "employees";
 
 /*-----------------------------------*/
 
