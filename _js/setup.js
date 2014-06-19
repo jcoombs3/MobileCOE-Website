@@ -152,6 +152,11 @@ function setup(el){
             });
             break;
         case('.timeline'):
+            if($(window).outerWidth() > 1024){
+                var tLPad = ($(window).outerWidth - 1024)/2;
+                $('.timeline ul').css('width', '1024px');
+                $('.timeline ul').css('marginLeft', tLPad + 'px');
+            }
             $('.timeline.container').css('height', $('.timeline.container').outerWidth()*0.15);
 
             // description close 
