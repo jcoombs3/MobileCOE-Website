@@ -152,13 +152,16 @@ function setup(el){
             });
             break;
         case('.timeline'):
-            $('.timeline.container').css('height', $('.timeline.circleDiv').outerWidth());
+            $('.timeline.container').css('height', $('.timeline.container').outerWidth()*0.15);
 
             // description close 
             var descriptionWidth = $('.timeline .description').outerWidth();
             TweenMax.to($('.timeline .description'), 0, {width:'100%'});
 
             // disk
+            var circDiam = $('.timeline .circleDiv').outerHeight()*0.80;
+            $('.timeline .circleDiv .disk').css('width', circDiam+'px');
+            $('.timeline .circleDiv .disk').css('height', circDiam+'px');
             var diskSire = $('.disk').parent('.circleDiv');
             var circX = $(diskSire).outerWidth()/2 - $('.timeline .circleDiv .disk').outerWidth()/2;
             var circY = $(diskSire).outerHeight()/2 - $('.timeline .circleDiv .disk').outerHeight()/2;
