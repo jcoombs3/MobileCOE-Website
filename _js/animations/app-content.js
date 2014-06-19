@@ -189,14 +189,14 @@ function loadContent() {
 		}});
 
 	},function(e){
-		$(e.currentTarget).removeClass('hover');
 		var member = $(e.currentTarget).parents('.member');
 		var post = $(member).find('.post');
 		var name = $(member).find('.name');
 
 		TweenMax.to($(name).find('table'),0.1,{opacity:'0', onComplete:function(){
-			TweenMax.to($(name), 0.2, {marginLeft: $(post).outerWidth()/2 + 'px', width: '0px', onComplete:function(){
+			TweenMax.to($(name), 0.2, {marginLeft: $(name).outerWidth()/2 + 'px', width: '0px', onComplete:function(){
 				TweenMax.to($(post),0.1,{top:'0px'});
+				$(e.currentTarget).removeClass('hover');
 			}});
 		}});
 	});
@@ -319,10 +319,30 @@ function toggleTimeline(li){
 
 function roleStack(disk){
 	// roles will stack based on which one was clicked. But for now, they will all just fall
-	var diskParent = $(disk).parent();
+	var member = $(disk).parents('.member');
+	var li = $(member).parents('.meet-the-team');
+	var order = member.data('order');
+	var delayOffset = 0.15;
 
-	TweenMax.to($('.meet-the-team .role-mask .role'), 1, {top: $('.meet-the-team .role-mask .role').outerHeight() + $('.meet-the-team .member-mask .member').outerHeight() + 'px', ease:Back.easeOut});
-	TweenMax.to($('.meet-the-team .role-mask .role'), 1, {delay:'0.3', opacity:'1'});
+	TweenMax.to($(li).find('.role'), 0, {top:'-'+$(disk).outerHeight()/2 + 'px', opacity:'0'});
+
+	var kiddies = $('.timeline .meet-the-team .container').children().length;
+    if(kiddies <=5){    
+    	var centerChild = Math.round(kiddies/2);
+
+    	if(centerChild%2 > 0){
+			$($(li).find('.role')).each(function(i){
+				var sep = Math.abs((centerChild-1) - i);
+				var delay = delayOffset * sep;
+
+				TweenMax.to($(this),0.5, {delay:delay, top:'0px', ease:Back.easeOut});
+				TweenMax.to($(this),0.5, {delay:delay+0.1, opacity:'1'});
+			});
+    	}
+    }
+
+	// TweenMax.to($(member).find('.role'), 0.5, {top:'0px', ease:Back.easeOut});
+	// TweenMax.to($(member).find('.role'), 0.5, {delay:'0.1', opacity:'1'});
 }
 
 

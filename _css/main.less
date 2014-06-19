@@ -983,6 +983,7 @@ html, body {
  
 	.disk{
 		border-radius: 50%;
+		z-index:50;
 		width: 80%;
 		height: 80%;
 		background: @sapient-heat;
@@ -1104,7 +1105,7 @@ html, body {
 			.member-mask {
 				width:100%;
 				overflow: hidden;
-				padding-top:10%;
+				padding:5% 0px;
 			}
 
 			.container {
@@ -1121,10 +1122,11 @@ html, body {
 					width:100%;
 					height:100%;
 				}
+
 			}
 
 			.disk.hover {
-				border-color:#666;
+				border-color:@sapient-heat;
 			}
 
 			.role {
@@ -1151,14 +1153,16 @@ html, body {
 
 				.name {
 					width:100%;
-					background:@sapient-heat;
 					height:12%;
 					position:absolute;
 					top:0;
-					color:@ice-white;
+					overflow:hidden;
 					text-align:center;
 					font-size:14px;
-					overflow:hidden;
+					color:@ice-white;
+					background:@sapient-heat;
+					.gradient(#be1314, @sapient-heat);
+					.box-shadow(1px 2px 3px 0px rgba(50, 50, 50, 0.75));
 
 					table {
 						width:100%;
@@ -1171,9 +1175,9 @@ html, body {
 		&:first-child {
 			padding-top:10%;
 		}
-		&:last-child {
-			padding-bottom:10%;
-		}
+		// &:last-child {
+		// 	padding-bottom:10%;
+		// }
 	}
 }
 

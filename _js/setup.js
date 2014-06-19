@@ -214,7 +214,6 @@ function setup(el){
 
             var kiddies = $('.timeline li.meet-the-team .container').children().length;
             if(kiddies <=5){
-                console.log(((5-kiddies)*teamWidth)/(kiddies +1));
                 var pad = ((5 - kiddies)*teamWidth)/(kiddies +1);
                 $('.meet-the-team .member').css('marginLeft', pad + 'px');
             }
@@ -223,11 +222,11 @@ function setup(el){
                 $('.meet-the-team .container').css('width', contLength +'px');
             }
 
-                // member roles 
-            // var order = 0;  
-            // $('.meet-the-team .role-mask .member').each(function(i){
-            //     $(this).data('order',i);
-            // });
+                // member order 
+            var order = 0;  
+            $('.meet-the-team .member').each(function(i){
+                $(this).data('order',i);
+            });
 
                 // member posts 
             var postHeight = $('.meet-the-team .memberPic').outerHeight() / 2;
@@ -237,7 +236,7 @@ function setup(el){
 
             var nameWidth = $('.meet-the-team .name table').outerWidth();
             TweenMax.to($('.meet-the-team .name table'), 0, {width:nameWidth + 'px'});
-            TweenMax.to($('.meet-the-team .name'), 0, {marginLeft:nameWidth + 'px', width: '0px'});
+            TweenMax.to($('.meet-the-team .name'), 0, {marginLeft:nameWidth/2 + 'px', width: '0px'});
 
             TweenMax.to($('.meet-the-team .post'), 0, 
                 {   height:postHeight + 'px',
