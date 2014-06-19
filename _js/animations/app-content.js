@@ -182,6 +182,10 @@ function loadContent() {
 		$(e.currentTarget).removeClass('hover');
 	});
 
+	$('#app-content .timeline .meet-the-team .disk').on('click', function(e){
+		roleStack($(e.currentTarget));
+	});
+
 	animPowerpoints();
 	moveEverforms($('#leftEF'),1);
 	moveEverforms($('#rightEF'),-1);
@@ -292,5 +296,21 @@ function toggleTimeline(li){
 		$(li).addClass('expanded');
 		TweenMax.to($(description), 0.3, {delay:'3', width:'90%'});
 	}
-
 }
+
+function roleStack(disk){
+	// roles will stack based on which one was clicked. But for now, they will all just fall
+	var diskParent = $(disk).parent();
+
+	TweenMax.to($('.meet-the-team .role-mask .role'), 1, {top: $('.meet-the-team .role-mask .role').outerHeight() + $('.meet-the-team .member-mask .member').outerHeight() + 'px', opacity:'1', ease:Back.easeOut});
+}
+
+
+
+
+
+
+
+
+
+
