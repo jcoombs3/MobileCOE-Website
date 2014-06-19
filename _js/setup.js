@@ -192,12 +192,22 @@ function setup(el){
             $('.separator').css('height', diskPad/2);
 
             var divWidth = $('.separator').outerWidth()*0.33;
-
+            var numDevices = $('.blankSpace .devicesDiv').children().length;
             var device = $('.blankSpace').outerWidth()*0.33*0.25;
             $('.timeline li.blankSpace img').css('height', 100 + 'px');
+
+            var imgXPad = ($('.blankSpace li').outerWidth() - $('.timeline li.blankSpace img').outerWidth())/2;
+            console.log($('.timeline li.blankSpace img').outerWidth()/2);
+            console.log(imgXPad);
+            $('.blankSpace img').css('marginLeft', imgXPad+'px');
+
             var devicePadHeight = $('.timeline li.blankSpace img').outerHeight()/2 -$('.separator').outerHeight()/2;
-            var devicePadWidth = $('.timeline li.blankSpace img').outerWidth();
-            $('.timeline li.blankSpace img').css('marginTop', -devicePadHeight + 'px');
+            console.log(divWidth);
+            console.log(numDevices);
+            var devicePadWidth = (divWidth/4)/(numDevices +1);
+
+            $('.timeline li.blankSpace li').css('marginTop', -devicePadHeight + 'px');
+            //$('.timeline li.blankSpace li').css('marginLeft', devicePadWidth + 'px');
 
 
             //meet-the-team
@@ -214,7 +224,6 @@ function setup(el){
 
             var kiddies = $('.timeline li.meet-the-team .container').children().length;
             if(kiddies <=5){
-                console.log(((5-kiddies)*teamWidth)/(kiddies +1));
                 var pad = ((5 - kiddies)*teamWidth)/(kiddies +1);
                 $('.meet-the-team .member').css('marginLeft', pad + 'px');
             }
