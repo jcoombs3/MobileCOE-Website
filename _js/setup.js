@@ -211,6 +211,17 @@ function setup(el){
             var circX = $(diskSire).outerWidth()/2 - $('.timeline .memberPic .disk').outerWidth()/2;
             TweenMax.to($('.timeline .memberPic .disk'), 0, {left: circX + 'px', top: circX+'px'});
 
+            var kiddies = $('.timeline .container').children().length;
+            if(kiddies <=5){
+                console.log(kiddies);
+                var pad = ((5-kiddies)*teamWidth)/(kiddies +1);
+                $('.timeline .member').css('marginLeft', pad + 'px');
+            }
+            else{
+                var contLength = teamWidth*kiddies;
+                $('.meet-the-team .container').css('width', contLength +'px');
+            }
+
                 // member roles 
             // var order = 0;  
             // $('.meet-the-team .role-mask .member').each(function(i){
