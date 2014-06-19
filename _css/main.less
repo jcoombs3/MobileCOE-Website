@@ -991,6 +991,11 @@ html, body {
 		.transition(all 300ms ease);
 	}
 
+	.separator{
+		width:100%;
+		background: @aluminum-gray;
+	}
+
 	ul{
 		list-style-type: none;
 		margin:0;
@@ -998,7 +1003,18 @@ html, body {
 	}
 	li{
 		padding: 0 0 0 10%;
+
+		&.blankSpace{
+			width: 100%;
+			padding:0;
+		}
 		
+		img{
+			background-size: 100%;
+			max-width: 100%;
+			position: relative;
+		}
+
 		&.question {
 
 			.disk {
