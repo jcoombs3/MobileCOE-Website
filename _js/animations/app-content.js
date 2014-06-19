@@ -162,7 +162,7 @@ function loadContent() {
 		}
 	});
 
-	$('#app-content .timeline .disk').on('click', function(e){
+	$('#app-content .timeline.circleDiv .disk').on('click', function(e){
 		var parent = $(e.currentTarget).parents('li');
 		if(!($(parent).hasClass('expanded'))){
 			toggleTimeline(parent);
