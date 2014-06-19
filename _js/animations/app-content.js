@@ -306,7 +306,7 @@ function toggleTimeline(li){
 		TweenMax.to($(description), 0, {delay: '0.2', width:'100%'});
 		$(li).removeClass('expanded');
 		TweenMax.to($(box), 0.3, {marginLeft: '0px'});
-		TweenMax.to($(box), 0.2, {delay: 0.1, opacity: 0});
+		TweenMax.to($(box), 0.1, {opacity: 0});
 	}
 	else{
 		TweenMax.to($(disk), 0.3, {borderRadius: '25%'});
