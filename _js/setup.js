@@ -165,10 +165,8 @@ function setup(el){
             TweenMax.to($('.timeline .circleDiv .disk'), 0, {marginTop: circY + 'px', marginLeft: circX+'px'});
 
             //title
-            $('.timeline .icon').css('height', $('.timeline .icon').outerWidth());
-            var iconY = $('.timeline.titleDiv').outerHeight()/2 - $('.timeline .icon').outerHeight()/2;
-            var titleY = $('.timeline.titleDiv').outerHeight()/2 - $('.timeline .subtitle').outerHeight()/2;
-            TweenMax.to($('.timeline .subtitle'), 0, {marginTop: titleY + 'px'});
+            var titleY = $('.timeline .titleDiv').outerHeight()/2 - $('.titleDiv img').outerHeight()/2;
+            TweenMax.to($('.timeline .titleDiv img'), 0, {marginTop: titleY + 'px'});
 
             // box
             var detailX = $('.timeline .box').outerWidth();
@@ -177,6 +175,13 @@ function setup(el){
             var deltaY = ( $('.timeline .details').outerHeight() - detailY ) / 2;
             TweenMax.to($('.timeline .box'), 0, {marginTop: deltaY+'px', marginLeft: '0px', opacity:0});
             TweenMax.to($('.timeline .box p'), 0, {width: descriptionWidth *.9 + 'px'});
+
+            //blankSpace
+            var diskPad = $('.disk').outerHeight()/2;
+            $('.blankSpace').css('marginTop', diskPad);
+            $('.blankSpace').css('marginBottom', diskPad);
+            $('.separator').css('height', diskPad/2);
+
 
             //meet-the-team
                 // member disks
