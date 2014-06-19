@@ -191,6 +191,14 @@ function setup(el){
             $('.blankSpace').css('marginBottom', diskPad);
             $('.separator').css('height', diskPad/2);
 
+            var divWidth = $('.separator').outerWidth()*0.33;
+
+            var device = $('.blankSpace').outerWidth()*0.33*0.25;
+            $('.timeline li.blankSpace img').css('height', 100 + 'px');
+            var devicePadHeight = $('.timeline li.blankSpace img').outerHeight()/2 -$('.separator').outerHeight()/2;
+            var devicePadWidth = $('.timeline li.blankSpace img').outerWidth();
+            $('.timeline li.blankSpace img').css('marginTop', -devicePadHeight + 'px');
+
 
             //meet-the-team
                 // member disks
