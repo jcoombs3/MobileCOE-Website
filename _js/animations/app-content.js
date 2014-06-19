@@ -280,15 +280,11 @@ function toggleTimeline(li){
 		TweenMax.to($(box), 0.2, {delay: 0.1, opacity: 0});
 	}
 	else{
-		TweenMax.to($(disk), 0.2, {marginTop: padY + 30 + 'px', onComplete: function(){
-			TweenMax.to($(disk), 0.2, {marginTop: padY + 'px', onComplete: function(){
-				TweenMax.to($(disk), 0.3, {borderRadius: '25%'});
-				TweenMax.to($(box), 0.3, {delay: 1.0, marginLeft: deltaX + 'px'});
-				TweenMax.to($(box), 0.2, {delay: 1.1, opacity: 1});
-				$(li).addClass('expanded');
-				TweenMax.to($(description), 0.3, {delay:'3', width:'90%'});
-			}})
-		}});
+		TweenMax.to($(disk), 0.3, {borderRadius: '25%'});
+		TweenMax.to($(box), 0.3, {delay: 1.0, marginLeft: deltaX + 'px'});
+		TweenMax.to($(box), 0.2, {delay: 1.1, opacity: 1});
+		$(li).addClass('expanded');
+		TweenMax.to($(description), 0.3, {delay:'3', width:'90%'});
 	}
 
 }
