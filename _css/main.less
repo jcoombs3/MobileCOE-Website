@@ -1067,6 +1067,10 @@ html, body {
 			}
 		}
 
+		.disk {
+			.box-shadow(1px 2px 3px 0 rgba(50,50,50,.75));
+			position:relative;
+		}
 
 		&.meet-the-team {
 			width: 100% - @memberContainer;
@@ -1074,10 +1078,19 @@ html, body {
 			background:#eee;
 			.gradient(#eee, #B5B5B5);
 
+			.team-title {
+				width:30%;
+				margin:0 auto;
+				padding-bottom:10%;
+
+				img {
+					width:100%;
+					margin:0 auto;
+				}
+			}
 
 			.member-mask {
 				width:100%;
-				height: 100%;
 				overflow: hidden;
 			}
 
@@ -1088,8 +1101,12 @@ html, body {
 			.member{
 				float: left;
 				width: 20%;
-				height:100%;
 				background: transparent;
+
+				.memberPic {
+					width:100%;
+					height:100%;
+				}
 			}
 
 			.disk.hover {
@@ -1101,7 +1118,20 @@ html, body {
 				text-align:center;
 				color:#666666;
 				position:relative;
-				opacity:0;
+				opacity:1;
+			}
+
+			.name-tag {
+				width:100%;
+				height:100%;
+				position:absolute;
+
+				.post {
+					width:1%;
+					height:100%;
+					background:@sapient-heat;
+					.box-shadow(1px 2px 3px 0px rgba(50, 50, 50, 0.75));
+				}
 			}
 		}
 

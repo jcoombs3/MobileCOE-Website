@@ -195,20 +195,25 @@ function setup(el){
             //meet-the-team
                 // member disks
             var teamWidth = $('.meet-the-team .member-mask .container').outerWidth()/5;
-            $('.meet-the-team').css('height', teamWidth+'px');
+            $('.meet-the-team .member-mask .container').css('height', teamWidth+'px');
             $('.meet-the-team .member-mask .member').css('width', teamWidth+'px');
-            var teamHeight = $('.meet-the-team .member-mask .container').outerHeight();
-            $('.meet-the-team .member-mask .member').css('height', teamHeight+'px');
-            var diskSire = $('.disk').parent('.member');
-            var circX = $(diskSire).outerWidth()/2 - $('.timeline .member-mask .member .disk').outerWidth()/2;
-            var circY = $(diskSire).outerHeight()/2 - $('.timeline .member-mask .member .disk').outerHeight()/2;
-            TweenMax.to($('.timeline .member-mask .member .disk'), 0, {marginTop: circY + 'px', marginLeft: circX+'px'});
+            $('.meet-the-team .member-mask .memberPic').css('width', teamWidth+'px');
+            $('.meet-the-team .member-mask .memberPic').css('height', teamWidth+'px');
+            var diskSire = $('.disk').parent('.memberPic');
+            var circX = $(diskSire).outerWidth()/2 - $('.timeline .memberPic .disk').outerWidth()/2;
+            TweenMax.to($('.timeline .memberPic .disk'), 0, {left: circX + 'px', top: circX+'px'});
 
                 // member roles 
-            var order = 0;  
-            $('.meet-the-team .role-mask .member').each(function(i){
-                $(this).data('order',i);
-            });
+            // var order = 0;  
+            // $('.meet-the-team .role-mask .member').each(function(i){
+            //     $(this).data('order',i);
+            // });
+
+                // member posts 
+            // var postMar = $('.meet-the-team .member').outerWidth() / 2;
+            // var postOffset = $('.meet-the-team .post').outerWidth() / 2;
+
+            // TweenMax.to($('.meet-the-team .post'), 0, {marginLeft:postMar - postOffset + 'px', marginTop:'-' + postMar + 'px'});
 
             break;
 
