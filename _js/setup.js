@@ -211,11 +211,11 @@ function setup(el){
             var circX = $(diskSire).outerWidth()/2 - $('.timeline .memberPic .disk').outerWidth()/2;
             TweenMax.to($('.timeline .memberPic .disk'), 0, {left: circX + 'px', top: circX+'px'});
 
-            var kiddies = $('.timeline .container').children().length;
+            var kiddies = $('.timeline li.meet-the-team .container').children().length;
             if(kiddies <=5){
-                console.log(kiddies);
-                var pad = ((5-kiddies)*teamWidth)/(kiddies +1);
-                $('.timeline .member').css('marginLeft', pad + 'px');
+                console.log(((5-kiddies)*teamWidth)/(kiddies +1));
+                var pad = ((5 - kiddies)*teamWidth)/(kiddies +1);
+                $('.meet-the-team .member').css('marginLeft', pad + 'px');
             }
             else{
                 var contLength = teamWidth*kiddies;
