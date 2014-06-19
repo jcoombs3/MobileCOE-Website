@@ -218,10 +218,16 @@ function setup(el){
             // });
 
                 // member posts 
-            // var postMar = $('.meet-the-team .member').outerWidth() / 2;
-            // var postOffset = $('.meet-the-team .post').outerWidth() / 2;
+            var postHeight = $('.meet-the-team .memberPic').outerHeight() / 2;
 
-            // TweenMax.to($('.meet-the-team .post'), 0, {marginLeft:postMar - postOffset + 'px', marginTop:'-' + postMar + 'px'});
+            var postMar = $('.meet-the-team .memberPic').outerWidth() / 2;
+            var postOffset = $('.meet-the-team .post').outerWidth() / 2;
+
+            TweenMax.to($('.meet-the-team .post'), 0, 
+                {   height:postHeight + 'px',
+                    marginTop:(postMar/2)+'px',
+                    marginLeft:postMar-postOffset+'px'
+                });
 
             break;
 

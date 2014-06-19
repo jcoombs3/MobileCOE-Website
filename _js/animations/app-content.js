@@ -178,8 +178,21 @@ function loadContent() {
 
 	$('#app-content .timeline .meet-the-team .disk').hover(function(e){
 		$(e.currentTarget).addClass('hover');
+		var member = $(e.currentTarget).parents('.member');
+		var post = $(member).find('.post');
+		var name = $(member).find('.name');
+
+		TweenMax.to($(post),0.2,{top:'-'+$(post).outerHeight() + 'px', onComplete:function(){
+
+		}});
+
 	},function(e){
 		$(e.currentTarget).removeClass('hover');
+		var member = $(e.currentTarget).parents('.member');
+		var post = $(member).find('.post');
+		var name = $(member).find('.name');
+
+		TweenMax.to($(post),0.2,{top:'0px'});
 	});
 
 	$('#app-content .timeline .meet-the-team .disk').on('click', function(e){
