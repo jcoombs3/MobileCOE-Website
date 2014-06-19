@@ -176,6 +176,12 @@ function loadContent() {
 		}
 	});
 
+	$('#app-content .timeline .meet-the-team .disk').hover(function(e){
+		$(e.currentTarget).addClass('hover');
+	},function(e){
+		$(e.currentTarget).removeClass('hover');
+	});
+
 	animPowerpoints();
 	moveEverforms($('#leftEF'),1);
 	moveEverforms($('#rightEF'),-1);
