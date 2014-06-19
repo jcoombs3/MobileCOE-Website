@@ -207,6 +207,7 @@ function setup(el){
             $('.meet-the-team .member-mask .member').css('width', teamWidth+'px');
             $('.meet-the-team .member-mask .memberPic').css('width', teamWidth+'px');
             $('.meet-the-team .member-mask .memberPic').css('height', teamWidth+'px');
+            $('.meet-the-team .member .name-tag').css('width', teamWidth + 'px')
             var diskSire = $('.disk').parent('.memberPic');
             var circX = $(diskSire).outerWidth()/2 - $('.timeline .memberPic .disk').outerWidth()/2;
             TweenMax.to($('.timeline .memberPic .disk'), 0, {left: circX + 'px', top: circX+'px'});
@@ -234,9 +235,16 @@ function setup(el){
             var postMar = $('.meet-the-team .memberPic').outerWidth() / 2;
             var postOffset = $('.meet-the-team .post').outerWidth() / 2;
 
+            var nameWidth = $('.meet-the-team .name table').outerWidth();
+            TweenMax.to($('.meet-the-team .name table'), 0, {width:nameWidth + 'px'});
+
+            var nameMar = $('.meet-the-team .name').outerWidth()/2;
+
+            TweenMax.to($('.meet-the-team .name'), 0, {marginLeft:nameMar + 'px', width: '0px'});
+
             TweenMax.to($('.meet-the-team .post'), 0, 
                 {   height:postHeight + 'px',
-                    marginTop:(postMar/2)+'px',
+                    marginTop:postMar+'px',
                     marginLeft:postMar-postOffset+'px'
                 });
 

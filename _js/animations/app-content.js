@@ -182,8 +182,10 @@ function loadContent() {
 		var post = $(member).find('.post');
 		var name = $(member).find('.name');
 
-		TweenMax.to($(post),0.2,{top:'-'+$(post).outerHeight() + 'px', onComplete:function(){
-
+		TweenMax.to($(post),0.1,{top:'-'+$(post).outerHeight() + 'px', onComplete:function(){
+			TweenMax.to($(name), 0.2, {marginLeft: '0px', width: '100%', onComplete:function(){
+				TweenMax.to($(name).find('table'),0.1,{opacity:'1'});
+			}});
 		}});
 
 	},function(e){
@@ -192,7 +194,11 @@ function loadContent() {
 		var post = $(member).find('.post');
 		var name = $(member).find('.name');
 
-		TweenMax.to($(post),0.2,{top:'0px'});
+		TweenMax.to($(name).find('table'),0.1,{opacity:'0', onComplete:function(){
+			TweenMax.to($(name), 0.2, {marginLeft: $('.meet-the-team .name').outerWidth()/2 + 'px', width: '0px', onComplete:function(){
+				TweenMax.to($(post),0.1,{top:'0px'});
+			}});
+		}});
 	});
 
 	$('#app-content .timeline .meet-the-team .disk').on('click', function(e){
