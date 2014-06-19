@@ -162,7 +162,7 @@ function loadContent() {
 		}
 	});
 
-	$('#app-content .timeline.circleDiv .disk').on('click', function(e){
+	$('#app-content .timeline .circleDiv .disk').on('click', function(e){
 		var parent = $(e.currentTarget).parents('li');
 		if(!($(parent).hasClass('expanded'))){
 			toggleTimeline(parent);
@@ -302,7 +302,8 @@ function roleStack(disk){
 	// roles will stack based on which one was clicked. But for now, they will all just fall
 	var diskParent = $(disk).parent();
 
-	TweenMax.to($('.meet-the-team .role-mask .role'), 1, {top: $('.meet-the-team .role-mask .role').outerHeight() + $('.meet-the-team .member-mask .member').outerHeight() + 'px', opacity:'1', ease:Back.easeOut});
+	TweenMax.to($('.meet-the-team .role-mask .role'), 1, {top: $('.meet-the-team .role-mask .role').outerHeight() + $('.meet-the-team .member-mask .member').outerHeight() + 'px', ease:Back.easeOut});
+	TweenMax.to($('.meet-the-team .role-mask .role'), 1, {delay:'0.3', opacity:'1'});
 }
 
 

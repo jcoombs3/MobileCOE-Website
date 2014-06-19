@@ -152,7 +152,7 @@ function setup(el){
             });
             break;
         case('.timeline'):
-            $('.timeline.container').css('height', $('.timeline.container').outerWidth()*0.15);
+            $('.timeline .phase .container').css('height', $('.timeline .phase .container').outerWidth()*0.15);
 
             // description close 
             var descriptionWidth = $('.timeline .description').outerWidth();
