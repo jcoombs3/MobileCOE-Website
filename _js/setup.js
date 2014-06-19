@@ -237,10 +237,7 @@ function setup(el){
 
             var nameWidth = $('.meet-the-team .name table').outerWidth();
             TweenMax.to($('.meet-the-team .name table'), 0, {width:nameWidth + 'px'});
-
-            var nameMar = $('.meet-the-team .name').outerWidth()/2;
-
-            TweenMax.to($('.meet-the-team .name'), 0, {marginLeft:nameMar + 'px', width: '0px'});
+            TweenMax.to($('.meet-the-team .name'), 0, {marginLeft:nameWidth + 'px', width: '0px'});
 
             TweenMax.to($('.meet-the-team .post'), 0, 
                 {   height:postHeight + 'px',

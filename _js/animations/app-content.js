@@ -195,7 +195,7 @@ function loadContent() {
 		var name = $(member).find('.name');
 
 		TweenMax.to($(name).find('table'),0.1,{opacity:'0', onComplete:function(){
-			TweenMax.to($(name), 0.2, {marginLeft: $('.meet-the-team .name').outerWidth()/2 + 'px', width: '0px', onComplete:function(){
+			TweenMax.to($(name), 0.2, {marginLeft: $(post).outerWidth()/2 + 'px', width: '0px', onComplete:function(){
 				TweenMax.to($(post),0.1,{top:'0px'});
 			}});
 		}});
