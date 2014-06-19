@@ -152,7 +152,13 @@ function setup(el){
             });
             break;
         case('.timeline'):
+            if($(window).outerWidth() > 1024){
+                var tLPad = ($(window).outerWidth - 1024)/2;
+                $('.timeline ul').css('width', '1024px');
+                $('.timeline ul').css('marginLeft', tLPad + 'px');
+            }
             $('.timeline .phase .container').css('height', $('.timeline .phase .container').outerWidth()*0.15);
+
 
             // description close 
             var descriptionWidth = $('.timeline .description').outerWidth();
