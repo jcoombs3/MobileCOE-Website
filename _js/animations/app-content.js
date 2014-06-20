@@ -329,6 +329,7 @@ function roleStack(disk){
 	var kiddies = $('.timeline .meet-the-team .container').children().length;
     if(kiddies <=5){    
     	var centerChild = Math.round(kiddies/2);
+    	console.log(centerChild);
 
     	if(centerChild%2 > 0){
 			$($(li).find('.role')).each(function(i){

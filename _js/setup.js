@@ -197,13 +197,8 @@ function setup(el){
             $('.timeline li.blankSpace img').css('height', 100 + 'px');
 
             var imgXPad = ($('.blankSpace li').outerWidth() - $('.timeline li.blankSpace img').outerWidth())/2;
-            console.log($('.timeline li.blankSpace img').outerWidth()/2);
-            console.log(imgXPad);
             $('.blankSpace img').css('marginLeft', imgXPad+'px');
-
             var devicePadHeight = $('.timeline li.blankSpace img').outerHeight()/2 -$('.separator').outerHeight()/2;
-            console.log(divWidth);
-            console.log(numDevices);
             var devicePadWidth = (divWidth/4)/(numDevices +1);
 
             $('.timeline li.blankSpace li').css('marginTop', -devicePadHeight + 'px');
