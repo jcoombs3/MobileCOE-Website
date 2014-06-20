@@ -205,6 +205,10 @@ function loadContent() {
 		roleStack($(e.currentTarget));
 	});
 
+	$('#app-content .timeline .member-arrow').on('click',function(e){
+		moveMembers($(e.currentTarget));
+	});
+
 	animPowerpoints();
 	moveEverforms($('#leftEF'),1);
 	moveEverforms($('#rightEF'),-1);
@@ -363,6 +367,15 @@ function roleStack(disk){
 
 	// TweenMax.to($(member).find('.role'), 0.5, {top:'0px', ease:Back.easeOut});
 	// TweenMax.to($(member).find('.role'), 0.5, {delay:'0.1', opacity:'1'});
+}
+
+function moveMembers(arrow){
+	if($(arrow).hasClass('arrow-right')){
+		TweenMax.to($('.meet-the-team .member-mask .container'),0.5,{left:'-='+$('.member').outerWidth()+'px',ease:Back.easeInOut});
+	}
+	else {
+		TweenMax.to($('.meet-the-team .member-mask .container'),0.5,{left:'+='+$('.member').outerWidth()+'px',ease:Back.easeInOut});
+	}
 }
 
 
