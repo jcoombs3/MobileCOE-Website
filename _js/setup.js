@@ -213,8 +213,20 @@ function setup(el){
             var devicePadWidth = (divWidth/4)/(numDevices +1);
             var liPadTop = $('.timeline li.blankSpace ul').outerHeight()/2 - $('.timeline li.blankSpace li').outerHeight()/2;
 
+            var separatorWidth = $('.timeline .separator').outerWidth();
+            TweenMax.to($('.timeline .devicesDiv'),0,{left:separatorWidth - $('.timeline .devicesDiv').outerWidth() + 'px'});
+
             $('.timeline li.blankSpace ul').css('top', -devicePadHeight + 'px');
-            // $('.timeline li.blankSpace li').css('marginTop', liPadTop + 'px'); 
+
+            $('.timeline .devicesDiv img').each(function(){
+                var width = $(this).outerWidth();
+                var height = $(this).outerHeight();
+
+                var deltaX = $(this).parent().outerWidth() - width;
+                var deltaY = $(this).parent().outerHeight() - height;
+
+                TweenMax.to($(this),0,{marginLeft:deltaX/2 + 'px', marginTop:deltaY/2 + 'px'});
+            });
 
             //meet-the-team
                 // member disks
@@ -261,8 +273,6 @@ function setup(el){
                 });
 
             //devices div 
-            var separatorWidth = $('.timeline .separator').outerWidth();
-            TweenMax.to($('.timeline .devicesDiv'),0,{left:separatorWidth - $('.timeline .devicesDiv').outerWidth() + 'px'});
 
             //app-store box 
             var appBoxHeight = $('.timeline .app-box').outerHeight();
