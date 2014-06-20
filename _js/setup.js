@@ -213,7 +213,7 @@ function setup(el){
             var devicePadWidth = (divWidth/4)/(numDevices +1);
             var liPadTop = $('.timeline li.blankSpace ul').outerHeight()/2 - $('.timeline li.blankSpace li').outerHeight()/2;
 
-            $('.timeline li.blankSpace ul').css('marginTop', -devicePadHeight + 'px');
+            $('.timeline li.blankSpace ul').css('top', -devicePadHeight + 'px');
             // $('.timeline li.blankSpace li').css('marginTop', liPadTop + 'px'); 
 
             //meet-the-team
