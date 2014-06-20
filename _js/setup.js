@@ -203,16 +203,18 @@ function setup(el){
             var divWidth = $('.separator').outerWidth()*0.33;
             var numDevices = $('.blankSpace .devicesDiv').children().length;
             var device = $('.blankSpace').outerWidth()*0.33*0.25;
-            $('.timeline li.blankSpace img').css('height', 100 + 'px');
+            var devULHeight = $('.separator').outerHeight()*5;
+            $('.timeline li.blankSpace ul').css('height', devULHeight + 'px');
 
+            console.log($('.timeline li.blankSpace ul').children.length);
             var imgXPad = ($('.blankSpace li').outerWidth() - $('.timeline li.blankSpace img').outerWidth())/2;
             $('.blankSpace img').css('marginLeft', imgXPad+'px');
-            var devicePadHeight = $('.timeline li.blankSpace img').outerHeight()/2 -$('.separator').outerHeight()/2;
+            var devicePadHeight = $('.timeline li.blankSpace ul').outerHeight()/2 - $('.separator').outerHeight()/2;
             var devicePadWidth = (divWidth/4)/(numDevices +1);
+            var liPadTop = $('.timeline li.blankSpace ul').outerHeight()/2 - $('.timeline li.blankSpace li').outerHeight()/2;
 
-            $('.timeline li.blankSpace li').css('marginTop', -devicePadHeight + 'px');
-            //$('.timeline li.blankSpace li').css('marginLeft', devicePadWidth + 'px');
-
+            $('.timeline li.blankSpace ul').css('marginTop', -devicePadHeight + 'px');
+            // $('.timeline li.blankSpace li').css('marginTop', liPadTop + 'px'); 
 
             //meet-the-team
                 // member disks
