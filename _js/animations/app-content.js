@@ -327,20 +327,39 @@ function roleStack(disk){
 	TweenMax.to($(li).find('.role'), 0, {top:'-'+$(disk).outerHeight()/2 + 'px', opacity:'0'});
 
 	var kiddies = $('.timeline .meet-the-team .container').children().length;
-    if(kiddies <=5){    
-    	var centerChild = Math.round(kiddies/2);
-    	console.log(centerChild);
+	var center = kiddies/2;
+	var centerAbs = Math.round(center); 
 
-    	if(centerChild%2 > 0){
-			$($(li).find('.role')).each(function(i){
-				var sep = Math.abs((centerChild-1) - i);
-				var delay = delayOffset * sep;
+	if(centerAbs > center && kiddies <= 5){
+		center -= 0.5;
+		$($(li).find('.role')).each(function(i){
+			var sep = Math.abs( center - i );
+			var delay = delayOffset * sep;
 
-				TweenMax.to($(this),0.5, {delay:delay, top:'0px', ease:Back.easeOut});
-				TweenMax.to($(this),0.5, {delay:delay+0.1, opacity:'1'});
-			});
-    	}
-    }
+			TweenMax.to($(this),0.5, {delay:delay, top:'0px', ease:Back.easeOut});
+			TweenMax.to($(this),0.5, {delay:delay+0.1, opacity:'1'});
+		});
+	}
+	else if (kiddies > 5) {
+		center = 2;
+		$($(li).find('.role')).each(function(i){
+			var sep = Math.abs( center - i );
+			var delay = delayOffset * sep;
+
+			TweenMax.to($(this),0.5, {delay:delay, top:'0px', ease:Back.easeOut});
+			TweenMax.to($(this),0.5, {delay:delay+0.1, opacity:'1'});
+		});
+	}
+	else {
+		center -= 0.5;
+		$($(li).find('.role')).each(function(i){
+			var sep = Math.abs( center - i );
+			var delay = delayOffset * sep;
+
+			TweenMax.to($(this),0.5, {delay:delay, top:'0px', ease:Back.easeOut});
+			TweenMax.to($(this),0.5, {delay:delay+0.1, opacity:'1'});
+		});
+	}
 
 	// TweenMax.to($(member).find('.role'), 0.5, {top:'0px', ease:Back.easeOut});
 	// TweenMax.to($(member).find('.role'), 0.5, {delay:'0.1', opacity:'1'});

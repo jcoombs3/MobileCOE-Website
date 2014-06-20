@@ -1000,7 +1000,7 @@ html, body {
 		height: 80%;
 		background: @sapient-heat;
 		position: relative;
-		border: 5px solid #B5B5B5;
+		border: 5px solid #eee;
 		.transition(all 300ms ease);
 	}
 
@@ -1037,8 +1037,8 @@ html, body {
 
 			.devicesDiv{
 				width: 33%;
-				position: absolute;
-				right: 0;
+				position: relative;
+				left:0;
 			}
 
 			img{
@@ -1046,6 +1046,26 @@ html, body {
 				max-width: 100%;
 				position: relative;
 				float: left;
+			}
+		}
+
+		&.app-store {
+			width: 100%;
+			padding:0px 10% 3%;
+
+			.app-box {
+				width:27%;
+				height:2%;
+				position:absolute;
+				right:0;
+				background:@electric-blue;
+				.gradient(#60bcdb,@electric-blue);
+				.box-shadow(1px 2px 3px 0px rgba(50, 50, 50, 0.25));
+
+				.app-store-link {
+					height:100%;
+					max-width:50%;
+				}
 			}
 		}
 		

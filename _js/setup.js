@@ -154,14 +154,13 @@ function setup(el){
         case('.timeline'):
             if($(window).outerWidth() > 1024){
                 var tLPad = ($(window).outerWidth - 1024)/2;
-                $('.timeline ul').css('width', '1024px');
-                $('.timeline ul').css('marginLeft', tLPad + 'px');
+                $('.timeline .timeline-phases').css('width', '1024px');
+                $('.timeline .timeline-phases').css('marginLeft', tLPad + 'px');
             }
             $('.timeline .phase .container').css('height', $('.timeline .phase .container').outerWidth()*0.15);
 
             //setting li padding based off nav width
             var navWidth = $('#nav').outerWidth();
-            console.log(navWidth);
             navWidth = navWidth*1.25;
             $('.timeline li').css('padding-left', navWidth+'px');
             $('.blankSpace').css('padding-left', 0);
@@ -258,6 +257,17 @@ function setup(el){
                     marginTop:postMar+'px',
                     marginLeft:postMar-postOffset+'px'
                 });
+
+            //devices div 
+            var separatorWidth = $('.timeline .separator').outerWidth();
+            TweenMax.to($('.timeline .devicesDiv'),0,{left:separatorWidth - $('.timeline .devicesDiv').outerWidth() + 'px'});
+
+            //app-store box 
+            var appBoxHeight = $('.timeline .app-box').outerHeight();
+            TweenMax.to($('.timeline .app-store-link'),0,{height:appBoxHeight*3 +'px'});
+            TweenMax.to($('.timeline .app-box'),0,{height:appBoxHeight*3 +'px'});
+            TweenMax.to($('.timeline .app-store'),0,{height:appBoxHeight*3 +'px'});
+            TweenMax.to($('.timeline .app-box'),0,{left:separatorWidth - $('.timeline .devicesDiv').outerWidth() + (imgXPad/2) + 'px', width:$('.timeline .devicesDiv').outerWidth() * .95 + 'px'});
 
             break;
 
