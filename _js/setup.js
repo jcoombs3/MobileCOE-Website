@@ -73,7 +73,7 @@ function setup(el){
             $('#app-content .title').css('height',setHeight + 'px');
             break;
         case ('.slider-section'):
-            var liWidth = Math.round($(window).outerWidth()*.20);
+            var liWidth = Math.round($(window).outerWidth()*.25);
 
             //Check for Scanner//
             if($(window).outerWidth() < 400){

@@ -904,7 +904,19 @@ html, body {
 }
 .timeline{
 	background:#eee;
+	.gradient(#eee, #dfdfdf);
 	overflow-y:auto;
+
+	.timeline-title {
+		width:30%;
+		margin:0 auto;
+		padding:5% 0px;
+
+		img {
+			width:100%;
+			margin:0 auto;
+		}
+	}
 
 	.container{
 		width: 100%;
@@ -1102,8 +1114,6 @@ html, body {
 		&.meet-the-team {
 			width: 100% - @memberContainer;
 			padding: 15 + @navDim;
-			background:#eee;
-			.gradient(#eee, #B5B5B5);
 
 			.team-title {
 				width:30%;
@@ -1184,13 +1194,6 @@ html, body {
 				}
 			}
 		}
-
-		&:first-child {
-			padding-top:10%;
-		}
-		// &:last-child {
-		// 	padding-bottom:10%;
-		// }
 	}
 }
 
