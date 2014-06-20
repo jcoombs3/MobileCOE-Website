@@ -229,7 +229,7 @@ function setup(el){
                 // member disks
             TweenMax.to($('.meet-the-team .member-mask'),0,{marginLeft:navWidth+'px',width:$(window).outerWidth()-navWidth*2 + 'px'});
             var teamWidth = $('.meet-the-team .member-mask .container').outerWidth()/5;
-            $('.meet-the-team .member-mask .container').css('height', teamWidth+'px');
+            $('.meet-the-team .member-mask .container').css('height', teamWidth + ($('.meet-the-team .role').outerHeight()*2) +'px');
             $('.meet-the-team .member-mask .member').css('width', teamWidth+'px');
             $('.meet-the-team .member-mask .memberPic').css('width', teamWidth+'px');
             $('.meet-the-team .member-mask .memberPic').css('height', teamWidth+'px');
@@ -271,7 +271,7 @@ function setup(el){
                 });
 
                 // member arrows 
-            TweenMax.to($('.meet-the-team .member-arrow'),0,{width:navWidth + 'px',height:$('.meet-the-team .member-mask').outerHeight() - navWidth + 'px'});
+            TweenMax.to($('.meet-the-team .member-arrow'),0,{width:navWidth + 'px',height:$('.meet-the-team .member-mask').outerHeight() - navWidth - $('.meet-the-team .role').outerHeight() + 'px'});
             TweenMax.to($('.meet-the-team .member-arrows'),0,{bottom:$('.meet-the-team .member-mask').outerHeight() +'px'});
 
             //app-store box 
