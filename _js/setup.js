@@ -159,6 +159,16 @@ function setup(el){
             }
             $('.timeline .phase .container').css('height', $('.timeline .phase .container').outerWidth()*0.15);
 
+            //setting li padding based off nav width
+            var navWidth = $('#nav').outerWidth();
+            console.log(navWidth);
+            navWidth = navWidth*1.25;
+            $('.timeline li').css('padding-left', navWidth+'px');
+            $('.blankSpace').css('padding-left', 0);
+            $('.blankSpace li').css('padding-left', 0);
+            $('.timeline li.meet-the-team').css('padding', navWidth+'px');
+
+
 
             // description close 
             var descriptionWidth = $('.timeline .description').outerWidth();
