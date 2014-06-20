@@ -209,6 +209,10 @@ function loadContent() {
 		moveMembers($(e.currentTarget));
 	});
 
+	$('#app-content .timeline .seperator').on('click',function(){
+		appsUnite();
+	});
+	
 	animPowerpoints();
 	moveEverforms($('#leftEF'),1);
 	moveEverforms($('#rightEF'),-1);
@@ -376,6 +380,11 @@ function moveMembers(arrow){
 	else {
 		TweenMax.to($('.meet-the-team .member-mask .container'),0.5,{left:'+='+$('.member').outerWidth()+'px',ease:Back.easeInOut});
 	}
+}
+
+
+function appsUnite(){
+
 }
 
 
