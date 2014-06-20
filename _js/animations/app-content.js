@@ -209,7 +209,7 @@ function loadContent() {
 		moveMembers($(e.currentTarget));
 	});
 
-	$('#app-content .timeline .seperator').on('click',function(){
+	$('#app-content .timeline .separator').on('click',function(){
 		appsUnite();
 	});
 	
@@ -384,7 +384,11 @@ function moveMembers(arrow){
 
 
 function appsUnite(){
+	var jump = $('li.blankSpace li').outerHeight();
+	TweenMax.staggerTo($('li.blankSpace li'), 0.3, {opacity: 1, top: -jump + 'px'}, 0.3);
 
+
+	TweenMax.staggerTo($('li.blankSpace li'), 0.3, {delay: 1.2, top: 0, opacity: 0}, 0.3);
 }
 
 
