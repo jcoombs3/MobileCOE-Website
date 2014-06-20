@@ -165,9 +165,7 @@ function setup(el){
             $('.timeline li').css('padding-left', navWidth+'px');
             $('.blankSpace').css('padding-left', 0);
             $('.blankSpace li').css('padding-left', 0);
-            $('.timeline li.meet-the-team').css('padding', navWidth+'px');
-
-
+            $('.timeline li.meet-the-team').css('padding', navWidth+'px 0px');
 
             // description close 
             var descriptionWidth = $('.timeline .description').outerWidth();
@@ -206,7 +204,6 @@ function setup(el){
             var devULHeight = $('.separator').outerHeight()*5;
             $('.timeline li.blankSpace ul').css('height', devULHeight + 'px');
 
-            console.log($('.timeline li.blankSpace ul').children.length);
             var imgXPad = ($('.blankSpace li').outerWidth() - $('.timeline li.blankSpace img').outerWidth())/2;
             $('.blankSpace img').css('marginLeft', imgXPad+'px');
             var devicePadHeight = $('.timeline li.blankSpace ul').outerHeight()/2 - $('.separator').outerHeight()/2;
@@ -230,6 +227,7 @@ function setup(el){
 
             //meet-the-team
                 // member disks
+            TweenMax.to($('.meet-the-team .member-mask'),0,{padding:navWidth+'px '+navWidth+'px 0px',width:$(window).outerWidth()-navWidth*2 + 'px'});
             var teamWidth = $('.meet-the-team .member-mask .container').outerWidth()/5;
             $('.meet-the-team .member-mask .container').css('height', teamWidth+'px');
             $('.meet-the-team .member-mask .member').css('width', teamWidth+'px');
@@ -272,7 +270,9 @@ function setup(el){
                     marginLeft:postMar-postOffset+'px'
                 });
 
-            //devices div 
+                // member arrows 
+            TweenMax.to($('.meet-the-team .member-arrow'),0,{width:navWidth + 'px'});
+            TweenMax.to($('.meet-the-team .member-arrows'),0,{height:$('.meet-the-team .member-mask').outerHeight() - navWidth + 'px',bottom:navWidth+'px'});
 
             //app-store box 
             var appBoxHeight = $('.timeline .app-box').outerHeight();

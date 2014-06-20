@@ -1161,7 +1161,7 @@ html, body {
 			.member-mask {
 				width:100%;
 				overflow: hidden;
-				padding:5% 0px;
+				padding:5% 0px 0px 0px;
 			}
 
 			.container {
@@ -1224,6 +1224,29 @@ html, body {
 						width:100%;
 						opacity:0;
 					}
+				}
+			}
+
+			.member-arrows {
+				width:100%;
+				position:absolute;
+				bottom:0;
+				//height from member-mask
+
+				.member-arrow {
+					background:@sapient-heat;
+					height:100%;
+					overflow:hidden;
+				}
+
+				.arrow-right {
+					float: right;
+					.box-shadow(-1px 0px 5px 0px rgba(50, 50, 50, 0.75));
+				}
+
+				.arrow-left {
+					float: left;
+					.box-shadow(1px 0px 5px 0px rgba(50, 50, 50, 0.75));
 				}
 			}
 		}
