@@ -177,18 +177,20 @@ function loadContent() {
 	});
 
 	$('#app-content .timeline .meet-the-team .disk').hover(function(e){
-		$(e.currentTarget).addClass('hover');
-		var member = $(e.currentTarget).parents('.member');
-		var post = $(member).find('.post');
-		var name = $(member).find('.name');
+		if(!$(e.currentTarget).hasClass('.busy')){
+			$(e.currentTarget).addClass('hover');
+			var member = $(e.currentTarget).parents('.member');
+			var post = $(member).find('.post');
+			var name = $(member).find('.name');
 
-		TweenMax.to($(post),0.1,{top:'-'+$(post).outerHeight() + 'px', onComplete:function(){
-			TweenMax.to($(name), 0.2, {marginLeft: '0px', width: '100%', onComplete:function(){
-				TweenMax.to($(name).find('table'),0.1,{opacity:'1'});
+			TweenMax.to($(post),0.1,{top:'-'+$(post).outerHeight() + 'px', onComplete:function(){
+				TweenMax.to($(name), 0.2, {marginLeft: '0px', width: '100%', onComplete:function(){
+					TweenMax.to($(name).find('table'),0.1,{opacity:'1'});
+				}});
 			}});
-		}});
-
+		}
 	},function(e){
+		$(e.currentTarget).addClass('.busy');
 		var member = $(e.currentTarget).parents('.member');
 		var post = $(member).find('.post');
 		var name = $(member).find('.name');
@@ -197,6 +199,7 @@ function loadContent() {
 			TweenMax.to($(name), 0.1, {marginLeft: $(name).outerWidth()/2 + 'px', width: '0px', onComplete:function(){
 				TweenMax.to($(post),0.1,{top:'0px'});
 				$(e.currentTarget).removeClass('hover');
+				$(e.currentTarget).removeClass('.busy');
 			}});
 		}});
 	});
@@ -378,7 +381,6 @@ var targetCenter = 3;
 
 function moveMembers(arrow){
 	var numMembers = $('.timeline li.meet-the-team .container').children().length;
-	console.log(numMembers);
 	if($(arrow).hasClass('arrow-right')){
 		if(targetCenter + 2 < numMembers){
 			TweenMax.to($('.meet-the-team .member-mask .container'),0.5,{left:'-='+$('.member').outerWidth()+'px',ease:Back.easeInOut});
