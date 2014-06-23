@@ -152,22 +152,29 @@ function setup(el){
             });
             break;
         case('.timeline'):
+            var bigScreen = false;
             if($(window).outerWidth() > 1024){
+                bigScreen = true;
+                console.log('yay');
                 var tLPad = ($(window).outerWidth - 1024)/2;
-                $('.timeline .timeline-phases').css('width', '1024px');
+                //$('.timeline .timeline-phases').css('width', '1024px');
                 $('.timeline .timeline-phases').css('marginLeft', tLPad + 'px');
-                
+                $('.timeline .phase').each(function(){
+                    $(this).css('width', 1024 + 'px');
+                    $(this).css('marginLeft', tLPad + 'px');
+                });
             }
             $('.timeline .phase .container').css('height', $('.timeline .phase .container').outerWidth()*0.15);
 
             //setting li padding based off nav width
-            var navWidth = $('#nav').outerWidth();
-            navWidth = navWidth*1.25;
-            $('.timeline li').css('padding-left', navWidth+'px');
-            $('.blankSpace').css('padding-left', 0);
-            $('.blankSpace li').css('padding-left', 0);
-            $('.timeline li.meet-the-team').css('padding', navWidth+'px 0px');
-
+            if(!bigScreen){
+                var navWidth = $('#nav').outerWidth();
+                navWidth = navWidth*1.25;
+                $('.timeline li').css('padding-left', navWidth+'px');
+                $('.blankSpace').css('padding-left', 0);
+                $('.blankSpace li').css('padding-left', 0);
+                $('.timeline li.meet-the-team').css('padding', navWidth+'px 0px');
+             }
             // description close 
             var descriptionWidth = $('.timeline .description').outerWidth();
             TweenMax.to($('.timeline .description'), 0, {width:'100%'});
