@@ -216,6 +216,7 @@ function loadContent() {
 	animPowerpoints();
 	moveEverforms($('#leftEF'),1);
 	moveEverforms($('#rightEF'),-1);
+	checkArrows($('.timeline li.meet-the-team .container').children().length);
 }
 
 function animPowerpoints() {
@@ -373,12 +374,42 @@ function roleStack(disk){
 	// TweenMax.to($(member).find('.role'), 0.5, {delay:'0.1', opacity:'1'});
 }
 
+var targetCenter = 3;
+
 function moveMembers(arrow){
+	var numMembers = $('.timeline li.meet-the-team .container').children().length;
+	console.log(numMembers);
 	if($(arrow).hasClass('arrow-right')){
-		TweenMax.to($('.meet-the-team .member-mask .container'),0.5,{left:'-='+$('.member').outerWidth()+'px',ease:Back.easeInOut});
+		if(targetCenter + 2 < numMembers){
+			TweenMax.to($('.meet-the-team .member-mask .container'),0.5,{left:'-='+$('.member').outerWidth()+'px',ease:Back.easeInOut});
+			targetCenter++;
+		}
 	}
 	else {
-		TweenMax.to($('.meet-the-team .member-mask .container'),0.5,{left:'+='+$('.member').outerWidth()+'px',ease:Back.easeInOut});
+		if(targetCenter - 2 > 1){
+			TweenMax.to($('.meet-the-team .member-mask .container'),0.5,{left:'+='+$('.member').outerWidth()+'px',ease:Back.easeInOut});
+			targetCenter--;
+		}
+	}
+	checkArrows(numMembers);
+}
+
+function checkArrows(numMembers){
+	var leftArr = $('.timeline li.meet-the-team .member-arrows .arrow-left');
+	var rightArr = $('.timeline li.meet-the-team .member-arrows .arrow-right');
+	//left arrow check
+	if(targetCenter-2 == 1){
+		TweenMax.to($(leftArr), 0.5, {opacity: 0});
+	}
+	else{
+		TweenMax.to($(leftArr), 0.5, {opacity: 1});
+	}
+
+	if(targetCenter+2 == numMembers){
+		TweenMax.to($(rightArr), 0.5, {opacity: 0});
+	}
+	else{
+		TweenMax.to($(rightArr), 0.5, {opacity: 1});
 	}
 }
 
