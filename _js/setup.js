@@ -156,6 +156,7 @@ function setup(el){
                 var tLPad = ($(window).outerWidth - 1024)/2;
                 $('.timeline .timeline-phases').css('width', '1024px');
                 $('.timeline .timeline-phases').css('marginLeft', tLPad + 'px');
+                
             }
             $('.timeline .phase .container').css('height', $('.timeline .phase .container').outerWidth()*0.15);
 

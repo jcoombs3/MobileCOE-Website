@@ -384,11 +384,11 @@ function moveMembers(arrow){
 
 
 function appsUnite(){
-	var jump = $('li.blankSpace li').outerHeight();
-	TweenMax.staggerTo($('li.blankSpace li'), 0.3, {opacity: 1, top: -jump + 'px'}, 0.3);
-
-
-	TweenMax.staggerTo($('li.blankSpace li'), 0.3, {delay: 1.2, top: 0, opacity: 0}, 0.3);
+	TweenMax.to($('li.blankSpace li'), 0, {opacity: 0, left:'+=' + 25 + 'px'});
+	var jump = $('li.blankSpace ul').outerHeight()*3/4;
+	TweenMax.to($('li.blankSpace li'), 1.2, {left: 0});
+	TweenMax.staggerTo($('li.blankSpace li'), 0.5, {opacity: 1, top: -jump + 'px', ease:Power1.easeOut}, 0.1);
+	TweenMax.staggerTo($('li.blankSpace li'), 0.5, {delay: 0.5, top: 0, ease:Power1.easeIn}, 0.1);
 }
 
 
