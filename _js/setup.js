@@ -207,14 +207,15 @@ function setup(el){
 
             var imgXPad = ($('.blankSpace li').outerWidth() - $('.timeline li.blankSpace img').outerWidth())/2;
             $('.blankSpace img').css('marginLeft', imgXPad+'px');
-            var devicePadHeight = $('.timeline li.blankSpace ul').outerHeight()/2 - $('.separator').outerHeight()/2;
+            // var devicePadHeight = $('.timeline li.blankSpace ul').outerHeight()/2 - $('.separator').outerHeight()/2;
             var devicePadWidth = (divWidth/4)/(numDevices +1);
             var liPadTop = $('.timeline li.blankSpace ul').outerHeight()/2 - $('.timeline li.blankSpace li').outerHeight()/2;
 
             var separatorWidth = $('.timeline .separator').outerWidth();
-            TweenMax.to($('.timeline .devicesDiv'),0,{left:separatorWidth - $('.timeline .devicesDiv').outerWidth() + 'px'});
+            TweenMax.to($('.timeline .devicesDiv'),0,{left:separatorWidth - $('.timeline .devicesDiv').outerWidth() + 'px', top:'-' + $('.devicesDiv').outerHeight() + 'px'});
+            TweenMax.to($('.timeline .devicesDiv ul'),0,{top: ($('.devicesDiv').outerHeight() + $('.separator').outerHeight()) + 'px'});            
 
-            $('.timeline li.blankSpace ul').css('top', -devicePadHeight + 'px');
+            // $('.timeline li.blankSpace ul').css('top', -devicePadHeight + 'px');
 
             $('.timeline .devicesDiv img').each(function(){
                 var width = $(this).outerWidth();
