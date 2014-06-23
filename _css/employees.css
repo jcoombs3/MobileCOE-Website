@@ -1,24 +1,2 @@
-.alli-shepard .disk {
-  background: url(../_img/sapient-employees/Alli_Shepard.jpg) 0px 0px no-repeat;
-  background-size: 100%;
-}
-.aram-yang .disk {
-  background: url(../_img/sapient-employees/Aram_Yang.jpg) 0px 0px no-repeat;
-  background-size: 100%;
-}
-.ashton-grosz .disk {
-  background: url(../_img/sapient-employees/Ashton_Grosz.jpg) 0px 0px no-repeat;
-  background-size: 100%;
-}
-.brian-davidoff .disk {
-  background: url(../_img/sapient-employees/Brian_Daviadoff.jpg) 0px 0px no-repeat;
-  background-size: 100%;
-}
-.jon-mittelbronn .disk {
-  background: url(../_img/sapient-employees/Jon_Mittelbronn.jpg) 0px 0px no-repeat;
-  background-size: 100%;
-}
-.michael-leonard .disk {
-  background: url(../_img/sapient-employees/Michael_Leonard.jpg) 0px 0px no-repeat;
-  background-size: 100%;
-}
+.alli-shepard .disk{background:url(../_img/sapient-employees/Alli_Shepard.jpg) 0 0 no-repeat;background-size:100%}.aram-yang .disk{background:url(../_img/sapient-employees/Aram_Yang.jpg) 0 0 no-repeat;background-size:100%}.ashton-grosz .disk{background:url(../_img/sapient-employees/Ashton_Grosz.jpg) 0 0 no-repeat;background-size:100%}.brian-davidoff .disk{background:url(../_img/sapient-employees/Brian_Daviadoff.jpg) 0 0 no-repeat;background-size:100%}.brian-davidoff .disk:hover{background:url(../_img/sapient-employees/Brian_Daviadoff-clown.jpg) 0 0 no-repeat}.jon-mittelbronn .disk{background:url(../_img/sapient-employees/Jon_Mittelbronn.jpg) 0 0 no-repeat;background-size:100%}.michael-leonard .disk{background:url(../_img/sapient-employees/Michael_Leonard.jpg) 0 0 no-repeat;background-size:100%}
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

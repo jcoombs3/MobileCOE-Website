@@ -385,12 +385,12 @@ function moveMembers(arrow){
 
 function appsUnite(){
 	TweenMax.to($('li.blankSpace li'), 0, {left:'+=' + 25 + 'px', top: 0});
-	TweenMax.to($('li.blankSpace .devicesDiv'), 0, {overflow: 'hidden'});
+	TweenMax.to($('li.blankSpace .devicesDiv'), 0, {overflow: 'hidden', height: 'auto'});
 	var jump = $('li.blankSpace ul').outerHeight()*5/4;
 	var land = $('li.blankSpace ul').outerHeight()/2 + $('.separator').outerHeight()/2;
 	TweenMax.to($('li.blankSpace li'), 1.2, {left: 0});
 	TweenMax.staggerTo($('li.blankSpace li'), 0.5, {opacity: 1, top: -jump + 'px', ease:Power1.easeOut}, 0.1);
-	TweenMax.to($('li.blankSpace .devicesDiv'), 0, {delay: 0.6, overflow: 'visible'});
+	TweenMax.to($('li.blankSpace .devicesDiv'), 0, {delay: 0.6, overflow: 'visible', height:'0px'});
 	TweenMax.staggerTo($('li.blankSpace li'), 0.5, {delay: 0.5, top:  -land + 'px' , ease:Power1.easeIn}, 0.1);
 }
 
