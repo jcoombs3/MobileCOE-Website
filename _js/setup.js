@@ -153,8 +153,14 @@ function setup(el){
             break;
 
         case('.carousel'):
-            var folderDim = $('.carousel').outerWidth()/3;
-            console.log(folderDim);
+            var navWidth = $('#nav').outerWidth();
+            navWidth = navWidth*1.25;
+            $('.carousel').css('paddingLeft', navWidth + 'px');
+            var foldersWidth = $('.carousel').outerWidth() - navWidth*3;
+            var folderDim = foldersWidth/3;
+            console.log($('.carousel').outerWidth());
+            console.log(foldersWidth);
+            console.log(folderDim); 
             TweenMax.to($('.carousel'), 0, {height: folderDim*2 + 'px'});
             TweenMax.to($('.carousel .folder'), 0, {height:folderDim+'px', width:folderDim+'px'});
             break;
