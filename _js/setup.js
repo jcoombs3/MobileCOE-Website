@@ -298,6 +298,7 @@ function setup(el){
             $('.itunes').css('backgroundSize', bgSize + '%');
             $('.kindle').css('backgroundSize', bgSize + '%');
             $('.googlePlay').css('backgroundSize', bgSize + '%');
+            $('.app-store-link h6').css('top', bgSize + '%');
 
             TweenMax.to($('.timeline .app-box'),0,{height:appBoxHeight*4.25 +'px'});
             TweenMax.to($('.timeline .app-store'),0,{height:appBoxHeight*3 +'px'});
