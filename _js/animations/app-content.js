@@ -85,6 +85,7 @@ function loadContent() {
 	setup('.halfsies.img');
 	setup('.powerpoint');
 	setup('.timeline');
+    setup('.carousel')
 
 
 	$('#app-content .title .arrow').on('click', function(e){
