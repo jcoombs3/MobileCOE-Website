@@ -4,6 +4,7 @@ $(window).load(function(){
     setup('#ribbon');
 	setup('#devices');
 	setup('#projects');
+    setup('#carousel')
 
 	//setup('.progress-bar');
 });
@@ -151,6 +152,14 @@ function setup(el){
                 });
             });
             break;
+
+        case('#carousel'):
+            var folderDim = $('.block').outerWidth()/3;
+            console.log(folderDim);
+            TweenMax.to($('.carousel'), 0, {height: folderDim*2 + 'px'});
+            TweenMax.to($('.carousel .folder'), 0, {height:folderDim+'px', width:folderDim+'px'});
+            break;
+
         case('.timeline'):
             var bigScreen = false;
             if($(window).outerWidth() > 1024){
