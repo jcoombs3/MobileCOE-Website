@@ -153,7 +153,7 @@ function setup(el){
             break;
 
         case('.carousel'):
-            var folderDim = $(window).outerWidth()/3;
+            var folderDim = $('.carousel').outerWidth()/3;
             console.log(folderDim);
             TweenMax.to($('.carousel'), 0, {height: folderDim*2 + 'px'});
             TweenMax.to($('.carousel .folder'), 0, {height:folderDim+'px', width:folderDim+'px'});
