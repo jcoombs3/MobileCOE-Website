@@ -215,6 +215,24 @@ function loadContent() {
 	$('#app-content .timeline .separator').on('click',function(){
 		appsUnite();
 	});
+
+
+	/* carousel function */
+	$('#app-content .carousel .folder').on('click',function(e){
+		var snippet = $(e.currentTarget).find('.snippet');
+		TweenMax.to($(snippet),0.5,{bottom:'90%'});
+	});
+
+	$('#app-content .carousel .folder').hover(function(e){
+		var snippet = $(e.currentTarget).find('.snippet');
+		TweenMax.to($(snippet),0.5,{bottom:'90%'});
+	},function(e){
+		var snippet = $(e.currentTarget).find('.snippet');
+		TweenMax.to($(snippet),0.5,{bottom:'10%'});
+	});
+	/* ------------------- */ 
+
+
 	
 	animPowerpoints();
 	checkArrows($('.timeline li.meet-the-team .container').children().length);
