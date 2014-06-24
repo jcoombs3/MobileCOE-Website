@@ -222,8 +222,6 @@ function setup(el){
             TweenMax.to($('.timeline .devicesDiv'),0,{left:separatorWidth - $('.timeline .devicesDiv').outerWidth() + 'px', top:'-' + $('.devicesDiv').outerHeight() + 'px'});
             TweenMax.to($('.timeline .devicesDiv ul'),0,{top: ($('.devicesDiv').outerHeight() + $('.separator').outerHeight()) + 'px'});            
 
-            // $('.timeline li.blankSpace ul').css('top', -devicePadHeight + 'px');
-
             $('.timeline .devicesDiv img').each(function(){
                 var width = $(this).outerWidth();
                 var height = $(this).outerHeight();
@@ -292,6 +290,20 @@ function setup(el){
             TweenMax.to($('.timeline .app-store'),0,{height:appBoxHeight*3 +'px'});
             TweenMax.to($('.timeline .app-box'),0,{left:separatorWidth - $('.timeline .devicesDiv').outerWidth() + (imgXPad/2) + 'px', width:$('.timeline .devicesDiv').outerWidth() * .95 + 'px'});
 
+            var numApps = $('.app-box').children().length;
+            var appStoreWidth = $('.app-box').outerWidth();
+            var iconWidth = appStoreWidth/numApps;
+            var bgSize = (appBoxHeight*3/iconWidth)*100;
+
+            $('.app-store-link').css('width', iconWidth + 'px');
+            $('.itunes').css('backgroundSize', bgSize + '%');
+            $('.kindle').css('backgroundSize', bgSize + '%');
+            $('.googlePlay').css('backgroundSize', bgSize + '%');
+
+            TweenMax.to($('.timeline .app-box'),0,{height:appBoxHeight*4.25 +'px'});
+            TweenMax.to($('.timeline .app-store'),0,{height:appBoxHeight*3 +'px'});
+            TweenMax.to($('.timeline .app-store-link'),0,{height:appBoxHeight*4.25 +'px', top:appBoxHeight*4.25*4/100 +'%'});
+            $('.app-store app-box').css('padding-top', 2+'%');
             break;
 
 
