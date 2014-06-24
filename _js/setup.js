@@ -234,6 +234,8 @@ function setup(el){
                 TweenMax.to($(this),0,{marginLeft:deltaX/2 + 'px', marginTop:deltaY/2 + 'px'});
             });
 
+            TweenMax.to($('.timeline .devicesDiv'),0,{height:'0px'});
+
             //meet-the-team
                 // member disks
             TweenMax.to($('.meet-the-team .member-mask'),0,{marginLeft:navWidth+'px',width:$(window).outerWidth()-navWidth*2 + 'px'});

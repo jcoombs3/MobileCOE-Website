@@ -217,8 +217,6 @@ function loadContent() {
 	});
 	
 	animPowerpoints();
-	moveEverforms($('#leftEF'),1);
-	moveEverforms($('#rightEF'),-1);
 	checkArrows($('.timeline li.meet-the-team .container').children().length);
 }
 
@@ -287,20 +285,6 @@ function slideAnimation(animSlide) {
 
 }
 
-//everform movement over non-focused slideshow images
-function moveEverforms($item, direction) {
-	var height = $item.height()/4.0*direction;
-	var width = $item.width()/4.0*direction;
-	TweenMax.to($item, 45, {
-		marginTop: height+'px',
-		marginLeft: width + 'px',
-		onComplete: function() {
-			moveEverforms($item, direction*-1)
-
-	}});
-
-}
-
 function toggleTimeline(li){
 	var disk = $(li).find('.disk');
 	var description = $(li).find('.description');
@@ -314,14 +298,14 @@ function toggleTimeline(li){
     var deltaX = ( $('.timeline .details').outerWidth() / 2) + ( ($('.timeline .details').outerWidth() / 2) - detailX - detailMar);
 
 	if($(li).hasClass('expanded')){
-		TweenMax.to($(disk), 0.3, {borderRadius: '50%'});
+		TweenMax.to($(disk), 0.3, {borderRadius: '50%', borderColor: '#eeeeee'});
 		TweenMax.to($(description), 0, {delay: '0.2', width:'100%'});
 		$(li).removeClass('expanded');
 		TweenMax.to($(box), 0.3, {marginLeft: '0px'});
 		TweenMax.to($(box), 0.1, {opacity: 0});
 	}
 	else{
-		TweenMax.to($(disk), 0.3, {borderRadius: '25%'});
+		TweenMax.to($(disk), 0.3, {borderRadius: '25%', borderColor: '#1d1d1d'});
 		TweenMax.to($(box), 0.3, {delay: 1.0, marginLeft: deltaX + 'px'});
 		TweenMax.to($(box), 0.2, {delay: 1.1, opacity: 1});
 		$(li).addClass('expanded');
