@@ -287,7 +287,7 @@ function setup(el){
             var appBoxHeight = $('.timeline .app-box').outerHeight();
             TweenMax.to($('.timeline .app-store-link'),0,{height:appBoxHeight*3 +'px'});
             TweenMax.to($('.timeline .app-box'),0,{height:appBoxHeight*3 +'px'});
-            TweenMax.to($('.timeline .app-store'),0,{height:appBoxHeight*3 +'px'});
+            //TweenMax.to($('.timeline .app-store'),0,{height:appBoxHeight*3 +'px'});
             TweenMax.to($('.timeline .app-box'),0,{left:separatorWidth - $('.timeline .devicesDiv').outerWidth() + (imgXPad/2) + 'px', width:$('.timeline .devicesDiv').outerWidth() * .95 + 'px'});
 
             var numApps = $('.app-box').children().length;
@@ -302,9 +302,9 @@ function setup(el){
             $('.app-store-link h6').css('top', bgSize + '%');
 
             TweenMax.to($('.timeline .app-box'),0,{height:appBoxHeight*4.25 +'px'});
-            TweenMax.to($('.timeline .app-store'),0,{height:appBoxHeight*3 +'px'});
             TweenMax.to($('.timeline .app-store-link'),0,{height:appBoxHeight*4.25 +'px', top:appBoxHeight*4.25*4/100 +'%'});
             $('.app-store app-box').css('padding-top', 2+'%');
+            TweenMax.to($('.timeline .app-store'),0,{height:$('.timeline .app-box').outerHeight() +'px'});
             break;
 
 
