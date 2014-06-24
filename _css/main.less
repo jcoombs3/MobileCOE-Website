@@ -480,10 +480,11 @@ html, body {
 
 	.shadow{
 		overflow: hidden;
+		
 		.EF{
 			width: 100%;
 			position:absolute;
-	}
+		}
 
 	}
 
@@ -492,6 +493,7 @@ html, body {
 	.title {
 		padding-top:@devicesHeight;
 		margin-bottom:0;
+		z-index:50;
 		/*set height through jquery*/
 
 		.app-icon {
@@ -921,6 +923,10 @@ html, body {
 		img {
 			width:100%;
 			margin:0 auto;
+		}
+
+		&.phone {
+			display:none;
 		}
 	}
 
@@ -1447,6 +1453,23 @@ html, body {
 			.sub-info {
 				display:none;
 			}
+		}
+	}
+
+	.timeline {
+
+		.timeline-title {
+			&.non-phone {
+				display:none;
+			}
+
+			&.phone {
+				display:block;
+			}
+		}
+
+		.phase {
+			display:none;
 		}
 	}
 
