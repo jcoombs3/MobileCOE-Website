@@ -178,6 +178,7 @@ function loadContent() {
 	});
 
 	$('#app-content .timeline .meet-the-team .disk').hover(function(e){
+		console.log($(e.currentTarget).hasClass('.busy'));
 		if(!$(e.currentTarget).hasClass('.busy')){
 			$(e.currentTarget).addClass('hover');
 			var member = $(e.currentTarget).parents('.member');
@@ -239,10 +240,13 @@ function loadContent() {
 	});
 
 	$('#app-content .carousel .large-image').on('click',function(e){
-		tileFlow();
+		if(!$(e.currentTarget).hasClass('busy')){
+			tileFlow();
+		}
 	});
 	
 	function tileFlow(){
+		$('.carousel .large-image').addClass('busy');
 		$('.tile').css('opacity', 1);
 		console.log("iniatiating tiles");
 		var rowTracker=0;
@@ -261,6 +265,8 @@ function loadContent() {
 			rowDelay+=0.0625;
 			rowTracker++;
 		});
+		window.setTimeout(function(){$('.carousel .large-image').removeClass('busy')}, 4000);
+		
 	}
 	/* ------------------- */ 
 
