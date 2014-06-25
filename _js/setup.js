@@ -161,6 +161,7 @@ function setup(el){
             var folderDim = foldersWidth/3;
             TweenMax.to($('.carousel'), 0, {height: folderDim*2 + 'px'});
             TweenMax.to($('.carousel .folder'), 0, {height:folderDim+'px', width:folderDim+'px'});
+            TweenMax.to($('.carousel .inspect-image'), 0, {height:folderDim*2+'px', width:folderDim*3+'px'});
             break;
 
         case('.timeline'):
