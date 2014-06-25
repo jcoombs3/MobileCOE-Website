@@ -327,13 +327,18 @@ function setup(el){
 }
 
 function loadTiles(){
+    var tileWidth = $('.carousel .tile').outerWidth();
+    var tileBorder = parseInt($('.carousel .tile').css('border-width'));
+    TweenMax.to($('.carousel .tile'),0,{width:tileWidth-(tileBorder*4), height:tileWidth-(tileBorder*4)});
+    TweenMax.to($('.carousel .tiles'),0,{width:$('.carousel .tiles').outerWidth()+1});
+
     var rowTracker=0;
     var rowDelay = 0;
     var randArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     $('.tile-row').each(function(){
         var colTracker = 0;
         $($(this).find('.tile')).each(function(){
-            TweenMax.to($(this),0.5,{rotationX:"+=720deg", delay:randArray[colTracker]+rowDelay});
+            TweenMax.to($(this),0.5,{rotationX:"+=720deg"});
             colTracker++;
         });
     });

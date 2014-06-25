@@ -178,7 +178,6 @@ function loadContent() {
 	});
 
 	$('#app-content .timeline .meet-the-team .disk').hover(function(e){
-		console.log($(e.currentTarget).hasClass('.busy'));
 		if(!$(e.currentTarget).hasClass('.busy')){
 			$(e.currentTarget).addClass('hover');
 			var member = $(e.currentTarget).parents('.member');
@@ -248,7 +247,6 @@ function loadContent() {
 	function tileFlow(){
 		$('.carousel .large-image').addClass('busy');
 		$('.tile').css('opacity', 1);
-		console.log("iniatiating tiles");
 		var rowTracker=0;
 		var rowDelay = 0;
 		var randArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
