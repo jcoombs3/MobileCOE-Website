@@ -912,6 +912,18 @@ html, body {
 }
 
 
+img.placeholder {
+
+	&.x-fill {
+		width:100%;
+	}
+
+	&.fill {
+		width:100%;
+		height:100%;
+	}
+}
+
 
 .carousel {
 
@@ -935,9 +947,10 @@ html, body {
 			width:100%;
 			height:90%;
 			border:2px solid #322e2e;
+			color:@aluminum-gray;
 
 			.container {
-				padding:2%;
+				padding:5%;
 			}
 		}
 	}
@@ -962,6 +975,8 @@ html, body {
 				width:100%;
 				height:5%;
 				background:@electric-blue;
+				position:relative;
+				top:-100%;
 			}
 
 			.tiles {
@@ -977,6 +992,16 @@ html, body {
 
 				&:nth-of-type(2n-1) {
 					.gradient(@sapient-heat,#a13838);
+				}
+			}
+
+			.image-content {
+				float: left;
+				width:100%;
+				height:100%;
+
+				.container {
+					padding:3%;
 				}
 			}
 		}

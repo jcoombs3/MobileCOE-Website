@@ -220,15 +220,14 @@ function loadContent() {
 
 	/* carousel function */
 	$('#app-content .carousel .folder').on('click',function(e){
-		var target = $(e.currentTarget);
-		var parent = $(target).parents('.carousel');
-		$(target).addClass('selected');
+		var parent = $(e.currentTarget).parents('.carousel');
 
-		$(parent).find('.folder').each(function(){
-			if(!($(this).hasClass('selected'))){
-				TweenMax.to($(this),0.5,{opacity:'0'});
-			}
+		$($(parent).find('.folder')).each(function(){
+			var delayFolder = Math.random() * 0.3;
+
+			TweenMax.to($(this),0.5,{x:'+='+$(window).outerWidth()+'px', delay:delayFolder});
 		});
+
 	});
 
 	$('#app-content .carousel .folder').hover(function(e){
