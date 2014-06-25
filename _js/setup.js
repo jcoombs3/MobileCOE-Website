@@ -162,6 +162,7 @@ function setup(el){
             TweenMax.to($('.carousel'), 0, {height: folderDim*2 + 'px'});
             TweenMax.to($('.carousel .folder'), 0, {height:folderDim+'px', width:folderDim+'px'});
             TweenMax.to($('.carousel .inspect-image'), 0, {height:folderDim*2+'px', width:folderDim*3+'px'});
+            loadTiles();
             break;
 
         case('.timeline'):
@@ -323,4 +324,18 @@ function setup(el){
 
     }
 
+}
+
+function loadTiles(){
+    var rowTracker=0;
+    var rowDelay = 0;
+    var randArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    $('.tile-row').each(function(){
+        var colTracker = 0;
+        $($(this).find('.tile')).each(function(){
+            TweenMax.to($(this),0.5,{rotationX:"+=720deg", delay:randArray[colTracker]+rowDelay});
+            colTracker++;
+        });
+    });
+    
 }

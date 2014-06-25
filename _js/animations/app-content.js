@@ -239,22 +239,29 @@ function loadContent() {
 	});
 
 	$('#app-content .carousel .large-image').on('click',function(e){
-		console.log("iniatiating tiles");
-
-		var rowDelay = 0;
-		$('.tile-row').each(function(){
-			$($(this).find('.tile')).each(function(){
-				var tileDelay = Math.random() * 1;
-
-				TweenMax.to($(this),2,{rotationX:"+=720deg", delay:tileDelay+rowDelay});
-
-				TweenMax.to($(this),0.5,{opacity:'0',delay:tileDelay+rowDelay+2});
-			});
-			rowDelay+=0.25;
-		});
-
-
+		tileFlow();
 	});
+	
+	function tileFlow(){
+		$('.tile').css('opacity', 1);
+		console.log("iniatiating tiles");
+		var rowTracker=0;
+		var rowDelay = 0;
+		var randArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		$('.tile-row').each(function(){
+			var colTracker = 0;
+			$($(this).find('.tile')).each(function(){
+				if(rowTracker==0){
+					randArray[colTracker] = Math.random() * 1;
+				}
+				TweenMax.to($(this),1,{rotationX:"+=720deg", delay:randArray[colTracker]+rowDelay});
+				TweenMax.to($(this),0.5,{opacity:'0',delay:randArray[colTracker]+rowDelay+0.5});
+				colTracker++;
+			});
+			rowDelay+=0.0625;
+			rowTracker++;
+		});
+	}
 	/* ------------------- */ 
 
 
