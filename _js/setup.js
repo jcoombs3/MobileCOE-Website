@@ -342,5 +342,7 @@ function loadTiles(){
             colTracker++;
         });
     });
+    var carouselDistance = $('.carousel .inspect-image').outerWidth() + $('#nav').outerWidth()*1.25;
+    TweenMax.to($('.carousel .inspect-image'), 0, {left: '-=' + carouselDistance+ 'px'});
     
 }
