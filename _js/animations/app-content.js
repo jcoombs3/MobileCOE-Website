@@ -238,6 +238,24 @@ function loadContent() {
 		var snippet = $(e.currentTarget).find('.snippet');
 		TweenMax.to($(snippet),0.3,{bottom:'10%'});
 	});
+
+	$('#app-content .carousel .large-image').on('click',function(e){
+		console.log("iniatiating tiles");
+
+		var rowDelay = 0;
+		$('.tile-row').each(function(){
+			$($(this).find('.tile')).each(function(){
+				var tileDelay = Math.random() * 1;
+
+				TweenMax.to($(this),2,{rotationX:"+=720deg", delay:tileDelay+rowDelay});
+
+				TweenMax.to($(this),0.5,{opacity:'0',delay:tileDelay+rowDelay+2});
+			});
+			rowDelay+=0.25;
+		});
+
+
+	});
 	/* ------------------- */ 
 
 
