@@ -389,11 +389,9 @@ function toggleFolder(state){
 		case 'img-view':
 			break;
 		case 'folders':
-				TweenMax.staggerTo($('.carousel .folder'), 0.4, {left: -$('.carousel').outerWidth()+'px', ease: Back.easeIn, 
-					onComplete: function(){
-						TweenMax.to($('.carousel .inspect-image'), 0.5, {left: $('#nav').outerWidth()*1.25 + 'px', ease: Back.easeOut});
-					}}, 0.02);
-				window.setTimeout(function(){tileFlow()}, 750);
+				TweenMax.staggerTo($('.carousel .folder'), 0.4, {left: -$('.carousel').outerWidth()+'px', ease: Back.easeIn}, 0.02);
+				TweenMax.to($('.carousel .inspect-image'), 0.5, {delay: 0.52, left: $('#nav').outerWidth()*1.25 + 'px', ease: Back.easeOut});
+				window.setTimeout(function(){tileFlow()}, 375);
 			break;
 	}
 }
