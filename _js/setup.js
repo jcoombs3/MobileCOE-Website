@@ -338,7 +338,7 @@ function loadTiles(){
     $('.tile-row').each(function(){
         var colTracker = 0;
         $($(this).find('.tile')).each(function(){
-            TweenMax.to($(this),0.5,{rotationX:"+=720deg"});
+            TweenMax.to($(this),0,{rotationX:"+=720deg"});
             colTracker++;
         });
     });
