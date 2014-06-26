@@ -254,15 +254,18 @@ function loadContent() {
 			var colTracker = 0;
 			$($(this).find('.tile')).each(function(){
 				if(rowTracker==0){
-					randArray[colTracker] = Math.random() * 1;
+					randArray[colTracker] = Math.random() * 0.7;
 				}
 				TweenMax.to($(this),1,{rotationX:"+=720deg", delay:randArray[colTracker]+rowDelay});
-				TweenMax.to($(this),0.5,{opacity:'0',delay:randArray[colTracker]+rowDelay+0.5});
+				TweenMax.to($(this),0.5,{opacity:'0',delay:randArray[colTracker]+rowDelay+0.3});
 				colTracker++;
 			});
-			rowDelay+=0.0625;
+			rowDelay+=0.0275;
 			rowTracker++;
 		});
+
+    	TweenMax.staggerFrom($('.carousel .image-content p'),0.8,{opacity:'0',delay:0.6});
+
 		window.setTimeout(function(){$('.carousel .large-image').removeClass('busy')}, 4000);
 		
 	}
