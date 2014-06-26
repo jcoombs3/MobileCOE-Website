@@ -69,13 +69,10 @@ function stackDeck(li) {
 		else{
 			aniAttr.onComplete = function(){
 			 	TweenMax.to($('#app-content'),.25,{opacity:'1', onComplete:function(){
-			 		TweenMax.to($('#app-content'),0.5,{height:$(window).outerHeight() - $('#ribbon').outerHeight() + 'px'});
 			 		loadContent();
 			 	}});
 			};
 		}
-
-		setup('#app-content');
 
 		TweenMax.to($(this), .2, aniAttr);
 	});
