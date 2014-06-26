@@ -393,6 +393,7 @@ function toggleFolder(state){
 					onComplete: function(){
 						TweenMax.to($('.carousel .inspect-image'), 0.5, {left: $('#nav').outerWidth()*1.25 + 'px', ease: Back.easeOut});
 					}}, 0.02);
+				window.setTimeout(function(){tileFlow()}, 1200);
 			break;
 	}
 }
