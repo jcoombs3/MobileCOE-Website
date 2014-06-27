@@ -178,11 +178,10 @@ function setup(el){
             var bigScreen = false;
             if($(window).outerWidth() > 1024){
                 bigScreen = true;
-                console.log('yay');
-                var tLPad = ($(window).outerWidth - 1024)/2;
-                //$('.timeline .timeline-phases').css('width', '1024px');
-                $('.timeline .timeline-phases').css('marginLeft', tLPad + 'px');
-                $('.timeline .phase').each(function(){
+                console.log(bigScreen);
+                var phaseWid = $('.timeline li.phase').css('padding-left');
+                var tLPad = ($(window).outerWidth() - 1024)/4;
+                $('.timeline li.phase').each(function(){
                     $(this).css('width', 1024 + 'px');
                     $(this).css('marginLeft', tLPad + 'px');
                 });
@@ -197,6 +196,9 @@ function setup(el){
                 $('.blankSpace').css('padding-left', 0);
                 $('.blankSpace li').css('padding-left', 0);
                 $('.timeline li.meet-the-team').css('padding', navWidth+'px 0px');
+             }
+             else{
+
              }
             // description close 
             var descriptionWidth = $('.timeline .description').outerWidth();
