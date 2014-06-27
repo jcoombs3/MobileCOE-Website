@@ -158,10 +158,8 @@ function loadContent() {
 		}
 	});
 
-	$('#app-content .carousel .image-content').on('click', function(e){
-		if(!$(e.currentTarget).hasClass('busy')){
+	$('.carousel .back-button').on('click', function(e){
 			toggleFolder('img-view');
-		}
 	});
 	/* ------------------- */ 
 
@@ -381,13 +379,16 @@ function tileFlow(){
 		rowTracker++;
 	});
 	window.setTimeout(function(){$('.carousel .large-image').removeClass('busy')}, 4000);
-	
+	TweenMax.to($('.carousel .back-button'), 1, {delay: 4.25, opacity: 1});
 }
 
 function toggleFolder(state){
 	switch(state){
 		case 'img-view':
-			break;
+				TweenMax.to($('.carousel .inspect-image'), 0.5, {left: -$('.carousel').outerWidth()+'px', ease: Back.easeIn});
+				TweenMax.staggerTo($('.carousel .folder'), 0.4, {delay: 0.25, left: 0, ease: Back.easeOut}, 0.02);
+				TweenMax.to($('.carousel .back-button'), 1, {opacity: 0});
+				break;
 		case 'folders':
 				TweenMax.staggerTo($('.carousel .folder'), 0.4, {left: -$('.carousel').outerWidth()+'px', ease: Back.easeIn}, 0.02);
 				TweenMax.to($('.carousel .inspect-image'), 0.5, {delay: 0.52, left: $('#nav').outerWidth()*1.25 + 'px', ease: Back.easeOut});
