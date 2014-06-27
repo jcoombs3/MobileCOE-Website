@@ -158,10 +158,8 @@ function loadContent() {
 		}
 	});
 
-	$('#app-content .carousel .image-content').on('click', function(e){
-		if(!$(e.currentTarget).hasClass('busy')){
+	$('.carousel .back-button').on('click', function(e){
 			toggleFolder('img-view');
-		}
 	});
 	/* ------------------- */ 
 
@@ -371,29 +369,30 @@ function tileFlow(){
 		var colTracker = 0;
 		$($(this).find('.tile')).each(function(){
 			if(rowTracker==0){
-				randArray[colTracker] = Math.random() * 1;
+				randArray[colTracker] = Math.random() * 0.8;
 			}
-			TweenMax.to($(this),1,{rotationX:"+=720deg", delay:randArray[colTracker]+rowDelay});
-			TweenMax.to($(this),0.5,{opacity:'0',delay:randArray[colTracker]+rowDelay+0.5});
+			TweenMax.to($(this),0.8,{rotationX:"+=720deg", delay:randArray[colTracker]+rowDelay});
+			TweenMax.to($(this),0.4,{opacity:'0',delay:randArray[colTracker]+rowDelay+0.4});
 			colTracker++;
 		});
-		rowDelay+=0.0625;
+		rowDelay+=0.05;
 		rowTracker++;
 	});
-	window.setTimeout(function(){$('.carousel .large-image').removeClass('busy')}, 4000);
-	
+	window.setTimeout(function(){$('.carousel .large-image').removeClass('busy')}, 3000);
+	TweenMax.to($('.carousel .back-button'), 0.5, {delay: 2.5, opacity: 1});
 }
 
 function toggleFolder(state){
 	switch(state){
 		case 'img-view':
-			break;
+				TweenMax.to($('.carousel .inspect-image'), 0.5, {left: -$('.carousel').outerWidth()+'px', ease: Back.easeIn});
+				TweenMax.staggerTo($('.carousel .folder'), 0.4, {delay: 0.25, left: 0, ease: Back.easeOut}, 0.02);
+				TweenMax.to($('.carousel .back-button'), 1, {opacity: 0});
+				break;
 		case 'folders':
-				TweenMax.staggerTo($('.carousel .folder'), 0.4, {left: -$('.carousel').outerWidth()+'px', ease: Back.easeIn, 
-					onComplete: function(){
-						TweenMax.to($('.carousel .inspect-image'), 0.5, {left: $('#nav').outerWidth()*1.25 + 'px', ease: Back.easeOut});
-					}}, 0.02);
-				window.setTimeout(function(){tileFlow()}, 1200);
+				TweenMax.staggerTo($('.carousel .folder'), 0.4, {left: -$('.carousel').outerWidth()+'px', ease: Back.easeIn}, 0.02);
+				TweenMax.to($('.carousel .inspect-image'), 0.5, {delay: 0.52, left: $('#nav').outerWidth()*1.25 + 'px', ease: Back.easeOut});
+				window.setTimeout(function(){tileFlow()}, 375);
 			break;
 	}
 }

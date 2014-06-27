@@ -4,7 +4,9 @@ $(window).load(function(){
     setup('#ribbon');
 	setup('#devices');
 	setup('#projects');
-
+    $('#nav ul li:nth-child(2)').on('click', function(e){
+        location.reload();
+    });
 	//setup('.progress-bar');
 });
 
@@ -162,6 +164,7 @@ function setup(el){
             TweenMax.to($('.carousel'), 0, {height: folderDim*2 + 'px'});
             TweenMax.to($('.carousel .folder'), 0, {height:folderDim+'px', width:folderDim+'px'});
             TweenMax.to($('.carousel .inspect-image'), 0, {height:folderDim*2+'px', width:folderDim*3+'px'});
+            $('.carousel .back-button').css('width', $('.carousel .back-button').outerHeight() + 'px');
             loadTiles();
             break;
 
