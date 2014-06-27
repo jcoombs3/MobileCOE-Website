@@ -97,31 +97,9 @@ function loadContent() {
 	});
 
 	$('#app-content .timeline .meet-the-team .disk').hover(function(e){
-		if(!$(e.currentTarget).hasClass('.busy')){
-			$(e.currentTarget).addClass('hover');
-			var member = $(e.currentTarget).parents('.member');
-			var post = $(member).find('.post');
-			var name = $(member).find('.name');
-
-			TweenMax.to($(post),0.1,{top:'-'+$(post).outerHeight() + 'px', onComplete:function(){
-				TweenMax.to($(name), 0.2, {marginLeft: '0px', width: '100%', onComplete:function(){
-					TweenMax.to($(name).find('table'),0.1,{opacity:'1'});
-				}});
-			}});
-		}
+		growName(e);
 	},function(e){
-		$(e.currentTarget).addClass('.busy');
-		var member = $(e.currentTarget).parents('.member');
-		var post = $(member).find('.post');
-		var name = $(member).find('.name');
-
-		TweenMax.to($(name).find('table'),0.05,{opacity:'0', onComplete:function(){
-			TweenMax.to($(name), 0.1, {marginLeft: $(name).outerWidth()/2 + 'px', width: '0px', onComplete:function(){
-				TweenMax.to($(post),0.1,{top:'0px'});
-				$(e.currentTarget).removeClass('hover');
-				$(e.currentTarget).removeClass('.busy');
-			}});
-		}});
+		shrinkName(e);
 	});
 
 	$('#app-content .timeline .meet-the-team .disk').on('click', function(e){
@@ -385,16 +363,43 @@ function tileFlow(){
 function toggleFolder(state){
 	switch(state){
 		case 'img-view':
-				TweenMax.to($('.carousel .inspect-image'), 0.5, {left: -$('.carousel').outerWidth()+'px', ease: Back.easeIn});
+				TweenMax.to($('.carousel .inspect-image'), 0.5, {left: -$('.carousel').outerWidth() + 50 +'px', ease: Back.easeIn});
 				TweenMax.staggerTo($('.carousel .folder'), 0.4, {delay: 0.25, left: 0, ease: Back.easeOut}, 0.02);
 				TweenMax.to($('.carousel .back-button'), 1, {opacity: 0});
 				break;
 		case 'folders':
-				TweenMax.staggerTo($('.carousel .folder'), 0.4, {left: -$('.carousel').outerWidth()+'px', ease: Back.easeIn}, 0.02);
+				TweenMax.staggerTo($('.carousel .folder'), 0.4, {left: -$('.carousel').outerWidth()+ 50 +'px', ease: Back.easeIn}, 0.02);
 				TweenMax.to($('.carousel .inspect-image'), 0.5, {delay: 0.52, left: $('#nav').outerWidth()*1.25 + 'px', ease: Back.easeOut});
 				window.setTimeout(function(){tileFlow()}, 375);
 			break;
 	}
+}
+function growName(e){
+		$(e.currentTarget).addClass('hover');
+		var member = $(e.currentTarget).parents('.member');
+		var post = $(member).find('.post');
+		var name = $(member).find('.name');
+
+		TweenMax.to($(post),0.1,{top:'-'+$(post).outerHeight() + 'px', onComplete:function(){
+			TweenMax.to($(name), 0.2, {marginLeft: '0px', width: '100%', onComplete:function(){
+				TweenMax.to($(name).find('table'),0.1,{opacity:'1'});
+			}});
+		}});
+}
+
+function shrinkName(e){
+	$(e.currentTarget).addClass('.busy');
+	var member = $(e.currentTarget).parents('.member');
+	var post = $(member).find('.post');
+	var name = $(member).find('.name');
+
+	TweenMax.to($(name).find('table'),0.05,{opacity:'0', onComplete:function(){
+		TweenMax.to($(name), 0.1, {marginLeft: $(name).outerWidth()/2 + 'px', width: '0px', onComplete:function(){
+			TweenMax.to($(post),0.1,{top:'0px'});
+			$(e.currentTarget).removeClass('hover');
+			$(e.currentTarget).removeClass('.busy');
+		}});
+	}});
 }
 
 
