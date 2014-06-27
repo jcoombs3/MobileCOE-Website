@@ -44,7 +44,6 @@ function setup(el){
 
             var appHeight = $('#apps li').outerHeight();
             var appWidth = Math.round(appHeight*0.5725191);
-            var appIconWidth = $('#projects .app-icon').outerWidth();
 
             //Check for Scanner//
             if($(window).outerWidth() < 400){
@@ -57,6 +56,7 @@ function setup(el){
 
             $('#apps li').css('max-width',appWidth + 'px');
             $('#apps').css('width',ulWidth + 'px');
+            var appIconWidth = $('#projects .app-icon').outerWidth() - (parseInt($('#projects .app-icon').css('border-width'))*2);
             $('#projects .app-icon').css('height', appIconWidth + 'px');
 
             /* set up hover */ 

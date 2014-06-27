@@ -58,9 +58,9 @@
 @navDim: 50px;
 @memberContainer: 30+2*@navDim;
 
-@app-li-one: @aluminum-gray;
-@app-li-two: #555555;
-@app-li-three: #888888;
+@app-li-one: #313131;
+@app-li-two: #484848;
+@app-li-three: #676767;
 
 @font-face {
   font-family: "ribbon";
@@ -401,21 +401,27 @@ html, body {
 			}
 
 			.app-icon {
-				background:@sapient-heat;
 				width:35%;
 				height:75px;
 				position: relative;
 				top:25%;
 				margin:0 auto;
+				border:5px solid @ice-white;
+				.transition(all 300ms ease);
 			}
 
 			.app-title {
-				background:@sapient-heat;
-				width:85%;
+				//background:@sapient-heat;
+				width:100%;
 				height:30px;
 				position:relative;
 				top:45%;
 				margin:0 auto;
+
+				text-align:center;
+				color:@ice-white;
+				font-size:30px;
+				.transition(all 300ms ease);
 			}
 
 			&.clicked {
@@ -427,6 +433,14 @@ html, body {
 				.overview {
 					background: @ice-white !important;
 					height: 95%;
+
+					.app-icon {
+						border:5px solid @charcoal;
+					}
+
+					.app-title {
+						color:@charcoal;
+					}
 				}
 
 			}
@@ -756,7 +770,7 @@ html, body {
 	}
 
 	p {
-		font-size:35px;
+		font-size:25px;
 		padding-left:8%;
 		padding-right:8%;
 	}
@@ -926,7 +940,8 @@ img.placeholder {
 
 
 .carousel {
-	border: 5px solid @sapient-heat;
+	background:@ice-white;
+	padding:15px 0px;
 	border-right: 0;
 	border-left: 0;
 
@@ -935,6 +950,7 @@ img.placeholder {
 		overflow:hidden;
 		float: left;
 		position: relative;
+		border:1px solid @ice-white;
 
 		.img {
 			width:100%;
@@ -988,137 +1004,129 @@ img.placeholder {
 			.tile-row {
 				width:100%;
 				height:5%;
-				background:@electric-blue;
+				background:@ice-white;
 				position:relative;
 				top:-100%;
-			}
+			
+				// &:nth-of-type(20n) {
+				// 	.tile {
+				// 		.gradient(#dfdfdf,#dedede);
+				// 	}
+				// }
 
-			.tile-row {
-				width:100%;
-				height:5%;
-				background:@electric-blue;
-				position:relative;
-				top:-100%;
+				// &:nth-of-type(20n-1) {
+				// 	.tile {
+				// 		.gradient(#dedede,#dddddd);
+				// 	}
+				// }
 
-				&:nth-of-type(20n) {
-					.tile {
-						.gradient(#dfdfdf,#dedede);
-					}
-				}
+				// &:nth-of-type(20n-2) {
+				// 	.tile {
+				// 		.gradient(#dddddd,#dcdcdc);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-1) {
-					.tile {
-						.gradient(#dedede,#dddddd);
-					}
-				}
+				// &:nth-of-type(20n-3) {
+				// 	.tile {
+				// 		.gradient(#dcdcdc,#dbdbdb);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-2) {
-					.tile {
-						.gradient(#dddddd,#dcdcdc);
-					}
-				}
+				// &:nth-of-type(20n-4) {
+				// 	.tile {
+				// 		.gradient(#dbdbdb,#dadada);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-3) {
-					.tile {
-						.gradient(#dcdcdc,#dbdbdb);
-					}
-				}
+				// &:nth-of-type(20n-5) {
+				// 	.tile {
+				// 		.gradient(#dadada,#d9d9d9);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-4) {
-					.tile {
-						.gradient(#dbdbdb,#dadada);
-					}
-				}
+				// &:nth-of-type(20n-6) {
+				// 	.tile {
+				// 		.gradient(#d9d9d9,#d8d8d8);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-5) {
-					.tile {
-						.gradient(#dadada,#d9d9d9);
-					}
-				}
+				// &:nth-of-type(20n-7) {
+				// 	.tile {
+				// 		.gradient(#d8d8d8,#d7d7d7);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-6) {
-					.tile {
-						.gradient(#d9d9d9,#d8d8d8);
-					}
-				}
+				// &:nth-of-type(20n-8) {
+				// 	.tile {
+				// 		.gradient(#d7d7d7,#d6d6d6);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-7) {
-					.tile {
-						.gradient(#d8d8d8,#d7d7d7);
-					}
-				}
+				// &:nth-of-type(20n-9) {
+				// 	.tile {
+				// 		.gradient(#d6d6d6,#d5d5d5);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-8) {
-					.tile {
-						.gradient(#d7d7d7,#d6d6d6);
-					}
-				}
+				// &:nth-of-type(20n-10) {
+				// 	.tile {
+				// 		.gradient(#d5d5d5,#d4d4d4);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-9) {
-					.tile {
-						.gradient(#d6d6d6,#d5d5d5);
-					}
-				}
+				// &:nth-of-type(20n-11) {
+				// 	.tile {
+				// 		.gradient(#d4d4d4,#d3d3d3);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-10) {
-					.tile {
-						.gradient(#d5d5d5,#d4d4d4);
-					}
-				}
+				// &:nth-of-type(20n-12) {
+				// 	.tile {
+				// 		.gradient(#d3d3d3,#d2d2d2);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-11) {
-					.tile {
-						.gradient(#d4d4d4,#d3d3d3);
-					}
-				}
+				// &:nth-of-type(20n-13) {
+				// 	.tile {
+				// 		.gradient(#d2d2d2,#d1d1d1);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-12) {
-					.tile {
-						.gradient(#d3d3d3,#d2d2d2);
-					}
-				}
+				// &:nth-of-type(20n-14) {
+				// 	.tile {
+				// 		.gradient(#d1d1d1,#d0d0d0);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-13) {
-					.tile {
-						.gradient(#d2d2d2,#d1d1d1);
-					}
-				}
+				// &:nth-of-type(20n-15) {
+				// 	.tile {
+				// 		.gradient(#d0d0d0,#cfcfcf);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-14) {
-					.tile {
-						.gradient(#d1d1d1,#d0d0d0);
-					}
-				}
+				// &:nth-of-type(20n-16) {
+				// 	.tile {
+				// 		.gradient(#cfcfcf,#cecece);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-15) {
-					.tile {
-						.gradient(#d0d0d0,#cfcfcf);
-					}
-				}
+				// &:nth-of-type(20n-17) {
+				// 	.tile {
+				// 		.gradient(#cecece,#cdcdcd);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-16) {
-					.tile {
-						.gradient(#cfcfcf,#cecece);
-					}
-				}
+				// &:nth-of-type(20n-18) {
+				// 	.tile {
+				// 		.gradient(#cdcdcd,#cccccc);
+				// 	}
+				// }
 
-				&:nth-of-type(20n-17) {
-					.tile {
-						.gradient(#cecece,#cdcdcd);
-					}
-				}
-
-				&:nth-of-type(20n-18) {
-					.tile {
-						.gradient(#cdcdcd,#cccccc);
-					}
-				}
-
-				&:nth-of-type(20n-19) {
-					.tile {
-						.gradient(#cccccc,#cbcbcb);
-					}
-				}
+				// &:nth-of-type(20n-19) {
+				// 	.tile {
+				// 		.gradient(#cccccc,#cbcbcb);
+				// 	}
+				// }
 			}
 
 			.tiles {

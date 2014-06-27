@@ -39,85 +39,64 @@ App.TopicsRoute = Ember.Route.extend({
 
 var topics = [{
     "id" : 1,
-    "appName" : "A",
-    "company" : "companyName",
+    "appName" : "Target Gift Registry",
+    "company" : "Target",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
     "dataAndroid" : "true",
     "dataIpad" : "false",
     "dataIphone" : "false",
     "dataKiosk" : "false",
-    "dataBrandColor" : "#ff0"
+    "dataBrandColor" : "#CC0000",
+    "dataBrandColor2" : "#ffffff",
+    "dataBrandColor3" : "#7F7F7F",
+    "dataBrandColor4" : "#000000",
+    "dataBrandColorGradient" : "#de2c2c",
+
+    "titleBG" : "#ffffff",
+    "appTitle" : "#7F7F7F",
+    "loadBrandColor" : "#CC0000",
+    "companyTitle" : "#CC0000",
+    "titleArrow" : "#000000",
+    "dataIcon" : "icon-target.jpg",
+    "brandGradientTop" : "#de2c2c",
+    "brandGradientBottom" : "#CC0000",
+    "imageTile1" : "target-1.jpg",
+    "imageTile1Y" : "-55px",
+    "imageTile1S" : "100%",
+    "imageTile2" : "target-2.jpg",
+    "imageTile2Y" : "-10px",
+    "imageTile2S" : "100%",
+    "imageTile3" : "target-3.jpg",
+    "imageTile3Y" : "-150px",
+    "imageTile3S" : "100%",
+    "imageTile4" : "target-4.jpg",
+    "imageTile4Y" : "0px",
+    "imageTile4S" : "150%",
   },
 
   {
     "id" : 2,
-    "appName" : "B",
-    "company" : "companyName",
-    "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
-    "dataAndroid" : "false",
-    "dataIpad" : "true",
-    "dataIphone" : "true",
-    "dataKiosk" : "true",
-    "dataBrandColor" : "blue"
-  },
-
-  {
-    "id" : 2,
-    "appName" : "C",
-    "company" : "companyName",
+    "appName" : "Ganassi Timeline",
+    "company" : "Ganassi Racing",
     "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
     "dataAndroid" : "true",
     "dataIpad" : "false",
-    "dataIphone" : "true",
+    "dataIphone" : "false",
     "dataKiosk" : "false",
-    "dataBrandColor" : "green"
-  },
+    "dataBrandColor" : "#212123",
+    "dataBrandColor2" : "#353535", //title background
+    "dataBrandColor3" : "#dc1c27", //app title color
+    "dataBrandColor4" : "#202020", //arrow title color
+    "dataBrandColorGradient" : "#322e2f",
 
-  {
-    "id" : 3,
-    "appName" : "D",
-    "company" : "companyName",
-    "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
-    "dataAndroid" : "true",
-    "dataIpad" : "false",
-    "dataIphone" : "false",
-    "dataKiosk" : "true"
-  },
+    "titleBG" : "#353535",
+    "appTitle" : "#1d1d1d",
+    "companyTitle" : "#DDDDDD",
+    "titleArrow" : "#dc1c27",
+    "dataIcon" : "icon-ganassi.jpg"
+  }]
 
-
-  {
-    "id" : 4,
-    "appName" : "E",
-    "company" : "companyName",
-    "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
-    "dataAndroid" : "false",
-    "dataIpad" : "true",
-    "dataIphone" : "false",
-    "dataKiosk" : "false"
-  },
-
-
-  {
-    "id" : 5,
-    "appName" : "F",
-    "company" : "companyName",
-    "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
-    "dataAndroid" : "false",
-    "dataIpad" : "false",
-    "dataIphone" : "true",
-    "dataKiosk" : "false"
-  },
-
-  {
-    "id" : 6,
-    "appName" : "G",
-    "company" : "companyName",
-    "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
-    "dataAndroid" : "true",
-    "dataIpad" : "true",
-    "dataIphone" : "true",
-    "dataKiosk" : "true"
-  }]//,
+  //,
 
 
   // {
