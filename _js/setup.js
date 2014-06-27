@@ -4,7 +4,9 @@ $(window).load(function(){
     setup('#ribbon');
 	setup('#devices');
 	setup('#projects');
-
+    $('#nav ul li:nth-child(2)').on('click', function(e){
+        location.reload();
+    });
 	//setup('.progress-bar');
 });
 

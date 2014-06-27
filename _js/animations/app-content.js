@@ -369,17 +369,17 @@ function tileFlow(){
 		var colTracker = 0;
 		$($(this).find('.tile')).each(function(){
 			if(rowTracker==0){
-				randArray[colTracker] = Math.random() * 1;
+				randArray[colTracker] = Math.random() * 0.8;
 			}
-			TweenMax.to($(this),1,{rotationX:"+=720deg", delay:randArray[colTracker]+rowDelay});
-			TweenMax.to($(this),0.5,{opacity:'0',delay:randArray[colTracker]+rowDelay+0.5});
+			TweenMax.to($(this),0.8,{rotationX:"+=720deg", delay:randArray[colTracker]+rowDelay});
+			TweenMax.to($(this),0.4,{opacity:'0',delay:randArray[colTracker]+rowDelay+0.4});
 			colTracker++;
 		});
-		rowDelay+=0.0625;
+		rowDelay+=0.05;
 		rowTracker++;
 	});
-	window.setTimeout(function(){$('.carousel .large-image').removeClass('busy')}, 4000);
-	TweenMax.to($('.carousel .back-button'), 1, {delay: 4.25, opacity: 1});
+	window.setTimeout(function(){$('.carousel .large-image').removeClass('busy')}, 3000);
+	TweenMax.to($('.carousel .back-button'), 0.5, {delay: 2.5, opacity: 1});
 }
 
 function toggleFolder(state){
