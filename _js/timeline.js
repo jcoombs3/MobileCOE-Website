@@ -5,11 +5,9 @@ function growName(e){
 		var post = $(member).find('.post');
 		var name = $(member).find('.name');
 
-		TweenMax.to($(post),0.1,{top:'-'+$(post).outerHeight() + 'px', onComplete:function(){
-			TweenMax.to($(name), 0.2, {marginLeft: '0px', width: '100%', onComplete:function(){
-				TweenMax.to($(name).find('table'),0.1,{opacity:'1'});
-			}});
-		}});
+		TweenMax.to($(post),0.1,{top:'-'+$(post).outerHeight() + 'px'});
+		TweenMax.to($(name), 0.2, {delay: 0.1, marginLeft: '0px', width: '100%'});
+		TweenMax.to($(name).find('table'),0.1,{delay: 0.3, opacity:'1'});
 }
 
 function shrinkName(e){
