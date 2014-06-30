@@ -155,16 +155,31 @@ function setup(el){
             break;
 
         case('.carousel'):
-            var folderDim = $('.carousel').outerWidth()/3;
-            var navWidth = $('#nav').outerWidth();
-            navWidth = navWidth*1.25;
-            $('.carousel').css('paddingLeft', navWidth + 'px');
-            var foldersWidth = $('.carousel').outerWidth() - navWidth*3;
-            var folderDim = foldersWidth/3;
-            TweenMax.to($('.carousel'), 0, {height: folderDim*2 + 'px'});
-            TweenMax.to($('.carousel .folder'), 0, {height:folderDim+'px', width:folderDim+'px'});
-            TweenMax.to($('.carousel .inspect-image'), 0, {height:folderDim*2+'px', width:folderDim*3+'px'});
-            $('.carousel .back-button').css('width', $('.carousel .back-button').outerHeight() + 'px');
+            //Check for Scanner//
+            if($(window).outerWidth() < 400){      
+                var folderDim = $('.carousel').outerWidth()/2;
+                var navWidth = $('#nav').outerWidth();
+                navWidth = navWidth*1.25;
+                $('.carousel').css('paddingLeft', navWidth + 'px');
+                var foldersWidth = $('.carousel').outerWidth() - navWidth*3;
+                var folderDim = foldersWidth/2;
+                TweenMax.to($('.carousel'), 0, {height: folderDim*2 + 'px'});
+                TweenMax.to($('.carousel .folder'), 0, {height:folderDim+'px', width:folderDim+'px'});
+                TweenMax.to($('.carousel .inspect-image'), 0, {height:folderDim*2+'px', width:folderDim*2+'px'});
+                $('.carousel .back-button').css('width', $('.carousel .back-button').outerHeight() + 'px');
+            }
+            else {
+                var folderDim = $('.carousel').outerWidth()/3;
+                var navWidth = $('#nav').outerWidth();
+                navWidth = navWidth*1.25;
+                $('.carousel').css('paddingLeft', navWidth + 'px');
+                var foldersWidth = $('.carousel').outerWidth() - navWidth*3;
+                var folderDim = foldersWidth/3;
+                TweenMax.to($('.carousel'), 0, {height: folderDim*2 + 'px'});
+                TweenMax.to($('.carousel .folder'), 0, {height:folderDim+'px', width:folderDim+'px'});
+                TweenMax.to($('.carousel .inspect-image'), 0, {height:folderDim*2+'px', width:folderDim*3+'px'});
+                $('.carousel .back-button').css('width', $('.carousel .back-button').outerHeight() + 'px');
+            }
             loadTiles();
             break;
 
@@ -172,7 +187,6 @@ function setup(el){
             var bigScreen = false;
             if($(window).outerWidth() > 1024){
                 bigScreen = true;
-                console.log('yay');
                 var tLPad = ($(window).outerWidth - 1024)/2;
                 //$('.timeline .timeline-phases').css('width', '1024px');
                 $('.timeline .timeline-phases').css('marginLeft', tLPad + 'px');

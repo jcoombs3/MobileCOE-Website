@@ -154,12 +154,13 @@ function loadContent() {
 
 	$('#app-content .carousel .folder').on('click', function(e){
 		if(!$(e.currentTarget).hasClass('busy')){
-			toggleFolder('folders');
+			toggleFolder('folders', $(e.currentTarget));
 		}
 	});
 
 	$('.carousel .back-button').on('click', function(e){
-			toggleFolder('img-view');
+			$('.carousel .large-image').removeClass('busy')
+			toggleFolder('img-view', $(e.currentTarget));
 	});
 	/* ------------------- */ 
 
@@ -348,7 +349,6 @@ function checkArrows(numMembers){
 	}
 }
 
-
 function appsUnite(){
 	TweenMax.to($('li.blankSpace li'), 0, {left:'+=' + 25 + 'px', top: 0});
 	TweenMax.to($('li.blankSpace .devicesDiv'), 0, {overflow: 'hidden', height: 'auto'});
@@ -359,30 +359,37 @@ function appsUnite(){
 	TweenMax.to($('li.blankSpace .devicesDiv'), 0, {delay: 0.6, overflow: 'visible', height:'0px'});
 	TweenMax.staggerTo($('li.blankSpace li'), 0.5, {delay: 0.5, top:  -land + 'px' , ease:Power1.easeIn}, 0.1);
 }	
+
 function tileFlow(){
 	$('.carousel .large-image').addClass('busy');
-	$('.tile').css('opacity', 1);
-	var rowTracker=0;
-	var rowDelay = 0;
-	var randArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-	$('.tile-row').each(function(){
-		var colTracker = 0;
-		$($(this).find('.tile')).each(function(){
-			if(rowTracker==0){
-				randArray[colTracker] = Math.random() * 0.8;
-			}
-			TweenMax.to($(this),0.8,{rotationX:"+=720deg", delay:randArray[colTracker]+rowDelay});
-			TweenMax.to($(this),0.4,{opacity:'0',delay:randArray[colTracker]+rowDelay+0.4});
-			colTracker++;
+	if(!($('.carousel .large-image').hasClass('initiatedTiles'))){
+		$('.carousel .large-image').addClass('initiatedTiles');
+		$('.tile').css('opacity', 1);
+		var rowTracker=0;
+		var rowDelay = 0;
+		var randArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		$('.tile-row').each(function(){
+			var colTracker = 0;
+			$($(this).find('.tile')).each(function(){
+				if(rowTracker==0){
+					randArray[colTracker] = Math.random() * 0.8;
+				}
+				TweenMax.to($(this),0.8,{rotationX:"+=720deg", delay:randArray[colTracker]+rowDelay});
+				TweenMax.to($(this),0.4,{opacity:'0',delay:randArray[colTracker]+rowDelay+0.4});
+				colTracker++;
+			});
+			rowDelay+=0.05;
+			rowTracker++;
 		});
-		rowDelay+=0.05;
-		rowTracker++;
-	});
-	window.setTimeout(function(){$('.carousel .large-image').removeClass('busy')}, 3000);
-	TweenMax.to($('.carousel .back-button'), 0.5, {delay: 2.5, opacity: 1});
+		TweenMax.to($('.carousel .back-button'), 0.5, {delay: 2.5, opacity: 1});
+	}
+	else {
+		TweenMax.to($('.carousel .back-button'), 0.5, {delay: 1, opacity: 1});
+	}
+	$('.carousel .tile-row').css('background', 'transparent');
 }
 
-function toggleFolder(state){
+function toggleFolder(state, currentTarget){
 	switch(state){
 		case 'img-view':
 				TweenMax.to($('.carousel .inspect-image'), 0.5, {left: -$('.carousel').outerWidth()+'px', ease: Back.easeIn});
@@ -390,6 +397,9 @@ function toggleFolder(state){
 				TweenMax.to($('.carousel .back-button'), 1, {opacity: 0});
 				break;
 		case 'folders':
+				var img = $(currentTarget).find('.img').css('background-image');
+				$('.carousel .inspect-image .large-image').css('background', img +' 0px 0px no-repeat');
+				$('.carousel .inspect-image .large-image').css('background-size', '100%');
 				TweenMax.staggerTo($('.carousel .folder'), 0.4, {left: -$('.carousel').outerWidth()+'px', ease: Back.easeIn}, 0.02);
 				TweenMax.to($('.carousel .inspect-image'), 0.5, {delay: 0.52, left: $('#nav').outerWidth()*1.25 + 'px', ease: Back.easeOut});
 				window.setTimeout(function(){tileFlow()}, 375);
