@@ -1,18 +1,16 @@
-function growName(e){
-	console.log('mouse in');
-		$(e).addClass('hover');
-		var member = $(e).parents('.member');
-		var post = $(member).find('.post');
-		var name = $(member).find('.name');
 
-		TweenMax.to($(post),0.1,{top:'-'+$(post).outerHeight() + 'px'});
-		TweenMax.to($(name), 0.2, {delay: 0.1, marginLeft: '0px', width: '100%'});
-		TweenMax.to($(name).find('table'),0.1,{delay: 0.3, opacity:'1'});
+function growName(e){
+	$(e).addClass('hover');
+	var member = $(e).parents('.member');
+	var post = $(member).find('.post');
+	var name = $(member).find('.name');
+
+	TweenMax.to($(post),0.1,{top:'-'+$(post).outerHeight() + 'px'});
+	TweenMax.to($(name), 0.2, {delay: 0.1, marginLeft: '0px', width: '100%'});
+	TweenMax.to($(name).find('table'),0.1,{delay: 0.3, opacity:'1'});
 }
 
 function shrinkName(e){
-	console.log('mouse out');
-	TweenMax.killTweensOf($(e));
 	var member = $(e).parents('.member');
 	var post = $(member).find('.post');
 	var name = $(member).find('.name');

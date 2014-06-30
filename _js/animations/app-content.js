@@ -100,6 +100,7 @@ function loadContent() {
 		growName(e.currentTarget);
 	},function(e){
 		shrinkName(e.currentTarget);
+		window.setTimeout(function(){if($(e.currentTarget).hasClass('hover')){shrinkName(e.currentTarget);}}, 300); 
 	});
 
 
