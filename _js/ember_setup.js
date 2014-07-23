@@ -219,7 +219,7 @@ var apps = [
     "id" : 4,
     "appName" : "FiOS",
     "company" : "Verizon",
-    "description" : "This is a brief description of an app.  It'll cover basic functionality, maketing impact, awards won, among any other relevent information about the app.",
+    "description" : "This is a brief description of an app.  It'll cover basic functionality, marketing impact, awards won, among any other relevent information about the app.",
     "dataAndroid" : "true",
     "dataIpad" : "true",
     "dataIphone" : "true",
